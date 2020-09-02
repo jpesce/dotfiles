@@ -7,4 +7,3 @@ vim/plugged
 vim/plugged/*
 
 zsh/.zsh/.zsh_history
-zsh/.zsh/plugins

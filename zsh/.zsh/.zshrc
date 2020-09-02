@@ -26,10 +26,6 @@ setopt CORRECT CORRECT_ALL
 
 # ---- Theme
 source $ZDOTDIR/themes/common/common.zsh-theme
-# Don't underline paths
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # ---- Plugins
 # Suggest completion
@@ -37,6 +33,15 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Highlight commands
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Change highlight colors
+# https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/highlighters/main
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
+
 
 # ---- Locales
 export LANG=en_US.UTF-8
