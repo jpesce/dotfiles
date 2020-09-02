@@ -1,0 +1,10 @@
+.DS_Store
+
+vim/undo-history
+vim/undo-history/*
+vim/.netrwhist
+vim/plugged
+vim/plugged/*
+
+zsh/.zsh/.zsh_history
+zsh/.zsh/plugins

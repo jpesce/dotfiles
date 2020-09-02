@@ -1,0 +1,271 @@
+set nocompatible
+
+" Plugins {{{
+" TODO: Use vim 8 plugin system and make a simple script to recursively update
+" git repositories Load vim-plug or install if necessary
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+
+" Fuzzy search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Buffers tab
+Plug 'ap/vim-buftabline'
+" Go to matching block end with % (similar to matchit.vim), required for ruby
+Plug 'andymass/vim-matchup'
+" Asynchronous code linting
+Plug 'w0rp/ale'
+" More mappings
+Plug 'tpope/vim-unimpaired'
+" Cheatsheet with <leader>?
+Plug 'lifepillar/vim-cheat40'
+" Hightlight #RGB codes
+Plug 'chrisbra/Colorizer'
+
+
+" Language specifics
+Plug 'sheerun/vim-polyglot'
+" JSONC (https://komkom.github.io/)
+Plug 'kevinoid/vim-jsonc'
+
+" Theme Builder
+Plug 'lifepillar/vim-colortemplate'
+" Themes
+Plug 'joshdick/onedark.vim'
+Plug 'axvr/photon.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'andreypopp/vim-colors-plain'
+call plug#end()
+" }}}
+
+" Sensible Defaults {{{
+" Default to english / utf-8
+set spelllang=en encoding=utf-8
+" Fast terminal connection
+set ttyfast
+" Make backspace work over everything
+set backspace=eol,start,indent
+" Don't update the display while executing macros
+set lazyredraw
+" Enable enhanced completion for commands
+set wildmenu showcmd
+" Start searching immediately and highlights all matches of current search
+set incsearch hlsearch
+" When searching, if the term has uppercase, search with case sensitivity, otherwise ignore case
+set smartcase ignorecase
+" Buffers are only hidden, not closed (no need to save before moving from a modified buffer)
+set hidden
+" Detect the file type being edited and load the appropriate ftplugin and indent files
+filetype plugin indent on
+" Automatically color syntax
+syntax on
+" }}}
+
+" Not so sensible defaults :-) {{{
+" Defaults splitting to the right and below
+set splitright splitbelow
+" Operations such as yanking, deleting and pasting work with the clipboard
+set clipboard=unnamed
+" Cursor always in the middle
+set scrolloff=1000
+" }}}
+
+" Remaps {{{
+" Set <leader> to space
+let mapleader = " "
+" FZF files, buffers and ripgrep the entire project
+map <leader>e :Files<CR>
+map <leader>b :Buffers<CR>
+nmap <Leader>/ :Rg<Space>
+" Next and previous linting concern
+nmap <silent> <leader>j :ALENext<cr>
+nmap <silent> <leader>k :ALEPrevious<cr>
+" Autocomplete
+inoremap <s-tab> <c-n>
+" Escape easily with <Shift+Enter>
+inoremap <S-CR> <c-[>
+noremap <S-CR> <c-[>
+" }}}
+
+" Backups {{{
+" Don't use swap and backup files
+set noswapfile nobackup
+" Keep undo history on a dir so you can always undo even after the file is closed/computer rebooted
+set undodir=~/.vim/undo-history
+set undofile
+" }}}
+
+" Visuals {{{
+" Set color scheme for syntax hightlighting
+set background=dark
+"set t_Co=256
+set termguicolors
+colorscheme essential_dev
+"colorscheme plain
+"colorscheme palenight
+"colorscheme base16-ocean
+"colorscheme ayu
+"colorscheme photon
+"let g:onedark_terminal_italics=1
+"colorscheme onedark
+"hi Normal ctermbg=NONE guibg=NONE
+
+" Redefine vertical split and statusline characters to form a straight line
+set fillchars+=vert:\   " Or try │ to make a vertical line
+set fillchars+=stl:─,stlnc:─ " Or ─ to make a horizontal line
+" Show relative line number + line numbers in a 3-character column
+set relativenumber number
+" Don't show vim intro
+set shortmess+=I
+" Show ruler
+set ruler
+set rulerformat=%7(%l:%c%)
+
+au InsertEnter * set cursorline
+au InsertLeave * set nocursorline
+" }}}
+
+" Status Line {{{
+set statusline=%0*\ \ %f\ \  " Filename and nothing more
+"  No status line :-)
+" Always show status line on all windows
+"set laststatus=2
+"
+"hi User1 guifg=#efebe3 guibg=#211f22 cterm=underline ctermfg=7 ctermbg=NONE
+"
+"set statusline=%0*\ \ %f\ \                                              " Initial spaces
+""set statusline+=%0*\ %{GetMode(mode())}%{&paste?'\ \ [P]':''}\  " Mode + Paste
+""set statusline+=%0*%<%r%h%w\ %f\ \%M\                         " Read-only, Helpfile, Preview, File Path, Modified
+""set statusline+=%0*%=                                         " Right Side
+""set statusline+=%#ALEErrorSign#%{AleSatusline('error')}
+""set statusline+=%#ALEWarningSign#%{AleSatusline('warning')}
+""set statusline+=%#ALEInfoSign#%{AleSatusline('info')}
+""set statusline+=%0*\ \ %p%%\ \                                " Percentage of file
+"
+"function! GetMode(mode)
+"  let l:mode_map = { 'n': 'NORMAL', 'i': 'INSERT', 'r': 'REPLACE', 'R': 'REPLACE', 'v': 'VISUAL',
+"                   \ 'V': 'VISUAL', "\<C-v>": 'V-BLOCK', 'c': 'COMMAND', 's': 'SELECT',
+"                   \ 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL' }
+"  return l:mode_map[a:mode]
+"endfunction
+"
+"" Return a bullet chaaracter and the number of ALE concerns given the type of ALE concern.
+"" E.g. types of concerns: errors, warning, info. For more info see `:h ale#statusline#Count'
+"function! AleSatusline(type)
+"  let l:count=ale#statusline#Count(bufnr("%"))[a:type]
+"  let l:status=''
+"  if l:count > 0 | let l:status='• '.l:count.'  ' | endif
+"  return l:status
+"endfunction
+" }}}
+
+" Indentation {{{
+" Tab size is two spaces for tabs, spaces and shift indenting command (< and >)
+set tabstop=2 softtabstop=2 shiftwidth=2
+" Convert tab into spaces
+set expandtab
+" Try to automatically indent next lines smartly
+set autoindent smartindent
+" }}}
+
+" Line width {{{
+" Responsible linebreaking at column 80. Highlight the column and break text upon reaching it.
+"set colorcolumn=81
+set formatoptions-=tc
+set textwidth=80
+match ColorColumn '\%>80v.\+'
+" }}}
+
+" Folding {{{
+set foldmethod=syntax
+" Start file unfolded
+"set foldlevelstart=99
+" Minimal fold text format with only the line content and a plus sign
+let FoldText = { -> getline(v:foldstart) . ' ﹢ '  }
+set foldtext=FoldText()
+" }}}
+
+" BufferTabLine {{{
+" Show if file has been modified
+let g:buftabline_indicators=1
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(-1)
+" }}}
+
+" File Types Specifics {{{
+" CSS/HTML
+" Highlight #RGB color codes. Don't highlight color names (such as red, yellow, etc)
+let g:colorizer_colornames = 0
+let g:colorizer_auto_filetype='css,html'
+" Makefile
+au BufNewFile,BufRead *[mM]akefile setlocal noexpandtab
+au BufNewFile,BufRead *[mM]akefile* setlocal filetype=make
+" LaTEX
+au BufNewFile,BufRead *.tex set spell
+" Python
+au BufNewFile,BufRead *.py set foldmethod=indent
+au BufNewFile,BufRead *.zshrc,*.zsh,*.zsh-theme set filetype=zsh
+" JSON
+au BufNewFile *.json,*.jsonc set foldlevelstart=1
+" vimrc
+au BufNewFile,BufRead vimrc set foldmethod=marker
+" }}}
+
+" File explorer (:Vexp) {{{
+" Don't show more info on top
+let g:netrw_banner = 0
+" Use tree view
+let g:netrw_liststyle = 3
+" Open file on the main window
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+" Resize to 20%
+let g:netrw_winsize = 20
+" }}}
+
+" FZF - Fuzzy Finder {{{
+let g:fzf_layout = { 'down': '~70%' }
+" }}}
+
+" ALE - Code Linting {{{
+" Use specific linters
+let g:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'], 'css': ['stylelint'] }
+let g:ale_linters_explicit = 1
+" Signs on sign column
+set signcolumn=yes
+let g:ale_sign_column_always = 1
+let g:ale_set_signs = 1
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
+" Rubocop
+let g:ale_ruby_rubocop_options = '--require rubocop-airbnb --config config/.rubocop.yml'
+" Remove trailing lines and whitespaces
+autocmd BufWritePre * %s/\s\+$//e
+let g:ale_fix_on_save = 1
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
+" }}}
+"
+"
+
+function! SynStack ()
+    for i1 in synstack(line("."), col("."))
+        let i2 = synIDtrans(i1)
+        let n1 = synIDattr(i1, "name")
+        let n2 = synIDattr(i2, "name")
+        echo n1 "->" n2
+    endfor
+endfunction

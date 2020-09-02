@@ -1,0 +1,187 @@
+# vim: ft=colortemplate
+Full name:  Essential Dev
+Short name: essential_dev
+Author:     João Pesce <joao@pesce.cc>
+
+Variant:    gui 256 8
+Background: dark
+
+# Color palette {{{
+# Color name         GUI                     Base256     Base16 (optional)
+Color: black         #1a1d23                 00          Black
+Color: red           #e06c75                 01          DarkRed
+Color: green         #98c379                 02          DarkGreen
+Color: yellow        #e5c07b                 03          DarkYellow
+Color: blue          #61afef                 04          DarkBlue
+Color: magenta       #c678dd                 05          DarkMagenta
+Color: cyan          #56b6c2                 06          DarkCyan
+Color: white         #abb2bf                 07          LightGrey
+Color: brightblack   #767676                 08          DarkGrey
+Color: brightred     rgb(255, 100,   0)      09          LightRed
+Color: brightgreen   rgb(100, 255,   0)      10          LightGreen
+Color: brightyellow  rgb(255, 255, 100)      11          LightYellow
+Color: brightblue    rgb(  0, 100, 255)      12          LightBlue
+Color: brightmagenta rgb(255, 100, 255)      13          LightMagenta
+Color: brightcyan    rgb(100, 255, 255)      14          LightCyan
+Color: brightwhite   #e0e0ed                 15          White
+
+Color: almostblack   #242424                 236         DarkGrey
+Color: darkgray      #464646                 236         DarkGrey
+# }}}
+
+# ---- Terminal colors
+Term colors: black red green yellow blue magenta cyan white
+Term colors: brightblack brightred brightgreen brightyellow
+Term colors: brightblue brightmagenta brightcyan brightwhite
+Terminal white black
+
+# Linked groups
+#Boolean           -> Constant
+#Float             -> Constant
+#Number            -> Constant
+#Character         -> Constant
+#String            -> Constant
+#Conditional       -> Statement
+#Label             -> Statement
+#Exception         -> Statement
+#Operator          -> Statement
+#Repeat            -> Statement
+#StorageClass      -> Type
+#Structure         -> Type
+#Typedef           -> Type
+#Debug             -> Special
+#Delimiter         -> Special
+#SpecialChar       -> Special
+#SpecialComment    -> Special
+#Tag               -> Special
+#Function          -> Identifier
+#PopupSelected     -> PmenuSel
+#QuickFixLine      -> Search
+lCursor            -> Cursor
+
+#Boolean           -> Normal
+#Float             -> Normal
+#Number            -> Normal
+#Character         -> Normal
+#String            -> Normal
+Conditional       -> Normal
+Label             -> Normal
+Exception         -> Normal
+Operator          -> Normal
+Repeat            -> Normal
+StorageClass      -> Normal
+Structure         -> Normal
+Typedef           -> Normal
+Debug             -> Normal
+Delimiter         -> Normal
+SpecialChar       -> Normal
+SpecialComment    -> Normal
+Tag               -> Normal
+Function          -> Normal
+PopupSelected     -> Normal
+QuickFixLine      -> Normal
+Special           -> Normal
+Constant          -> Normal
+Type              -> Normal
+
+# Constant {{{
+# Group              Foreground        Background        Attributes
+Constant             cyan              none
+Boolean              -> Constant
+Float                -> Constant
+Number               -> Constant
+Character            -> Constant
+String               -> Constant
+# }}}
+
+# Statement {{{
+# Group              Foreground        Background        Attributes
+Statement            white             none              bold
+Keyword              -> Statement
+Identifier           -> Statement
+# }}}
+
+# JSON {{{
+# Group              Foreground        Background        Attributes
+jsonKeyword          -> Keyword
+# }}}
+
+# CSS {{{
+# Group              Foreground        Background        Attributes
+cssClassName         -> Identifier
+# }}}
+
+# PreProc {{{
+# Group              Foreground        Background        Attributes
+PreProc              white             none              bold
+Define               -> PreProc
+Include              -> PreProc
+Macro                -> PreProc
+PreCondit            -> PreProc
+# }}}
+
+# Menus {{{
+# Group              Foreground        Background        Attributes
+PMenu                brightblack       almostblack
+PMenuSel             none              darkgray
+PMenuSbar            almostblack       none
+PMenuThumb           brightblack       none
+
+TabLine              darkgray          none
+TabLineFill          none              none
+TabLineSel           white             none
+
+WildMenu             white             none
+
+ToolbarLine	         none              almostblack
+ToolbarButton	       white             almostblack
+# }}}
+
+# Misc {{{
+Question             blue              none
+
+Title                white             none              bold
+
+Error                red               none
+ErrorMsg             -> Error
+diffRemoved          -> Error
+
+WarningMsg           yellow            none
+# }}}
+
+# Group              Foreground        Background        Attributes
+EndOfBuffer          black             none
+NonText              darkgray          none
+
+Normal               white             none
+Comment              brightblack       none
+
+LineNr               darkgray          none
+SignColumn           -> LineNr
+FoldColumn           -> LineNr
+
+IncSearch            yellow            brightblack
+Search               black             yellow
+
+StatusLine           darkgray          none
+StatusLineNC         almostblack       none
+StatusLineTerm       -> StatusLine
+StatusLineTermNC     -> StatusLineNC
+VertSplit            -> StatusLine
+
+
+Visual               none              almostblack
+CursorLine           -> Visual
+CursorLineNR         -> Visual
+CursorColumn         -> Visual
+ColorColumn          -> Visual
+
+MatchParen           none              none               underline
+
+Folded               none              none
+
+diffAdded            green             none
+
+Todo                 yellow            none
+
+Directory            cyan              none

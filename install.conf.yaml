@@ -1,0 +1,15 @@
+- clean: ['~']
+
+- link:
+    # Vim
+    ~/.vim: vim
+    # ZSH
+    ~/.zshenv: zsh/.zshenv
+    ~/.zsh: zsh/.zsh
+    # Git
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore: git/.gitignore
+
+- create:
+    # Vim
+    - ~/.vim/undo-history
