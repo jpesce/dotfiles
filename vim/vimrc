@@ -34,14 +34,14 @@ Plug 'kevinoid/vim-jsonc'
 
 " Theme Builder
 Plug 'lifepillar/vim-colortemplate'
-" Themes
-Plug 'joshdick/onedark.vim'
-Plug 'axvr/photon.vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'andreypopp/vim-colors-plain'
 call plug#end()
+" }}}
+
+" Themes {{{
+packadd vim-colors-plain
+packadd photon.vim
+packadd vim-colors-paramount
+packadd tokyonight-vim
 " }}}
 
 " Sensible Defaults {{{

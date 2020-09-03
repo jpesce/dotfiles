@@ -8,3 +8,15 @@
 [submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "vim/pack/colors/vim-colors-plain"]
+	path = vim/pack/colors/opt/vim-colors-plain
+	url = https://github.com/andreypopp/vim-colors-plain
+[submodule "vim/pack/colors/opt/vim-colors-paramount"]
+	path = vim/pack/colors/opt/vim-colors-paramount
+	url = https://github.com/owickstrom/vim-colors-paramount
+[submodule "vim/pack/colors/opt/photon.vim"]
+	path = vim/pack/colors/opt/photon.vim
+	url = https://github.com/axvr/photon.vim
+[submodule "vim/pack/colors/opt/tokyonight-vim"]
+	path = vim/pack/colors/opt/tokyonight-vim
+	url = https://github.com/ghifarit53/tokyonight-vim
