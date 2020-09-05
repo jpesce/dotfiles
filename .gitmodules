@@ -5,33 +5,44 @@
 [submodule "zsh/.zsh/plugins/zsh-autosuggestions"]
 	path = zsh/.zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+  ignore = dirty
 [submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+  ignore = dirty
 [submodule "vim/pack/colors/vim-colors-plain"]
 	path = vim/pack/colors/opt/vim-colors-plain
 	url = https://github.com/andreypopp/vim-colors-plain
+  ignore = dirty
 [submodule "vim/pack/colors/opt/vim-colors-paramount"]
 	path = vim/pack/colors/opt/vim-colors-paramount
 	url = https://github.com/owickstrom/vim-colors-paramount
+  ignore = dirty
 [submodule "vim/pack/colors/opt/photon.vim"]
 	path = vim/pack/colors/opt/photon.vim
 	url = https://github.com/axvr/photon.vim
+  ignore = dirty
 [submodule "vim/pack/colors/opt/tokyonight-vim"]
 	path = vim/pack/colors/opt/tokyonight-vim
 	url = https://github.com/ghifarit53/tokyonight-vim
+  ignore = dirty
 [submodule "vim/pack/plugins/start/vim-cheat40"]
 	path = vim/pack/plugins/start/vim-cheat40
 	url = https://github.com/lifepillar/vim-cheat40
+  ignore = dirty
 [submodule "vim/pack/plugins/start/vim-matchup"]
 	path = vim/pack/plugins/start/vim-matchup
 	url = https://github.com/andymass/vim-matchup
+  ignore = dirty
 [submodule "vim/pack/plugins/start/vim-unimpaired"]
 	path = vim/pack/plugins/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+  ignore = dirty
 [submodule "vim/pack/plugins/start/vim-hilinks"]
 	path = vim/pack/plugins/opt/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
+  ignore = dirty
 [submodule "vim/pack/plugins/opt/vim-colortemplate"]
 	path = vim/pack/plugins/opt/vim-colortemplate
 	url = https://github.com/lifepillar/vim-colortemplate
+  ignore = dirty
