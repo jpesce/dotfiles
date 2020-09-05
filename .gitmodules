@@ -20,3 +20,18 @@
 [submodule "vim/pack/colors/opt/tokyonight-vim"]
 	path = vim/pack/colors/opt/tokyonight-vim
 	url = https://github.com/ghifarit53/tokyonight-vim
+[submodule "vim/pack/plugins/start/vim-cheat40"]
+	path = vim/pack/plugins/start/vim-cheat40
+	url = https://github.com/lifepillar/vim-cheat40
+[submodule "vim/pack/plugins/start/vim-matchup"]
+	path = vim/pack/plugins/start/vim-matchup
+	url = https://github.com/andymass/vim-matchup
+[submodule "vim/pack/plugins/start/vim-unimpaired"]
+	path = vim/pack/plugins/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/pack/plugins/start/vim-hilinks"]
+	path = vim/pack/plugins/opt/vim-hilinks
+	url = https://github.com/kergoth/vim-hilinks
+[submodule "vim/pack/plugins/opt/vim-colortemplate"]
+	path = vim/pack/plugins/opt/vim-colortemplate
+	url = https://github.com/lifepillar/vim-colortemplate

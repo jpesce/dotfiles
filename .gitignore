@@ -7,3 +7,5 @@ vim/plugged
 vim/plugged/*
 
 zsh/.zsh/.zsh_history
+zsh/.zsh/.zcompcache
+zsh/.zsh/.zcompdump
