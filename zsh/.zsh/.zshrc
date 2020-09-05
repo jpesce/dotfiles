@@ -1,13 +1,13 @@
 # ---- Options
-# Load colors on zsh commands by name
+# Use colors on zsh commands by name
 autoload colors && colors
 # Use VI mode and set vim as the default editor
 bindkey -v
 export EDITOR=vim
-# Enable calling functions in PROMPT
-setopt PROMPT_SUBST
-# New completion system
+# Completion
 autoload -Uz compinit && compinit
+setopt AUTO_MENU
+zstyle ':completion:*' menu yes select
 # Show dotfiles in completion
 setopt globdots
 # Case-insensitive completion
@@ -25,6 +25,8 @@ HISTSIZE=20000
 setopt CORRECT CORRECT_ALL
 
 # ---- Theme
+# Enable calling functions in PROMPT. Required for the theme.
+setopt PROMPT_SUBST
 source $ZDOTDIR/themes/common/common.zsh-theme
 
 # ---- Plugins
