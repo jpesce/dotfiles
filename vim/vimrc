@@ -3,41 +3,21 @@ set nocompatible
 " Plugins {{{
 " TODO: Use vim 8 plugin system and make a simple script to recursively update
 " git repositories Load vim-plug or install if necessary
-" Done for the following:
 " * andymass/vim-matchup: matching with % recognize language-specific words as well
 " * tpope/vim-unimpaired: [, ] mappings
 " * lifepillar/vim-cheat40: cheatcheat with <leader>?
+" * sheerun/vim-polyglot: lots of languages support
+" * ap/vim-buftabline: buffers in tabline
+" * dense-analysis/ale: code linting
+" * junegunn/fzf.vim: fuzzy finder
+" Add fzf to runtimepath (required)
+set rtp+=/usr/local/opt/fzf
 
 " Currently developing a theme
 " * lifepillar/vim-colortemplate: toolkit for colorscheme design
 packadd vim-colortemplate
 " Toggle showing highlight stack with :HLT!
 packadd vim-hilinks
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin('~/.vim/plugged')
-
-" Fuzzy search
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" Buffers tab
-Plug 'ap/vim-buftabline'
-" Asynchronous code linting
-Plug 'w0rp/ale'
-" Hightlight #RGB codes
-Plug 'chrisbra/Colorizer'
-
-
-" Language specifics
-Plug 'sheerun/vim-polyglot'
-" JSONC (https://komkom.github.io/)
-Plug 'kevinoid/vim-jsonc'
-
-call plug#end()
 " }}}
 
 " Themes {{{

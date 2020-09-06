@@ -46,3 +46,23 @@
 	path = vim/pack/plugins/opt/vim-colortemplate
 	url = https://github.com/lifepillar/vim-colortemplate
   ignore = dirty
+[submodule "vim/pack/plugins/start/vim-polyglot"]
+	path = vim/pack/plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+	ignore = dirty
+[submodule "vim/pack/plugins/start/vim-buftabline"]
+	path = vim/pack/plugins/start/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
+	ignore = dirty
+[submodule "vim/pack/plugins/start/ale"]
+	path = vim/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale
+	ignore = dirty
+[submodule "vim/pack/plugins/start/fzf.vim"]
+	path = vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+	ignore = dirty
+[submodule "vim/pack/plugins/start/vim-jsonc"]
+	path = vim/pack/plugins/start/vim-jsonc
+	url = https://github.com/kevinoid/vim-jsonc
+	ignore = dirty
