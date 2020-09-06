@@ -1,8 +1,6 @@
 set nocompatible
 
 " Plugins {{{
-" TODO: Use vim 8 plugin system and make a simple script to recursively update
-" git repositories Load vim-plug or install if necessary
 " * andymass/vim-matchup: matching with % recognize language-specific words as well
 " * tpope/vim-unimpaired: [, ] mappings
 " * lifepillar/vim-cheat40: cheatcheat with <leader>?
@@ -14,7 +12,7 @@ set nocompatible
 set rtp+=/usr/local/opt/fzf
 
 " Currently developing a theme
-" * lifepillar/vim-colortemplate: toolkit for colorscheme design
+" Toolkit for colorscheme design
 packadd vim-colortemplate
 " Toggle showing highlight stack with :HLT!
 packadd vim-hilinks
