@@ -40,6 +40,7 @@ source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
