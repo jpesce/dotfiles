@@ -107,6 +107,22 @@ set statusline=%0*\ \ %f\ \  " Filename
 " When entering insert show cursorline and when exiting hide it
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
+
+" Customize fzf colors
+let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Comment'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Search'],
+      \ 'fg+':     ['fg', 'Normal'],
+      \ 'bg+':     ['bg', 'Terminal'],
+      \ 'hl+':     ['fg', 'Search'],
+      \ 'info':    ['bg', 'Terminal'],
+      \ 'border':  ['fg', 'NonText'],
+      \ 'prompt':  ['fg', 'Directory'],
+      \ 'pointer': ['bg', 'Terminal'],
+      \ 'marker':  ['fg', 'WarningMsg'],
+      \ 'spinner': ['fg', 'Normal'],
+      \ 'header':  ['fg', 'Normal'] }
 " }}}
 
 " Indentation {{{
@@ -164,7 +180,7 @@ let g:netrw_winsize = 20
 " ALE - Code Linting {{{
 " Define linters manually
 let g:ale_linters = { 'ruby': ['rubocop'],
-                    \ 'javascript': ['eslint'],
-                    \ 'css': ['stylelint'] }
+      \ 'javascript': ['eslint'],
+      \ 'css': ['stylelint'] }
 let g:ale_linters_explicit = 1
 " }}}
