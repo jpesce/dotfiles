@@ -26,7 +26,7 @@ Color: brightcyan    rgb(100, 255, 255)      14          LightCyan
 Color: brightwhite   #e0e0ed                 15          White
 
 Color: almostblack   #242424                 236         DarkGrey
-Color: darkgray      #464646                 236         DarkGrey
+Color: darkgray      #464646                 239         DarkGrey
 ; }}}
 
 ; Terminal colors {{{
@@ -87,9 +87,9 @@ SpecialComment       -> Special
 Debug                -> Special
 ; }}}
 
-; Menus {{{
+; Menus and Lines {{{
 ; Group              Foreground        Background        Attributes
-PopupSelected     -> Normal
+PopupSelected        -> Normal
 
 PMenu                brightblack       almostblack
 PMenuSel             none              darkgray
@@ -100,10 +100,17 @@ TabLine              darkgray          none
 TabLineFill          none              none
 TabLineSel           white             none
 
-WildMenu             white             none
-
 ToolbarLine	         none              almostblack
 ToolbarButton	       white             almostblack
+
+WildMenu             white             none               bold
+
+StatusLine           darkgray          none
+StatusLineNC         almostblack       none
+StatusLineTerm       -> StatusLine
+StatusLineTermNC     -> StatusLineNC
+VertSplit            -> StatusLine
+
 ; }}}
 
 ; Misc {{{
@@ -120,7 +127,7 @@ Question             -> WarningMsg
 
 Todo                 yellow            none
 
-Search               yellow            brightblack
+Search               yellow            almostblack
 IncSearch            black             yellow
 ; }}}
 
@@ -132,11 +139,6 @@ LineNr               darkgray          none
 SignColumn           -> LineNr
 FoldColumn           -> LineNr
 
-StatusLine           darkgray          none
-StatusLineNC         almostblack       none
-StatusLineTerm       -> StatusLine
-StatusLineTermNC     -> StatusLineNC
-VertSplit            -> StatusLine
 
 Visual               none              almostblack
 CursorLine           -> Visual

@@ -27,15 +27,15 @@
 	url = https://github.com/ghifarit53/tokyonight-vim
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-cheat40"]
-	path = vim/pack/plugins/start/vim-cheat40
+	path = vim/pack/plugins/opt/vim-cheat40
 	url = https://github.com/lifepillar/vim-cheat40
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-matchup"]
-	path = vim/pack/plugins/start/vim-matchup
+	path = vim/pack/plugins/opt/vim-matchup
 	url = https://github.com/andymass/vim-matchup
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-unimpaired"]
-	path = vim/pack/plugins/start/vim-unimpaired
+	path = vim/pack/plugins/opt/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-hilinks"]
@@ -47,22 +47,26 @@
 	url = https://github.com/lifepillar/vim-colortemplate
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-polyglot"]
-	path = vim/pack/plugins/start/vim-polyglot
+	path = vim/pack/plugins/opt/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 	ignore = dirty
 [submodule "vim/pack/plugins/start/vim-buftabline"]
-	path = vim/pack/plugins/start/vim-buftabline
+	path = vim/pack/plugins/opt/vim-buftabline
 	url = https://github.com/ap/vim-buftabline
 	ignore = dirty
 [submodule "vim/pack/plugins/start/ale"]
-	path = vim/pack/plugins/start/ale
+	path = vim/pack/plugins/opt/ale
 	url = https://github.com/dense-analysis/ale
 	ignore = dirty
 [submodule "vim/pack/plugins/start/fzf.vim"]
-	path = vim/pack/plugins/start/fzf.vim
+	path = vim/pack/plugins/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
 	ignore = dirty
 [submodule "vim/pack/plugins/start/vim-jsonc"]
-	path = vim/pack/plugins/start/vim-jsonc
+	path = vim/pack/plugins/opt/vim-jsonc
 	url = https://github.com/kevinoid/vim-jsonc
+	ignore = dirty
+[submodule "vim-sensible"]
+	path = vim/pack/plugins/opt/vim-sensible
+	url = https://github.com/tpope/vim-sensible
 	ignore = dirty
