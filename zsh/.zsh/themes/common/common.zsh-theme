@@ -48,6 +48,7 @@ common_current_dir() {
         PROMPT_PATH="$BASE"
     else
         PROMPT_PATH="$BASE/$(git rev-parse --show-prefix)"
+        PROMPT_PATH=${PROMPT_PATH%?} # Remove trailing `/`
     fi
   else
     PROMPT_PATH="%~"

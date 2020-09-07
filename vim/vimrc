@@ -144,7 +144,7 @@ let g:buftabline_indicators = 1
 
 " File Types Specifics {{{
 " Help identify some zsh-related files
-"au BufNewFile,BufRead *.zshrc,*.zsh,*.zsh-theme set filetype=zsh
+au BufNewFile,BufRead *.zshrc,*.zsh,*.zsh-theme set filetype=zsh
 " vimrc
 au BufNewFile,BufRead vimrc set foldmethod=marker
 " }}}
