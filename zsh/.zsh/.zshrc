@@ -51,6 +51,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # ---- Paths
+# Homebrew sbin
+export PATH="/usr/local/sbin:$PATH"
 # PostgreSQL
 PATH=$PATH:/Library/PostgreSQL/12/bin
 # Rails in dev mode by default
