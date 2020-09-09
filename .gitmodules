@@ -47,7 +47,7 @@
 	url = https://github.com/lifepillar/vim-colortemplate
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-polyglot"]
-	path = vim/pack/plugins/opt/vim-polyglot
+	path = vim/pack/filetypes/opt/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 	ignore = dirty
 [submodule "vim/pack/plugins/start/vim-buftabline"]
@@ -70,3 +70,6 @@
 	path = vim/pack/plugins/opt/vim-sensible
 	url = https://github.com/tpope/vim-sensible
 	ignore = dirty
+[submodule "vim-jsonc"]
+	path = vim/pack/filetypes/opt/vim-jsonc
+	url = https://github.com/kevinoid/vim-jsonc

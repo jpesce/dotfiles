@@ -11,8 +11,6 @@ packadd vim-cheat40
 packadd vim-sensible
 " `[`, `]` and `y` mappings
 packadd vim-unimpaired
-" Lots of languages support
-packadd vim-polyglot
 " `%` recognize language-specific words
 packadd vim-matchup
 " Buffers in tabline
@@ -30,6 +28,12 @@ packadd vim-colortemplate
 packadd vim-hilinks
 " }}}
 
+" Filetype support {{{
+" Lots of languages support
+packadd vim-polyglot
+packadd vim-jsonc
+" }}}
+
 " Themes {{{
 packadd vim-colors-plain
 packadd photon.vim
@@ -45,6 +49,8 @@ set ttyfast
 set lazyredraw
 " Enable enhanced completion for commands
 set wildmenu
+" Enable OMNI Completion for know keywords (<C-X><C-O> while in Insert Mode)
+set omnifunc=syntaxcomplete#Complete
 " Highlight all matches of current search
 set hlsearch
 " Buffers are only hidden, not closed
@@ -178,9 +184,18 @@ let g:netrw_winsize = 20
 " }}}
 
 " ALE - Code Linting {{{
+" Always show sign columns
+set signcolumn=yes
 " Define linters manually
-let g:ale_linters = { 'ruby': ['rubocop'],
+let g:ale_linters = {
+      \ 'ruby': ['rubocop'],
       \ 'javascript': ['eslint'],
-      \ 'css': ['stylelint'] }
+      \ 'css': ['stylelint']
+      \ }
 let g:ale_linters_explicit = 1
+" Define fixers for ALEFix
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'css': ['stylelint']
+      \ }
 " }}}
