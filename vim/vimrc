@@ -103,18 +103,40 @@ set fillchars+=stl:─,stlnc:─  " ─ to make a horizontal line
 set relativenumber number
 " Don't show vim intro
 set shortmess+=I
-" Show statusline only if there are more than one split
-set laststatus=1
 " Ruler is only current line and column
 set rulerformat=%7(%l:%c%)
-" Statuslien is only filename
-set statusline=%0*\ \ %f\ \  " Filename
+" Show what you are typing on the ruler
+set showcmd
+" Statusline is filename and line:column
+function! ActiveStatus()
+  let statusline=""
+  let statusline.="%#TabLineSel#"
+  let statusline.="\ \ %f\ \ "
+  let statusline.="%0*%="
+  let statusline.="\ \ %l:%c"
+  return statusline
+endfunction
+function! InactiveStatus()
+  let statusline=""
+  let statusline.="%0*"
+  let statusline.="\ \ %f\ \ "
+  return statusline
+endfunction
+
+" Show statusline only if there is more than one split
+set laststatus=2
+set statusline=%!ActiveStatus()
+augroup status
+  autocmd!
+  autocmd WinEnter * setlocal statusline=%!ActiveStatus()
+  autocmd WinLeave * setlocal statusline=%!InactiveStatus()
+augroup END
 
 " When entering insert show cursorline and when exiting hide it
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
 
-" Customize fzf colors
+" Customize fzf
 let g:fzf_colors =
     \ { 'fg':      ['fg', 'Comment'],
       \ 'bg':      ['bg', 'Normal'],
