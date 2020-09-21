@@ -29,7 +29,7 @@ setopt CORRECT CORRECT_ALL
 setopt PROMPT_SUBST
 source $ZDOTDIR/themes/common/common.zsh-theme
 
-# ---- Plugins
+## ---- Plugins
 # Suggest completion
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -54,16 +54,13 @@ export LC_ALL=en_US.UTF-8
 # Homebrew sbin
 export PATH="/usr/local/sbin:$PATH"
 # PostgreSQL
-PATH=$PATH:/Library/PostgreSQL/12/bin
+export PATH=$PATH:/Library/PostgreSQL/12/bin
 # Rails in dev mode by default
 export RAILS_ENV=development
-# Open SSL
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# Use homebrew open SSL instead of libressl
+export PATH=/usr/local/opt/openssl/bin:$PATH
+# Add openssl lib to path
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
-# Libffi
-export LDFLAGS="-L/usr/local/opt/libffi/lib"
-export CPPFLAGS="-I/usr/local/opt/libffi/include"
 
 # ---- Alias
 alias ..='cd ..'
@@ -81,7 +78,3 @@ alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launc
 
 # If installed, load rbenv when terminal starts
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Add nvm path
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
