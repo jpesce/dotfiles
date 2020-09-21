@@ -15,11 +15,14 @@ packadd vim-unimpaired
 packadd vim-matchup
 " Buffers in tabline
 packadd vim-buftabline
+
+" Snippets
+packadd vim-minisnip
 " Code linting
 packadd ale
 " Fuzzy finder
-packadd fzf.vim
-set rtp+=/usr/local/opt/fzf
+" packadd fzf.vim
+" set rtp+=/usr/local/opt/fzf
 
 " Currently developing a theme
 " Toolkit for colorscheme design
@@ -57,6 +60,8 @@ set hlsearch
 set hidden
 " Defaults splitting to the right and below
 set splitright splitbelow
+" Recursevely add project's directories to path
+set path+=**
 " }}}
 
 " Not so sensible defaults :-) {{{
@@ -71,7 +76,7 @@ set scrolloff=1000
 autocmd BufWritePre * %s/\s\+$//e
 " }}}
 
-" Remaps {{{
+" Commands & Remaps {{{
 " FZF files, buffers and ripgrep the entire project
 map <leader>e :Files<CR>
 map <leader>b :Buffers<CR>

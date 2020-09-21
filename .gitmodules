@@ -73,3 +73,6 @@
 [submodule "vim-jsonc"]
 	path = vim/pack/filetypes/opt/vim-jsonc
 	url = https://github.com/kevinoid/vim-jsonc
+[submodule "vim/pack/plugins/opt/vim-minisnip"]
+	path = vim/pack/plugins/opt/vim-minisnip
+	url = https://github.com/joereynolds/vim-minisnip
