@@ -14,7 +14,7 @@ packadd vim-unimpaired
 " `%` recognize language-specific words
 packadd vim-matchup
 " Buffers in tabline
-packadd vim-buftabline
+"packadd vim-buftabline
 
 " Snippets
 packadd vim-minisnip
@@ -74,6 +74,8 @@ set clipboard=unnamed
 set scrolloff=1000
 " Remove trailing lines and whitespaces on exit
 autocmd BufWritePre * %s/\s\+$//e
+" Consider '-' part of the word
+set iskeyword+=-
 " }}}
 
 " Commands & Remaps {{{
@@ -101,10 +103,7 @@ colorscheme essential_dev
 "colorscheme photon
 "colorscheme tokyonight
 
-" Redefine vertical split and statusline characters
-set fillchars+=vert:\         " │ to make a vertical line
-set fillchars+=stl:─,stlnc:─  " ─ to make a horizontal line
-" Show relative line number + line numbers
+" Show relative line numbers + current line number
 set relativenumber number
 " Don't show vim intro
 set shortmess+=I
@@ -112,11 +111,16 @@ set shortmess+=I
 set rulerformat=%7(%l:%c%)
 " Show what you are typing on the ruler
 set showcmd
+
+" Redefine vertical split and statusline characters
+set fillchars+=vert:\           " │ to make a vertical line
+set fillchars+=stl:\ ,stlnc:\   " ─ to make a horizontal line
 " Statusline is filename and line:column
+" Filename in the active buffer is evident and on inactive buffers is opaque
 function! ActiveStatus()
   let statusline=""
   let statusline.="%#TabLineSel#"
-  let statusline.="\ \ %f\ \ "
+  let statusline.="\ \ %f\ %m\ \ "
   let statusline.="%0*%="
   let statusline.="\ \ %l:%c"
   return statusline
@@ -124,18 +128,17 @@ endfunction
 function! InactiveStatus()
   let statusline=""
   let statusline.="%0*"
-  let statusline.="\ \ %f\ \ "
+  let statusline.="\ \ %f\ %m\ \ "
   return statusline
 endfunction
-
-" Show statusline only if there is more than one split
-set laststatus=2
 set statusline=%!ActiveStatus()
 augroup status
   autocmd!
   autocmd WinEnter * setlocal statusline=%!ActiveStatus()
   autocmd WinLeave * setlocal statusline=%!InactiveStatus()
 augroup END
+" Always show statusline
+set laststatus=2
 
 " When entering insert show cursorline and when exiting hide it
 au InsertEnter * set cursorline
@@ -192,7 +195,7 @@ let g:buftabline_indicators = 1
 " }}}
 
 " File Types Specifics {{{
-" Help identify some zsh-related files
+" zsh
 au BufNewFile,BufRead *.zshrc,*.zsh,*.zsh-theme set filetype=zsh
 " vimrc
 au BufNewFile,BufRead vimrc set foldmethod=marker
