@@ -50,17 +50,9 @@
 	path = vim/pack/filetypes/opt/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 	ignore = dirty
-[submodule "vim/pack/plugins/start/vim-buftabline"]
-	path = vim/pack/plugins/opt/vim-buftabline
-	url = https://github.com/ap/vim-buftabline
-	ignore = dirty
 [submodule "vim/pack/plugins/start/ale"]
 	path = vim/pack/plugins/opt/ale
 	url = https://github.com/dense-analysis/ale
-	ignore = dirty
-[submodule "vim/pack/plugins/start/fzf.vim"]
-	path = vim/pack/plugins/opt/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
 	ignore = dirty
 [submodule "vim/pack/plugins/start/vim-jsonc"]
 	path = vim/pack/plugins/opt/vim-jsonc

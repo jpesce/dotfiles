@@ -7,22 +7,15 @@ let mapleader = " "
 " Plugins {{{
 " Cheatcheat with <leader>?
 packadd vim-cheat40
-" Sensible defaults
-packadd vim-sensible
 " `[`, `]` and `y` mappings
 packadd vim-unimpaired
 " `%` recognize language-specific words
 packadd vim-matchup
-" Buffers in tabline
-"packadd vim-buftabline
 
 " Snippets
 packadd vim-minisnip
 " Code linting
 packadd ale
-" Fuzzy finder
-" packadd fzf.vim
-" set rtp+=/usr/local/opt/fzf
 
 " Currently developing a theme
 " Toolkit for colorscheme design
@@ -44,45 +37,47 @@ packadd tokyonight-vim
 " }}}
 
 " Sensible Defaults {{{
-" Default to english
-set spelllang=en
-" Fast terminal connection
-set ttyfast
-" Don't update the display while executing macros
-set lazyredraw
-" Enable enhanced completion for commands
+" Enable syntax detection
+filetype plugin indent on
+syntax enable
+" Show a selection menu when completing commands
 set wildmenu
-" Enable OMNI Completion for know keywords (<C-X><C-O> while in Insert Mode)
-set omnifunc=syntaxcomplete#Complete
-" Highlight all matches of current search
-set hlsearch
-" Buffers are only hidden, not closed
-set hidden
 " Defaults splitting to the right and below
 set splitright splitbelow
-" Recursevely add project's directories to path
-set path+=**
+" Automatically reload files that have been modified outside of vim
+set autoread
+" UTF-8 and English as default
+set encoding=utf-8 spelllang=en
+" Delete comment character when joining commented lines
+set formatoptions+=j
+" Buffers are only hidden, not closed
+set hidden
+" Backspace works over every thing
+set backspace=indent,eol,start
+" Don't consider numbers stating with zeros to be octals
+set nrformats-=octal
+" Don't update the display while executing macros
+set lazyredraw
+" Better handles lines that overflow at the end of the screen
+set display+=lastline
+" Time waited for key press to complete. It makes for a faster key response.
+set ttimeout
+set ttimeoutlen=50
 " }}}
 
 " Not so sensible defaults :-) {{{
-" When searching, if the term has an uppercase letter, search with case
-" sensitivity, otherwise ignore case
-set smartcase ignorecase
+" Enable OMNI Completion for known keywords (<C-X><C-O> while on insert mode)
+set omnifunc=syntaxcomplete#Complete
+" Recursively add project's directories to path to make it easy to find files
+set path+=**
 " Operations such as yanking, deleting and pasting work with the clipboard
 set clipboard=unnamed
 " Cursor always in the middle
 set scrolloff=1000
-" Remove trailing lines and whitespaces on exit
+" Remove trailing lines and white spaces on exit
 autocmd BufWritePre * %s/\s\+$//e
-" Consider '-' part of the word
+" Consider '-' part of a word
 set iskeyword+=-
-" }}}
-
-" Commands & Remaps {{{
-" FZF files, buffers and ripgrep the entire project
-map <leader>e :Files<CR>
-map <leader>b :Buffers<CR>
-nmap <Leader>/ :Rg<Space>
 " }}}
 
 " Backups {{{
@@ -92,6 +87,36 @@ set noswapfile nobackup
 " after the file is closed or the computer rebooted
 set undodir=~/.vim/undo-history
 set undofile
+" }}}
+
+" Search {{{
+" Highlight all matches of current search
+set incsearch hlsearch
+" When searching, if the term has an uppercase letter, search with case
+" sensitivity, otherwise ignore case
+set smartcase ignorecase
+" <C-L> to clear the search highlights
+" https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+" }}}
+
+" Indentation {{{
+" Tab size is two spaces for tabs, spaces and shift indenting command (< and >)
+set tabstop=2 softtabstop=2 shiftwidth=2
+" Try to automatically indent next lines smartly
+set autoindent smartindent
+" Convert tab into spaces and erase spaces smartly as though they were tabs
+set expandtab smarttab
+" }}}
+
+" Line width {{{
+" Responsible line breaking at column 80. Highlight the column but don't break
+" text upon reaching it.
+set textwidth=80
+set formatoptions-=t
+" Highlight text that exceeds 80 characters instead of showing a colored column.
+"set colorcolumn=81
+match ColorColumn "\%>80v.\+"
 " }}}
 
 " Visuals {{{
@@ -112,17 +137,17 @@ set rulerformat=%7(%l:%c%)
 " Show what you are typing on the ruler
 set showcmd
 
-" Redefine vertical split and statusline characters
+" Redefine vertical split and status line characters
 set fillchars+=vert:\           " │ to make a vertical line
 set fillchars+=stl:\ ,stlnc:\   " ─ to make a horizontal line
-" Statusline is filename and line:column
+" Status line is filename and line:column
 " Filename in the active buffer is evident and on inactive buffers is opaque
 function! ActiveStatus()
   let statusline=""
   let statusline.="%#TabLineSel#"
   let statusline.="\ \ %f\ %m\ \ "
   let statusline.="%0*%="
-  let statusline.="\ \ %l:%c"
+  let statusline.="\ \ %l:%c\ \ "
   return statusline
 endfunction
 function! InactiveStatus()
@@ -137,61 +162,21 @@ augroup status
   autocmd WinEnter * setlocal statusline=%!ActiveStatus()
   autocmd WinLeave * setlocal statusline=%!InactiveStatus()
 augroup END
-" Always show statusline
+" Always show status line
 set laststatus=2
 
-" When entering insert show cursorline and when exiting hide it
+" When entering insert show cursor line and when exiting hide it
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
-
-" Customize fzf
-let g:fzf_colors =
-    \ { 'fg':      ['fg', 'Comment'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Search'],
-      \ 'fg+':     ['fg', 'Normal'],
-      \ 'bg+':     ['bg', 'Terminal'],
-      \ 'hl+':     ['fg', 'Search'],
-      \ 'info':    ['bg', 'Terminal'],
-      \ 'border':  ['fg', 'NonText'],
-      \ 'prompt':  ['fg', 'Directory'],
-      \ 'pointer': ['bg', 'Terminal'],
-      \ 'marker':  ['fg', 'WarningMsg'],
-      \ 'spinner': ['fg', 'Normal'],
-      \ 'header':  ['fg', 'Normal'] }
-" }}}
-
-" Indentation {{{
-" Tab size is two spaces for tabs, spaces and shift indenting command (< and >)
-set tabstop=2 softtabstop=2 shiftwidth=2
-" Convert tab into spaces
-set expandtab
-" Try to automatically indent next lines smartly
-set smartindent
-" }}}
-
-" Line width {{{
-" Responsible linebreaking at column 80. Highlight the column but don't break
-" text upon reaching it.
-set textwidth=80
-set formatoptions-=t
-" Highlight text that exceeds 80 characters intead of showing a colored column.
-"set colorcolumn=81
-match ColorColumn "\%>80v.\+"
 " }}}
 
 " Folding {{{
 set foldmethod=syntax
-" Start file unfolded
+" Start unfolded
 set foldlevelstart=99
-" Minimal fold text format with only the line content and a plus sign
+" Fold text is only the line content and a plus sign
 let FoldText = { -> getline(v:foldstart) . ' ﹢ '  }
 set foldtext=FoldText()
-" }}}
-
-" BufferTabLine {{{
-" Show if file has been modified
-let g:buftabline_indicators = 1
 " }}}
 
 " File Types Specifics {{{
@@ -202,20 +187,27 @@ au BufNewFile,BufRead vimrc set foldmethod=marker
 " }}}
 
 " File explorer (:Vexp) {{{
-" Don't show more info on top
+" Don't show info on top
 let g:netrw_banner = 0
 " Use tree view
 let g:netrw_liststyle = 3
-" Open file on the main window
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
 " Resize to 20%
 let g:netrw_winsize = 20
+" }}}
+
+" Ripgrep {{{
+" Use ripgrep as searching program
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 " }}}
 
 " ALE - Code Linting {{{
 " Always show sign columns
 set signcolumn=yes
+" Don't highlight
+let g:ale_set_highlights = 0
+" Prettier signs
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '●'
 " Define linters manually
 let g:ale_linters = {
       \ 'ruby': ['rubocop'],
