@@ -105,8 +105,8 @@ ToolbarButton	       white             almostblack
 
 WildMenu             white             none               bold
 
-StatusLine           darkgray          none
-StatusLineNC         almostblack       none
+StatusLine           white             none
+StatusLineNC         darkgray          none
 StatusLineTerm       -> StatusLine
 StatusLineTermNC     -> StatusLineNC
 VertSplit            -> StatusLine
