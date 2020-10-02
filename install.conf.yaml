@@ -1,18 +1,21 @@
 - clean: ['~']
 
 - link:
-    # Vim
-    ~/.vim: vim
-    # ZSH
+    # Zsh
     ~/.zshenv: zsh/.zshenv
     ~/.zsh: zsh/.zsh
+    # Tmux
+    ~/.tmux.conf: tmux/.tmux.conf
+    # Vim
+    ~/.vim: vim
     # Git
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore
 
 - create:
-    # Vim
+    # vim
     - ~/.vim/undo-history
 
 - shell:
+    # Enable italics for iTerm
     - [iterm2/enable-italics.sh]
