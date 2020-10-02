@@ -10,21 +10,9 @@
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
   ignore = dirty
-[submodule "vim/pack/colors/vim-colors-plain"]
-	path = vim/pack/colors/opt/vim-colors-plain
-	url = https://github.com/andreypopp/vim-colors-plain
-  ignore = dirty
-[submodule "vim/pack/colors/opt/vim-colors-paramount"]
-	path = vim/pack/colors/opt/vim-colors-paramount
-	url = https://github.com/owickstrom/vim-colors-paramount
-  ignore = dirty
 [submodule "vim/pack/colors/opt/photon.vim"]
 	path = vim/pack/colors/opt/photon.vim
 	url = https://github.com/axvr/photon.vim
-  ignore = dirty
-[submodule "vim/pack/colors/opt/tokyonight-vim"]
-	path = vim/pack/colors/opt/tokyonight-vim
-	url = https://github.com/ghifarit53/tokyonight-vim
   ignore = dirty
 [submodule "vim/pack/plugins/start/vim-cheat40"]
 	path = vim/pack/plugins/opt/vim-cheat40

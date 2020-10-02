@@ -5,9 +5,9 @@ set nocompatible
 let mapleader = " "
 
 " Plugins {{{
-" Cheatcheat with <leader>?
+" Cheat cheat with <leader>?
 packadd vim-cheat40
-" `[`, `]` and `y` mappings
+" Previous `[`, next `]` and toggle `y` mappings (see :h unimpaired)
 packadd vim-unimpaired
 " `%` recognize language-specific words
 packadd vim-matchup
@@ -18,59 +18,44 @@ packadd vim-minisnip
 packadd ale
 
 " Currently developing a theme
-" Toolkit for colorscheme design
+" Toolkit for color scheme design
 packadd vim-colortemplate
-" Toggle showing highlight stack with :HLT!
+" Show/hide highlight stack with :HLT!
 packadd vim-hilinks
 " }}}
 
-" Filetype support {{{
-" Lots of languages support
+" File type support {{{
 packadd vim-polyglot
 packadd vim-jsonc
 " }}}
 
 " Themes {{{
-packadd vim-colors-plain
 packadd photon.vim
-packadd tokyonight-vim
 " }}}
 
 " Sensible Defaults {{{
-" Enable syntax detection
-filetype plugin indent on
-syntax enable
-" Show a selection menu when completing commands
-set wildmenu
-" Defaults splitting to the right and below
-set splitright splitbelow
-" Automatically reload files that have been modified outside of vim
-set autoread
-" UTF-8 and English as default
-set encoding=utf-8 spelllang=en
-" Delete comment character when joining commented lines
-set formatoptions+=j
-" Buffers are only hidden, not closed
-set hidden
-" Backspace works over every thing
-set backspace=indent,eol,start
-" Don't consider numbers stating with zeros to be octals
-set nrformats-=octal
-" Don't update the display while executing macros
-set lazyredraw
-" Better handles lines that overflow at the end of the screen
-set display+=lastline
-" Time waited for key press to complete. It makes for a faster key response.
-set ttimeout
-set ttimeoutlen=50
+filetype plugin indent on       " Be aware of file types
+syntax enable                   " Enable syntax highlight
+set wildmenu                    " Show a selection menu when completing commands
+set splitright splitbelow       " Defaults splitting to the right and below
+set autoread                    " Automatically reload modified files
+set encoding=utf-8 spelllang=en " UTF-8 and English as default
+set formatoptions+=j            " Delete comment character when joining lines
+set hidden                      " Buffers are only hidden, not closed
+set backspace=indent,eol,start  " Backspace works over everything
+set nrformats-=octal            " Don't assume as octals numbers starting with 0
+set lazyredraw                  " Don't update the display while running macros
+set display+=lastline           " Better display overflowing lines
+set ttimeout                    " Time waited for key press to complete...
+set ttimeoutlen=50              " ...it makes for a faster key response.
 " }}}
 
 " Not so sensible defaults :-) {{{
-" Enable OMNI Completion for known keywords (<C-X><C-O> while on insert mode)
+" Enable OMNI Completion (<C-X><X-O) for known language keywords
 set omnifunc=syntaxcomplete#Complete
-" Recursively add project's directories to path to make it easy to find files
+" Recursively add project's directories to path to make it easy to :find files
 set path+=**
-" Operations such as yanking, deleting and pasting work with the clipboard
+" Yanking, deleting and pasting work with the clipboard
 set clipboard=unnamed
 " Cursor always in the middle
 set scrolloff=1000
@@ -78,9 +63,6 @@ set scrolloff=1000
 autocmd BufWritePre * %s/\s\+$//e
 " Consider '-' part of a word
 set iskeyword+=-
-" }}}
-
-" Backups {{{
 " Don't use swap and backup files
 set noswapfile nobackup
 " Instead, keep undo history on a directory so you can always undo (U) even
@@ -90,10 +72,10 @@ set undofile
 " }}}
 
 " Search {{{
-" Highlight all matches of current search
+" Highlight all matches of the current search
 set incsearch hlsearch
-" When searching, if the term has an uppercase letter, search with case
-" sensitivity, otherwise ignore case
+" If the term has an uppercase letter, search with case sensitivity, otherwise
+" ignore case
 set smartcase ignorecase
 " <C-L> to clear the search highlights
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
@@ -101,7 +83,7 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 " }}}
 
 " Indentation {{{
-" Tab size is two spaces for tabs, spaces and shift indenting command (< and >)
+" Tab size is 2 spaces for tabs, spaces and shift indentation command (< and >)
 set tabstop=2 softtabstop=2 shiftwidth=2
 " Try to automatically indent next lines smartly
 set autoindent smartindent
@@ -110,8 +92,8 @@ set expandtab smarttab
 " }}}
 
 " Line width {{{
-" Responsible line breaking at column 80. Highlight the column but don't break
-" text upon reaching it.
+" Responsible line breaking at column 80. Don't automatically break text upon
+" reaching it. Use `gq` where and when needed.
 set textwidth=80
 set formatoptions-=t
 " Highlight text that exceeds 80 characters instead of showing a colored column.
@@ -120,28 +102,23 @@ match ColorColumn "\%>80v.\+"
 " }}}
 
 " Visuals {{{
+" Color scheme
 set background=dark
 set t_Co=256
 colorscheme essential_dev
-"colorscheme plain
-"colorscheme plain-cterm
-"colorscheme photon
-"colorscheme tokyonight
-
-" Show relative line numbers + current line number
+" Show relative line numbers except for the current line
 set relativenumber number
-" Don't show vim intro
+" Hide vim intro
 set shortmess+=I
 " Ruler is only current line and column
 set rulerformat=%7(%l:%c%)
-" Show what you are typing on the ruler
+" Show what you are currently typing on the ruler
 set showcmd
 
-" Redefine vertical split and status line characters
+" Redefine filling characters on vertical split and status line
 set fillchars+=vert:\           " │ to make a vertical line
 set fillchars+=stl:\ ,stlnc:\   " ─ to make a horizontal line
 " Status line is filename and line:column
-" Filename in the active buffer is evident and on inactive buffers is opaque
 set statusline =\ \ %f\ %m\ \   " Filename and modified indicator
 set statusline+=%=              " Spacer
 set statusline+=☰\ %l:%c\ \     " Line and column
@@ -174,37 +151,42 @@ au BufNewFile,BufRead vimrc set foldmethod=marker
 let g:netrw_banner = 0
 " Use tree view
 let g:netrw_liststyle = 3
-" Resize to 20%
+" Resize splits to 20%
 let g:netrw_winsize = 20
 " }}}
 
-" Ripgrep {{{
-" Grep silently
-cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() =~# '^grep')  ? 'silent grep'  : 'grep'
-cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() =~# '^lgrep') ? 'silent lgrep' : 'lgrep'
-" Use ripgrep as searching program
+" Matchup {{{
+" Don't replace status line with matching term when it's offscreen
+let g:matchup_matchparen_offscreen = {'method': 'status_manual'}
+" }}}
+
+" Grepping {{{
+" Use ripgrep as :grep program
 if executable("rg")
   set grepprg=rg\ --vimgrep\ --no-heading
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+" Grep silently
+cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() =~# '^grep')  ? 'silent grep'  : 'grep'
+cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() =~# '^lgrep') ? 'silent lgrep' : 'lgrep'
 " }}}
 
-" ALE - Code Linting {{{
+" ALE code linting {{{
 " Always show sign columns
 set signcolumn=yes
-" Don't highlight
+" Don't highlight the code
 let g:ale_set_highlights = 0
 " Prettier signs
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '●'
 " Define linters manually
+let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \ 'ruby': ['rubocop'],
       \ 'javascript': ['eslint'],
       \ 'css': ['stylelint']
       \ }
-let g:ale_linters_explicit = 1
-" Define fixers for ALEFix
+" Define fixers for :ALEFix
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'css': ['stylelint']
