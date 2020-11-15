@@ -1,6 +1,6 @@
 ; vim: ft=colortemplate
-Full name:  Essential Dev
-Short name: essential_dev
+Full name:  Essential
+Short name: essential
 Author:     João Pesce <joao@pesce.cc>
 
 Variant:    gui 256 8
@@ -36,19 +36,18 @@ Term colors: brightblue brightmagenta brightcyan brightwhite
 Terminal white black
 ; }}}
 
-Normal               white             none
-Comment              brightblack       none
+Normal               none              none
+Comment              brightblack       none     italic
 
-lCursor           -> Cursor
+lCursor              -> Cursor
 
-StorageClass      -> Normal
-Structure         -> Normal
-Typedef           -> Normal
-Identifier        -> Normal
-Function          -> Normal
-QuickFixLine      -> Normal
-Constant          -> Normal
-Type              -> Normal
+StorageClass         -> Normal
+Structure            -> Normal
+Typedef              -> Normal
+Identifier           -> Normal
+Function             -> Normal
+Constant             -> Normal
+Type                 -> Normal
 
 ; Constant {{{
 ; Group              Foreground        Background        Attributes
@@ -61,7 +60,7 @@ String               -> Constant
 ; }}}
 ; Statement {{{
 ; Group              Foreground        Background        Attributes
-Statement            white             none              bold
+Statement            none              none              bold
 Conditional          -> Statement
 Repeat               -> Statement
 Label                -> Statement
@@ -71,7 +70,7 @@ Exception            -> Statement
 ; }}}
 ; PreProc {{{
 ; Group              Foreground        Background        Attributes
-PreProc              white             none              bold
+PreProc              none              none              bold
 Define               -> PreProc
 Include              -> PreProc
 Macro                -> PreProc
@@ -79,7 +78,7 @@ PreCondit            -> PreProc
 ; }}}
 ; Special {{{
 ; Group              Foreground        Background        Attributes
-Special              white             none              bold
+Special              none              none              bold
 SpecialChar          -> Special
 Tag                  -> Special
 Delimiter            -> Special
@@ -91,65 +90,86 @@ Debug                -> Special
 ; Group              Foreground        Background        Attributes
 PopupSelected        -> Normal
 
-PMenu                brightblack       almostblack
-PMenuSel             none              darkgray
-PMenuSbar            almostblack       none
-PMenuThumb           brightblack       none
+PMenu                none              none
+PMenuSel             none              none              bold
+PMenuSbar            none              none
+PMenuThumb           none              black
 
 TabLine              darkgray          none
 TabLineFill          none              none
-TabLineSel           white             none
+TabLineSel           none              none
 
-ToolbarLine	         none              almostblack
-ToolbarButton	       white             almostblack
+ToolbarLine	         none              none
+ToolbarButton	       none              none
 
-WildMenu             white             none               bold
+WildMenu             none              none              bold
 
-StatusLine           white             none
-StatusLineNC         darkgray          none
+StatusLine           black             none
+StatusLineNC         brightblack       none
 StatusLineTerm       -> StatusLine
 StatusLineTermNC     -> StatusLineNC
-VertSplit            -> StatusLine
-
+VertSplit            black             none
 ; }}}
 
 ; Misc {{{
 ; Group              Foreground        Background        Attributes
-Title                white             none              bold
+Title                none              none              bold
 
 Error                red               none
 ErrorMsg             -> Error
-diffRemoved          -> Error
-SpellBad             -> Error
 
 WarningMsg           yellow            none
 Question             -> WarningMsg
 
 Todo                 yellow            none
 
-Search               yellow            almostblack
+Search               yellow            black
 IncSearch            black             yellow
 ; }}}
 
 ; Group              Foreground        Background        Attributes
-EndOfBuffer          black             none
-NonText              darkgray          none
+Ignore               white             none
+EndOfBuffer          -> Ignore
 
-LineNr               darkgray          none
+NonText              brightblack       none
+
+LineNr               brightblack       none
 SignColumn           -> LineNr
 FoldColumn           -> LineNr
 
-
-Visual               none              almostblack
+Visual               white             black
 CursorLine           -> Visual
 CursorLineNR         -> Visual
 CursorColumn         -> Visual
 ColorColumn          -> Visual
+QuickFixLine         -> Visual
 
 MatchParen           none              none               underline
 
 Folded               none              none
 
-diffAdded            green             none
+MoreMsg              green             none
 
 Directory            cyan              none
+Underlined           cyan              none               underline
+; }}}
+
+; Diff {{{
+; Group              Foreground        Background        Attributes
+DiffAdd              green             none
+DiffChange           yellow            none
+DiffText             yellow            none
+DiffDelete           red               none
+; }}}
+
+; Spelling {{{
+SpellBad             red               none
+SpellCap             yellow            none
+SpellRare            yellow            none
+SpellLocal           yellow            none
+; }}}
+
+
+; Json {{{
+jsonKeyword          -> Normal
+; }}}

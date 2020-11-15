@@ -14,8 +14,9 @@ packadd vim-matchup
 
 " Snippets
 packadd vim-minisnip
-" Code linting
+" Code linting and fixing
 packadd ale
+
 
 " Currently developing a theme
 " Toolkit for color scheme design
@@ -40,9 +41,9 @@ set wildmenu                    " Show a selection menu when completing commands
 set splitright splitbelow       " Defaults splitting to the right and below
 set autoread                    " Automatically reload modified files
 set encoding=utf-8 spelllang=en " UTF-8 and English as default
-set formatoptions+=j            " Delete comment character when joining lines
+set formatoptions+=j            " Delete comment characters when joining lines
 set hidden                      " Buffers are only hidden, not closed
-set backspace=indent,eol,start  " Backspace works over everything
+set backspace=indent,eol,start  " Backspace works over everything in insert mode
 set nrformats-=octal            " Don't assume as octals numbers starting with 0
 set lazyredraw                  " Don't update the display while running macros
 set display+=lastline           " Better display overflowing lines
@@ -74,12 +75,11 @@ set undofile
 " Search {{{
 " Highlight all matches of the current search
 set incsearch hlsearch
-" If the term has an uppercase letter, search with case sensitivity, otherwise
-" ignore case
+" If the term has uppercase, search with case sensitivity, otherwise ignore case
 set smartcase ignorecase
-" <C-L> to clear the search highlights
+" <C-L> clears search and rerenders everything
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <C-l> :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-L>
 " }}}
 
 " Indentation {{{
@@ -89,6 +89,9 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 set autoindent smartindent
 " Convert tab into spaces and erase spaces smartly as though they were tabs
 set expandtab smarttab
+" When indenting with < > in Visual mode continue with the selection
+vnoremap > >gv
+vnoremap < <gv
 " }}}
 
 " Line width {{{
@@ -98,36 +101,32 @@ set textwidth=80
 set formatoptions-=t
 " Highlight text that exceeds 80 characters instead of showing a colored column.
 "set colorcolumn=81
-match ColorColumn "\%>80v.\+"
+"match ColorColumn "\%>80v.\+"
 " }}}
 
 " Visuals {{{
 " Color scheme
 set background=dark
 set t_Co=256
-colorscheme essential_dev
+colorscheme essential
 " Show relative line numbers except for the current line
 set relativenumber number
 " Hide vim intro
 set shortmess+=I
-" Ruler is only current line and column
-set rulerformat=%7(%l:%c%)
 " Show what you are currently typing on the ruler
 set showcmd
-
 " Redefine filling characters on vertical split and status line
-set fillchars+=vert:\           " │ to make a vertical line
+set fillchars+=vert:\           "│ to make a vertical line
 set fillchars+=stl:\ ,stlnc:\   " ─ to make a horizontal line
+
+" Ruler is only current line and column
+set rulerformat=%7(%l:%c%)
 " Status line is filename and line:column
 set statusline =\ \ %f\ %m\ \   " Filename and modified indicator
 set statusline+=%=              " Spacer
 set statusline+=☰\ %l:%c\ \     " Line and column
 " Always show status line
-set laststatus=2
-
-" When entering insert show cursor line and when exiting hide it
-au InsertEnter * set cursorline
-au InsertLeave * set nocursorline
+set laststatus=1
 " }}}
 
 " Folding {{{
@@ -139,24 +138,15 @@ let FoldText = { -> getline(v:foldstart) . ' ﹢ '  }
 set foldtext=FoldText()
 " }}}
 
-" File Types Specifics {{{
-" zsh
-au BufNewFile,BufRead *.zshrc,*.zsh,*.zsh-theme set filetype=zsh
-" vimrc
-au BufNewFile,BufRead vimrc set foldmethod=marker
-" }}}
-
 " File explorer (:Vexp) {{{
 " Don't show info on top
 let g:netrw_banner = 0
-" Use tree view
-let g:netrw_liststyle = 3
 " Resize splits to 20%
 let g:netrw_winsize = 20
 " }}}
 
 " Matchup {{{
-" Don't replace status line with matching term when it's offscreen
+" Don't replace status line with the matching term when it's offscreen
 let g:matchup_matchparen_offscreen = {'method': 'status_manual'}
 " }}}
 
@@ -189,6 +179,7 @@ let g:ale_linters = {
 " Define fixers for :ALEFix
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'css': ['stylelint']
+      \ 'css': ['stylelint'],
+      \ 'json': ['jq'], 'jsonc': ['jq']
       \ }
 " }}}
