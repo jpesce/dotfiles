@@ -1,16 +1,18 @@
 - clean: ['~']
 
 - link:
-    # Zsh
+    # zsh
     ~/.zshenv: zsh/.zshenv
     ~/.zsh: zsh/.zsh
-    # Tmux
+    # tmux
     ~/.tmux.conf: tmux/.tmux.conf
-    # Vim
+    # vim
     ~/.vim: vim
-    # Git
+    # git
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore
+    # Universal ctags
+    ~/.ctags.d: ctags
 
 - create:
     # vim

@@ -56,3 +56,6 @@
 [submodule "vim/pack/plugins/opt/vim-minisnip"]
 	path = vim/pack/plugins/opt/vim-minisnip
 	url = https://github.com/joereynolds/vim-minisnip
+[submodule "vim/pack/plugins/opt/fzf.vim"]
+	path = vim/pack/plugins/opt/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

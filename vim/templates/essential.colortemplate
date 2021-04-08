@@ -104,7 +104,7 @@ ToolbarButton	       none              none
 
 WildMenu             none              none              bold
 
-StatusLine           black             none
+StatusLine           white             none
 StatusLineNC         brightblack       none
 StatusLineTerm       -> StatusLine
 StatusLineTermNC     -> StatusLineNC
@@ -128,7 +128,7 @@ IncSearch            black             yellow
 ; }}}
 
 ; Group              Foreground        Background        Attributes
-Ignore               white             none
+Ignore               black             none
 EndOfBuffer          -> Ignore
 
 NonText              brightblack       none
@@ -137,7 +137,7 @@ LineNr               brightblack       none
 SignColumn           -> LineNr
 FoldColumn           -> LineNr
 
-Visual               white             black
+Visual               black             white
 CursorLine           -> Visual
 CursorLineNR         -> Visual
 CursorColumn         -> Visual
