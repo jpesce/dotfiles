@@ -37,7 +37,7 @@ Terminal white black
 ; }}}
 
 Normal               none              none
-Comment              brightblack       none     italic
+Comment              brightblack       none
 
 lCursor              -> Cursor
 
@@ -51,7 +51,7 @@ Type                 -> Normal
 
 ; Constant {{{
 ; Group              Foreground        Background        Attributes
-Constant             cyan              none
+Constant             none              none              italic
 Boolean              -> Constant
 Float                -> Constant
 Number               -> Constant
@@ -91,18 +91,18 @@ Debug                -> Special
 PopupSelected        -> Normal
 
 PMenu                none              none
-PMenuSel             none              none              bold
+PMenuSel             none              none              bold,underline
 PMenuSbar            none              none
 PMenuThumb           none              black
 
 TabLine              none              none
 TabLineFill          none              none
-TabLineSel           none              none              bold
+TabLineSel           none              none              bold,underline
 
 ToolbarLine	         none              none
 ToolbarButton	       none              none
 
-WildMenu             none              none              bold
+WildMenu             none              none              bold,underline
 
 StatusLine           white             none
 StatusLineNC         brightblack       none
@@ -134,12 +134,12 @@ EndOfBuffer          -> Ignore
 NonText              brightblack       none
 
 LineNr               brightblack       none
+CursorLineNR         -> LineNr
 SignColumn           -> LineNr
 FoldColumn           -> LineNr
 
 Visual               black             white
 CursorLine           -> Visual
-CursorLineNR         -> Visual
 CursorColumn         -> Visual
 ColorColumn          -> Visual
 QuickFixLine         -> Visual

@@ -1,38 +1,61 @@
-" Use vim settings instead of vi. Must be first, because it changes other
-" options as a side effect.
-set nocompatible
 " Set <leader> to space
 let mapleader = " "
+
+" Extra mappings {{{
+" More previous `[`, next `]` and toggle `y` mappings
+packadd vim-unimpaired
+" Add and change surrounding brackets, parenthesis and tags
+packadd vim-surround
+" Add and remove comments with gc
+packadd vim-commentary
+" }}}
 
 " Plugins {{{
 " Cheat cheat with <leader>?
 packadd vim-cheat40
-" Previous `[`, next `]` and toggle `y` mappings (see :h unimpaired)
-packadd vim-unimpaired
+" Use custom cheat sheet
+let g:cheat40_use_default = 0
+
 " `%` recognize language-specific words
 packadd vim-matchup
-" Fuzzy finder FZF
-packadd fzf.vim
+" Don't replace status line with the matching term when it's offscreen
+let g:matchup_matchparen_offscreen = {}
+
 " File explorer
-packadd vim-dirvish
+"packadd vim-dirvish
+packadd vim-vinegar
+
+" Extra FZF integrations
+packadd fzf.vim
+set rtp+=/usr/local/opt/fzf
+nno <silent> <Leader>f :FZF<CR>
+nno <silent> <Leader>b :Buffers<CR>
+nno <silent> <Leader>s :BLines<CR>
+" Search includes hidden files and exclude node_modules and .git
+let $FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden --glob '!{**/node_modules,.git/*}'"
+let $FZF_DEFAULT_OPTS.=" --bind 'alt-a:select-all,alt-d:deselect-all'"
+
 " Show buffer list on tabline. Who needs tabs anyway?
 packadd vim-buftabline
 " Show modifiers on tabline
 let g:buftabline_indicators = 1
+
 " Auto complete when typing
-packadd AutoComplPop
+"packadd AutoComplPop
 
 " Git
 packadd vim-fugitive
 
-" Snippets
-packadd vim-minisnip
 " Code linting and fixing
 packadd ale
+" }}}
 
-" Currently developing a theme
+" Color scheme {{{
+" set termguicolors
+packadd vim-yami
 " Toolkit for color scheme design
 packadd vim-colortemplate
+
 " Show/hide highlight stack with :HLT!
 packadd vim-hilinks
 " }}}
@@ -42,26 +65,10 @@ packadd vim-polyglot
 packadd vim-jsonc
 " }}}
 
-" Themes {{{
-packadd photon.vim
-packadd onedark.vim
-" }}}
-
 " Sensible Defaults {{{
-filetype plugin indent on       " Be aware of file types
-syntax enable                   " Enable syntax highlight
-set wildmenu                    " Show a selection menu when completing commands
-set splitright splitbelow       " Defaults splitting to the right and below
-set autoread                    " Automatically reload modified files
-set encoding=utf-8 spelllang=en " UTF-8 and English as default
-set formatoptions+=j            " Delete comment characters when joining lines
-set hidden                      " Buffers are only hidden, not closed
-set backspace=indent,eol,start  " Backspace works over everything in insert mode
-set nrformats-=octal            " Don't assume as octals numbers starting with 0
-set lazyredraw                  " Don't update the display while running macros
-set display+=lastline           " Better display overflowing lines
-set ttimeout                    " Time waited for key press to complete...
-set ttimeoutlen=50              " ...it makes for a faster key response.
+set splitright splitbelow    " Defaults splitting to the right and below
+set hidden                   " Buffers are only hidden, not closed
+set lazyredraw               " Don't update the display while running macros
 " }}}
 
 " Not so sensible defaults :-) {{{
@@ -79,7 +86,6 @@ set iskeyword+=-
 set noswapfile nobackup
 " Instead, keep undo history on a directory so you can always undo (U)
 " even after the file is closed or the computer rebooted
-set undodir=~/.vim/undo-history
 set undofile
 " When completing commands, first complete as much as possible, on the next
 " <tab>, cycle through options
@@ -90,35 +96,35 @@ set wildmode=longest:full,full
 " Enable OMNI Completion (<C-X><X-O) for known language keywords
 set omnifunc=syntaxcomplete#Complete
 " Don't insert the first item of the menu automatically
-set completeopt=menuone,longest
+set completeopt=menuone,noselect
 " Don't show messages on ruler about number of completions
 set shortmess+=c
-" Tab and shift-tab navigate the results
+" CTRL-j and CTRL-k navigate the results
 ino <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
 ino <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
-" <Enter> or <Tab> select the item
-ino <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
-ino <expr> <Tab> pumvisible() ? "<C-y>" : "<Tab>"
+cno <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
+cno <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
+" <Enter> select the item
+" ino <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
+" cno <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " }}}
 
 " Search {{{
-" Highlight all matches of the current search
-set incsearch hlsearch
 " If the term has uppercase, search with case sensitivity, otherwise ignore case
 set smartcase ignorecase
-" <C-L> clears search and rerenders everything
+" <C-L> clears search and rerenders syntax
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-nno <C-l> :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-L>
+nno <C-l> :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
 " }}}
 
 " Indentation {{{
 " Tab size is 2 spaces for tabs, spaces and shift indentation command (< and >)
 set tabstop=2 softtabstop=2 shiftwidth=2
 " Try to automatically indent next lines smartly
-set autoindent smartindent
-" Convert tab into spaces and erase spaces smartly as though they were tabs
-set expandtab smarttab
-" When indenting with < > in Visual mode continue with the selection
+set smartindent
+" Convert tab into spaces
+set expandtab
+" When indenting with < > in visual mode continue with the selection
 vno > >gv
 vno < <gv
 " }}}
@@ -128,36 +134,55 @@ vno < <gv
 " reaching it. Use `gq` where and when needed.
 set textwidth=80
 set formatoptions-=t
-" Highlight text that exceeds 80 characters instead of showing a colored column.
+" Other options:
+" Show a colored column at column 81
 "set colorcolumn=81
+" Highlight text that exceeds 80 characters
 "match ColorColumn "\%>80v.\+"
 " }}}
 
 " Visuals {{{
 " Color scheme
-set background=dark
-set t_Co=256
-set termguicolors
-colorscheme onedark
-hi StatusLine guifg=#abb2bf guibg=NONE gui=NONE cterm=NONE
+colorscheme essential2
 " Show relative line numbers except for the current line
 set relativenumber number
 " Hide vim intro
 set shortmess+=I
-" Show what you are currently typing on the ruler
-set showcmd
 " Redefine filling characters on vertical split and status line
-set fillchars+=vert:\           "│ to make a vertical line
-set fillchars+=stl:\ ,stlnc:\   " ─ to make a horizontal line
+set fillchars+=vert:│            "│ vertical line
+set fillchars+=stl:-,stlnc:-    " ─ horizontal line
 
 " Ruler is only current line and column
 set rulerformat=%7(%l:%c%)
 " Status line is filename and line:column
-set statusline=\ \ %f\ %m\ \   " Filename and %m modified indicator
-set statusline+=%=              " Spacer
-set statusline+=☰\ %l:%c\ \     " Line and column
-" Always show status line
-set laststatus=2
+function! Statusline() abort
+  hi StatusLine ctermfg=DarkGray
+  hi ActiveStatusLine ctermfg=DarkGray
+  let l:statusline ='%#ActiveStatusLine#'
+  let l:statusline.=' %f %m '
+  let l:statusline.='%#StatusLineNC#'
+  let l:statusline.='%='
+  let l:statusline.='%#ActiveStatusLine#'
+  let l:statusline.='  ☰ %l:%c  '
+  return l:statusline
+endfunction
+function! StatuslineNC() abort
+  let l:statusline ='%#StatusLineNC#'
+  let l:statusline.=' %f %m '
+  let l:statusline.='%='
+  let l:statusline.='  ☰ %l:%c  '
+  return l:statusline
+endfunction
+:set statusline=%!Statusline()
+augroup set-active-statusline
+  autocmd!
+  autocmd WinEnter * :setlocal statusline=%!Statusline()
+  autocmd WinLeave * :setlocal statusline=%!StatuslineNC()
+augroup END
+"set statusline+=\ \ %f\ %m\ \     " Filename and %m modified indicator
+"set statusline+=%#StatusLine#%=               " Spacer
+"set statusline+=%#StatusLineText#
+"set statusline+=\ \ ☰\ %l:%c\ \  " Line and column
 " }}}
 
 " Folding {{{
@@ -173,22 +198,9 @@ set foldtext=FoldText()
 " Don't show info on top
 let g:netrw_banner = 0
 " Resize splits to 20%
-let g:netrw_winsize = 20
+"let g:netrw_winsize = 20
 " Use tree style by default
 let g:netrw_liststyle=3
-" }}}
-
-" Matchup {{{
-" Don't replace status line with the matching term when it's offscreen
-let g:matchup_matchparen_offscreen = {'method': 'status_manual'}
-" }}}
-
-" FZF Fuzzy finder {{{
-set rtp+=/usr/local/opt/fzf
-nno <silent> <Leader>f :FZF<CR>
-nno <silent> <Leader>b :Buffers<CR>
-" Search includes hidden files and exclude node_modules and .git
-let $FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden --glob '!{node_modules/*,.git/*}'"
 " }}}
 
 " Grepping {{{

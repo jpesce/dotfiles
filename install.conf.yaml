@@ -2,17 +2,38 @@
 
 - link:
     # zsh
-    ~/.zshenv: zsh/.zshenv
-    ~/.zsh: zsh/.zsh
+    ~/.zshenv:
+      path: zsh/.zshenv
+      force: false
+    ~/.zsh:
+      path: zsh/.zsh
+      force: false
     # tmux
-    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.tmux.conf:
+      path: tmux/.tmux.conf
+      force: false
     # vim
-    ~/.vim: vim
+    ~/.vim:
+      path: vim
+      force: false
+    # nvim
+    ~/.local/share/nvim/site:
+      path: nvim/site
+      force: false
+    ~/.config/nvim:
+      path: nvim/nvim
+      force: false
     # git
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitignore: git/.gitignore
+    ~/.gitconfig:
+      path: git/.gitconfig
+      force: false
+    ~/.gitignore:
+      path: git/.gitignore
+      force: false
     # Universal ctags
-    ~/.ctags.d: ctags
+    ~/.ctags.d:
+      path: ctags
+      force: false
 
 - create:
     # vim

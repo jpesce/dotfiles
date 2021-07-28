@@ -73,8 +73,11 @@ export LS_COLORS
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
 alias grep='grep  --color=auto'
+alias vim='nvim'
 
 alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod'
+# Go to git root
+alias root='cd `git rev-parse --show-toplevel`'
 
 # If installed, load rbenv when terminal starts
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

@@ -59,3 +59,69 @@
 [submodule "vim/pack/plugins/opt/fzf.vim"]
 	path = vim/pack/plugins/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/pack/plugins/opt/vim-dirvish"]
+	path = vim/pack/plugins/opt/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish
+[submodule "vim/pack/plugins/opt/AutoComplPop"]
+	path = vim/pack/plugins/opt/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop
+[submodule "vim/pack/plugins/opt/vim-buftabline"]
+	path = vim/pack/plugins/opt/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
+[submodule "vim/pack/colors/opt/onedark.vim"]
+	path = vim/pack/colors/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
+[submodule "vim/pack/plugins/opt/vim-fugitive"]
+	path = vim/pack/plugins/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "nvim/site/pack/filetypes/opt/vim-polyglot"]
+	path = nvim/site/pack/filetypes/opt/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "nvim/site/pack/filetypes/opt/vim-jsonc"]
+	path = nvim/site/pack/filetypes/opt/vim-jsonc
+	url = https://github.com/kevinoid/vim-jsonc
+[submodule "nvim/site/pack/plugins/opt/ale"]
+	path = nvim/site/pack/plugins/opt/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "nvim/site/pack/plugins/opt/vim-cheat40"]
+	path = nvim/site/pack/plugins/opt/vim-cheat40
+	url = https://github.com/lifepillar/vim-cheat40
+[submodule "nvim/site/pack/plugins/opt/vim-colortemplate"]
+	path = nvim/site/pack/plugins/opt/vim-colortemplate
+	url = https://github.com/lifepillar/vim-colortemplate
+[submodule "nvim/site/pack/plugins/opt/vim-hilinks"]
+	path = nvim/site/pack/plugins/opt/vim-hilinks
+	url = https://github.com/kergoth/vim-hilinks
+[submodule "nvim/site/pack/plugins/opt/vim-matchup"]
+	path = nvim/site/pack/plugins/opt/vim-matchup
+	url = https://github.com/andymass/vim-matchup
+[submodule "nvim/site/pack/plugins/opt/vim-unimpaired"]
+	path = nvim/site/pack/plugins/opt/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "nvim/site/pack/plugins/opt/vim-dirvish"]
+	path = nvim/site/pack/plugins/opt/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish
+[submodule "nvim/site/pack/plugins/opt/vim-buftabline"]
+	path = nvim/site/pack/plugins/opt/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
+[submodule "nvim/site/pack/plugins/opt/vim-fugitive"]
+	path = nvim/site/pack/plugins/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "nvim/site/pack/plugins/opt/fzf.vim"]
+	path = nvim/site/pack/plugins/opt/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "nvim/site/pack/plugins/opt/AutoComplPop"]
+	path = nvim/site/pack/plugins/opt/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop
+[submodule "nvim/site/pack/plugins/opt/vim-vinegar"]
+	path = nvim/site/pack/plugins/opt/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "nvim/site/pack/plugins/opt/vim-surround"]
+	path = nvim/site/pack/plugins/opt/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "nvim/site/pack/plugins/opt/vim-commentary"]
+	path = nvim/site/pack/plugins/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "nvim/site/pack/colors/opt/vim-yami"]
+	path = nvim/site/pack/colors/opt/vim-yami
+	url = https://github.com/danishprakash/vim-yami
