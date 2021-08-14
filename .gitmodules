@@ -10,79 +10,9 @@
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
   ignore = dirty
-[submodule "vim/pack/colors/opt/photon.vim"]
-	path = vim/pack/colors/opt/photon.vim
-	url = https://github.com/axvr/photon.vim
-  ignore = dirty
-[submodule "vim/pack/plugins/start/vim-cheat40"]
-	path = vim/pack/plugins/opt/vim-cheat40
-	url = https://github.com/lifepillar/vim-cheat40
-  ignore = dirty
-[submodule "vim/pack/plugins/start/vim-matchup"]
-	path = vim/pack/plugins/opt/vim-matchup
-	url = https://github.com/andymass/vim-matchup
-  ignore = dirty
-[submodule "vim/pack/plugins/start/vim-unimpaired"]
-	path = vim/pack/plugins/opt/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-  ignore = dirty
-[submodule "vim/pack/plugins/start/vim-hilinks"]
-	path = vim/pack/plugins/opt/vim-hilinks
-	url = https://github.com/kergoth/vim-hilinks
-  ignore = dirty
-[submodule "vim/pack/plugins/opt/vim-colortemplate"]
-	path = vim/pack/plugins/opt/vim-colortemplate
-	url = https://github.com/lifepillar/vim-colortemplate
-  ignore = dirty
-[submodule "vim/pack/plugins/start/vim-polyglot"]
-	path = vim/pack/filetypes/opt/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-	ignore = dirty
-[submodule "vim/pack/plugins/start/ale"]
-	path = vim/pack/plugins/opt/ale
-	url = https://github.com/dense-analysis/ale
-	ignore = dirty
-[submodule "vim/pack/plugins/start/vim-jsonc"]
-	path = vim/pack/plugins/opt/vim-jsonc
-	url = https://github.com/kevinoid/vim-jsonc
-	ignore = dirty
-[submodule "vim-sensible"]
-	path = vim/pack/plugins/opt/vim-sensible
-	url = https://github.com/tpope/vim-sensible
-	ignore = dirty
-[submodule "vim-jsonc"]
-	path = vim/pack/filetypes/opt/vim-jsonc
-	url = https://github.com/kevinoid/vim-jsonc
-[submodule "vim/pack/plugins/opt/vim-minisnip"]
-	path = vim/pack/plugins/opt/vim-minisnip
-	url = https://github.com/joereynolds/vim-minisnip
-[submodule "vim/pack/plugins/opt/fzf.vim"]
-	path = vim/pack/plugins/opt/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
-[submodule "vim/pack/plugins/opt/vim-dirvish"]
-	path = vim/pack/plugins/opt/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish
-[submodule "vim/pack/plugins/opt/AutoComplPop"]
-	path = vim/pack/plugins/opt/AutoComplPop
-	url = https://github.com/vim-scripts/AutoComplPop
-[submodule "vim/pack/plugins/opt/vim-buftabline"]
-	path = vim/pack/plugins/opt/vim-buftabline
-	url = https://github.com/ap/vim-buftabline
-[submodule "vim/pack/colors/opt/onedark.vim"]
-	path = vim/pack/colors/opt/onedark.vim
-	url = https://github.com/joshdick/onedark.vim
-[submodule "vim/pack/plugins/opt/vim-fugitive"]
-	path = vim/pack/plugins/opt/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
 [submodule "nvim/site/pack/filetypes/opt/vim-polyglot"]
 	path = nvim/site/pack/filetypes/opt/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "nvim/site/pack/filetypes/opt/vim-jsonc"]
-	path = nvim/site/pack/filetypes/opt/vim-jsonc
-	url = https://github.com/kevinoid/vim-jsonc
-[submodule "nvim/site/pack/plugins/opt/ale"]
-	path = nvim/site/pack/plugins/opt/ale
-	url = https://github.com/dense-analysis/ale
 [submodule "nvim/site/pack/plugins/opt/vim-cheat40"]
 	path = nvim/site/pack/plugins/opt/vim-cheat40
 	url = https://github.com/lifepillar/vim-cheat40
@@ -125,3 +55,21 @@
 [submodule "nvim/site/pack/colors/opt/vim-yami"]
 	path = nvim/site/pack/colors/opt/vim-yami
 	url = https://github.com/danishprakash/vim-yami
+[submodule "nvim/site/pack/plugins/opt/asyncomplete.vim"]
+	path = nvim/site/pack/plugins/opt/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim
+[submodule "nvim/site/pack/plugins/opt/asyncomplete-buffer.vim"]
+	path = nvim/site/pack/plugins/opt/asyncomplete-buffer.vim
+	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
+[submodule "nvim/site/pack/plugins/opt/asyncomplete-file.vim"]
+	path = nvim/site/pack/plugins/opt/asyncomplete-file.vim
+	url = https://github.com/prabirshrestha/asyncomplete-file.vim
+[submodule "nvim/site/pack/plugins/opt/asyncomplete-omni.vim"]
+	path = nvim/site/pack/plugins/opt/asyncomplete-omni.vim
+	url = https://github.com/yami-beta/asyncomplete-omni.vim
+[submodule "nvim/site/pack/plugins/opt/asyncomplete-tags.vim"]
+	path = nvim/site/pack/plugins/opt/asyncomplete-tags.vim
+	url = https://github.com/prabirshrestha/asyncomplete-tags.vim
+[submodule "nvim/site/pack/filetypes/opt/vim-jsonc"]
+	path = nvim/site/pack/filetypes/opt/vim-jsonc
+	url = https://github.com/jpesce/vim-jsonc
