@@ -76,8 +76,11 @@ hi Title ctermfg=NONE ctermbg=NONE cterm=bold
 
 hi Error ctermfg=DarkRed ctermbg=NONE cterm=NONE
 hi! link ErrorMsg Error
+hi! link RedrawDebugRecompose Error
+hi! link NvimInternalError Error
 
 hi WarningMsg ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi! link RedrawDebugClear WarningMsg
 
 hi! link Question WarningMsg
 hi Todo ctermfg=DarkYellow ctermbg=NONE cterm=NONE
