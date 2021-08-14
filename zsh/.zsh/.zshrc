@@ -3,7 +3,7 @@
 autoload colors && colors
 # Use VI mode and set vim as the default editor
 bindkey -v
-export EDITOR=vim
+export EDITOR=nvim
 # Completion
 autoload -Uz compinit && compinit
 setopt AUTO_MENU
