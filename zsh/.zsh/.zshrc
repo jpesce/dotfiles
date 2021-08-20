@@ -1,19 +1,33 @@
-# ---- Options
-# Use colors on zsh commands by name
+# Sensible defaults {{{
+# Use colors on zsh commands by name instead of color code
 autoload colors && colors
-# Use VI mode and set vim as the default editor
+# Suggest commands corrections
+setopt CORRECT CORRECT_ALL
+# Locales
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+# }}}
+
+# Use vi mode on shell
 bindkey -v
+
+# Set nvim as the default editor
 export EDITOR=nvim
-# Completion
+
+# Completion {{{
 autoload -Uz compinit && compinit
 setopt AUTO_MENU
 zstyle ':completion:*' menu yes select
+# Case insensitive completion (lowercase letters also match uppercase)
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Show dotfiles in completion
 setopt globdots
-# Case-insensitive completion
-setopt NO_CASE_GLOB
-# Enter directory even without typing cd
-setopt AUTO_CD
+# Suggest completion before typing tab
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# }}}
+
+# History {{{
 # Store history in file
 HISTFILE=$ZDOTDIR/.zsh_history
 # See https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
@@ -21,18 +35,14 @@ setopt EXTENDED_HISTORY SHARE_HISTORY APPEND_HISTORY INC_APPEND_HISTORY HIST_EXP
 setopt HIST_IGNORE_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS
 SAVEHIST=100000
 HISTSIZE=20000
-# Try to correct commands
-setopt CORRECT CORRECT_ALL
+# }}}
 
-# ---- Theme
-# Enable calling functions in PROMPT. Required for the theme.
+# Visual {{{
+# Enable calling functions in PROMPT (required for the theme)
 setopt PROMPT_SUBST
+# Set theme
 source $ZDOTDIR/themes/common/common.zsh-theme
 
-## ---- Plugins
-# Suggest completion
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Highlight commands
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Change highlight colors
@@ -44,40 +54,42 @@ ZSH_HIGHLIGHT_STYLES[builtin]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[command]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[alias]=fg=none,bold
+# }}}
 
-
-# ---- Locales
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# ---- Paths
+# Paths {{{
 # Homebrew sbin
 export PATH="/usr/local/sbin:$PATH"
-# PostgreSQL
-export PATH=$PATH:/Library/PostgreSQL/12/bin
-# Rails in dev mode by default
-export RAILS_ENV=development
 # Use homebrew open SSL instead of libressl
 export PATH=/usr/local/opt/openssl/bin:$PATH
-# Add openssl lib to path
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+# }}}
 
-# ---- Alias
+# Aliases {{{
+# Enter directory even without typing cd
+setopt AUTO_CD
+# Easily cd to projects from anywhere
+export CDPATH='/Users/joaopesce/Projects'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias c='clear'
-# LS Color code (see: https://gist.github.com/thomd/7667642)
+alias grep='grep  --color=auto'
+# LS Colors (see: https://gist.github.com/thomd/7667642)
 LS_COLORS='fi=0:di=34:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ex=32:ow=31'
 export LS_COLORS
 # Use coreutils ls (gls)
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
-alias grep='grep  --color=auto'
 alias vim='nvim'
 
+# Restart OS X audio
 alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod'
-# Go to git root
+# Go to projects git root
 alias root='cd `git rev-parse --show-toplevel`'
 
-# If installed, load rbenv when terminal starts
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+ZETTLE_DIR='/Users/joaopesce/Projects/pesce.cc/source/'
+alias zettle='cd $ZETTLE_DIR && vim "+NewTimedMarkdown"'
+alias new-log='cd $ZETTLE_DIR && vim "+NewTimedMarkdown logbook"'
+
+CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
+alias cheat='cd $CHEATSHEET_DIR && vim "+Rg"'
+# }}}
