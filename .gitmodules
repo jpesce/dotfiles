@@ -52,9 +52,6 @@
 [submodule "nvim/site/pack/plugins/opt/vim-commentary"]
 	path = nvim/site/pack/plugins/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "nvim/site/pack/colors/opt/vim-yami"]
-	path = nvim/site/pack/colors/opt/vim-yami
-	url = https://github.com/danishprakash/vim-yami
 [submodule "nvim/site/pack/plugins/opt/asyncomplete.vim"]
 	path = nvim/site/pack/plugins/opt/asyncomplete.vim
 	url = https://github.com/prabirshrestha/asyncomplete.vim
@@ -73,3 +70,12 @@
 [submodule "nvim/site/pack/filetypes/opt/vim-jsonc"]
 	path = nvim/site/pack/filetypes/opt/vim-jsonc
 	url = https://github.com/jpesce/vim-jsonc
+[submodule "nvim/site/pack/colors/opt/onedark.nvim"]
+	path = nvim/site/pack/colors/opt/onedark.nvim
+	url = https://github.com/navarasu/onedark.nvim
+[submodule "nvim/site/pack/plugins/opt/vim-eunuch"]
+	path = nvim/site/pack/plugins/opt/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "nvim/site/pack/plugins/opt/vim-prj"]
+	path = nvim/site/pack/plugins/opt/vim-prj
+	url = https://github.com/emersonmx/vim-prj

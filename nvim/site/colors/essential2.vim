@@ -88,8 +88,8 @@ hi Todo ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 hi Search ctermfg=DarkYellow ctermbg=Black cterm=NONE
 hi IncSearch ctermfg=Black ctermbg=DarkYellow cterm=NONE
 
-hi Ignore ctermfg=Black ctermbg=NONE cterm=NONE
-hi! link EndOfBuffer Ignore
+hi Ignore ctermfg=8 ctermbg=NONE cterm=NONE
+hi EndOfBuffer ctermfg=Black ctermbg=NONE cterm=NONE
 
 hi NonText ctermfg=8 ctermbg=NONE cterm=NONE
 
