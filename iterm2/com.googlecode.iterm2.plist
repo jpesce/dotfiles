@@ -2738,13 +2738,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45098039507865906</real>
+				<real>0.45098039215686275</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.41568627953529358</real>
+				<real>0.41568627450980394</real>
 				<key>Red Component</key>
-				<real>0.85882353782653809</real>
+				<real>0.85882352941176465</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -2907,26 +2907,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.25152873992919922</real>
+				<real>0.25098039215686274</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.25152873992919922</real>
+				<real>0.25098039215686274</real>
 				<key>Red Component</key>
-				<real>0.25152873992919922</real>
+				<real>0.25098039215686274</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45098039507865906</real>
+				<real>0.45098039215686275</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.41568627953529358</real>
+				<real>0.41568627450980394</real>
 				<key>Red Component</key>
-				<real>0.85882353782653809</real>
+				<real>0.85882352941176465</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -3856,7 +3856,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.6499999999999999</real>
+			<real>1.5</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
