@@ -87,8 +87,7 @@ alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launc
 alias root='cd `git rev-parse --show-toplevel`'
 
 ZETTLE_DIR='/Users/joaopesce/Projects/pesce.cc/source/'
-alias zettle='cd $ZETTLE_DIR && vim "+NewTimedMarkdown"'
-alias new-log='cd $ZETTLE_DIR && vim "+NewTimedMarkdown logbook"'
+alias z='cd $ZETTLE_DIR && nvim'
 
 CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
 alias cheat='cd $CHEATSHEET_DIR && vim "+Rg"'
