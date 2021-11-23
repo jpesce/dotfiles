@@ -11,15 +11,15 @@ let g:ale_sign_warning = '●'
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
       \ 'ruby': ['rubocop'],
-      \ 'javascript': ['eslint'],
+      \ 'javascript': ['eslint'], 'typescript': ['eslint'],
       \ 'css': ['stylelint'],
-      \ 'json': ['eslint'], 'jsonc': ['eslint'], 'json5': ['eslint']
       \ }
 
 " Define fixers (:ALEFix)
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'],
       \ 'css': ['stylelint'],
-      \ 'json': ['eslint'], 'jsonc': ['eslint'], 'json5': ['eslint']
+      \ 'json': ['jq']
       \ }
 

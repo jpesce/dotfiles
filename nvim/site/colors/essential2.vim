@@ -91,6 +91,8 @@ hi IncSearch ctermfg=Black ctermbg=DarkYellow cterm=NONE
 hi Ignore ctermfg=8 ctermbg=NONE cterm=NONE
 hi EndOfBuffer ctermfg=Black ctermbg=NONE cterm=NONE
 
+hi Conceal ctermfg=LightGray ctermbg=NONE cterm=NONE
+
 hi NonText ctermfg=8 ctermbg=NONE cterm=NONE
 
 hi LineNr ctermfg=LightGrey ctermbg=NONE cterm=NONE
@@ -126,3 +128,8 @@ hi! link vimHiAttrib Normal
 
 " CSS
 hi! link cssVendor Normal
+
+" Git
+hi diffLine    ctermfg=LightGrey ctermbg=NONE cterm=NONE
+hi diffAdded   ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+hi diffRemoved ctermfg=DarkRed   ctermbg=NONE cterm=NONE

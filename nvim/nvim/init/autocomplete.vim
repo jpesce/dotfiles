@@ -7,8 +7,8 @@ set completeopt=menuone,noselect
 set shortmess+=c
 
 " CTRL-j and CTRL-k navigate the results
-inoremap <expr> <C-j> pumvisible() ? "<Down>" : "<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "<Up>" : "<C-k>"
+inoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
 inoremap <expr> <C-l> pumvisible() ? "<C-y>" : "<C-k>"
 inoremap <expr> <C-h> pumvisible() ? "<C-e>" : "<C-k>"
 

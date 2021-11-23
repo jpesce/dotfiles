@@ -5,13 +5,17 @@ let mapleader = " "
 packadd vim-prj | let g:prj_config_path = ".vim/vimrc"
 
 " Remove trailing lines and white spaces on exit
+let g:remove_white_spaces#blacklist = ['markdown']
 augroup remove_white_spaces
   autocmd!
-  autocmd BufWritePre * %s/\s\+$//e
+  autocmd BufWritePre * if index(g:remove_white_spaces#blacklist, &ft) < 0 | %s/\s\+$//e | endif
 augroup END
 
 " Autogenerate ctags when writing files
 au BufWritePost *.js,*.ts,*.json,*.jsonc silent! !ctags -R &
+
+" Leave (o)nly current (b)uffer open
+nnoremap <Leader>bo :%bd<bar>e#<bar>bd#<CR>
 
 " Fairly sensible Defaults {{{
 set splitright splitbelow " Defaults splitting to the right and below
@@ -41,6 +45,7 @@ set shortmess+=I
 " Redefine filling characters on vertical split and status line
 set fillchars+=vert:│
 set fillchars+=stl:-,stlnc:-
+
 
 " Statusline
 source $HOME/.config/nvim/init/statusline.vim
@@ -90,6 +95,8 @@ nno <C-l> :nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>
 " Indent {{{
 " Use 2 spaces for tabs, spaces and shift indentation command (< and >)
 set tabstop=2 softtabstop=2 shiftwidth=2
+" When indenting, round the indent level to a multiple of shiftwidth
+set shiftround
 " Try to automatically indent next lines smartly
 set smartindent
 " Convert tab into spaces

@@ -1,28 +1,41 @@
 packadd fzf.vim
 set rtp+=/usr/local/opt/fzf
+
+" Build quickfix list from result with <CTRL+Q>
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+endfunction
+
+let g:fzf_action = {
+  \ 'alt-q': function('s:build_quickfix_list'),
+  \ 'alt-v': 'vsplit'
+  \ }
 " <Alt-A> to select all results and <Alt-D> to deselect
 let $FZF_DEFAULT_OPTS.=" --bind 'alt-a:select-all,alt-d:deselect-all'"
 
 nno <silent> <Leader>f :Files<CR>
 nno <silent> <Leader>b :Buffers<CR>
 nno <silent> <Leader>h :Helptags<CR>
-" Search on all buffers
+" Search on current buffer
 nno <silent> <Leader>s :BLines<CR>
 
-" :Files includes hidden (.) files
-let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden"
+" :Files and :Rg
+" Include hidden (.) files
+" Remove .git, tags and node_modules
+let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!{.git,tags,**/node_modules}' "
+let g:fuzzy_finder#rg_command = "rg --column --line-number --no-heading --color=always --smart-case --hidden --glob '!{.git,tags,**/node_modules}' "
 
 " :Rg
-" Includes hidden files
 " Disable regex
 command! -bang -nargs=* Rg
-      \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden --fixed-strings ".shellescape(<q-args>),
+      \ call fzf#vim#grep(g:fuzzy_finder#rg_command . " --fixed-strings -- " . shellescape(<q-args>),
       \ 1, fzf#vim#with_preview(), <bang>0)
 
 " :Rge
 " Use regex
 command! -bang -nargs=* Rge
-      \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden ".shellescape(<q-args>),
+      \ call fzf#vim#grep(g:fuzzy_finder#rg_command . " -- " . shellescape(<q-args>),
       \ 1, fzf#vim#with_preview(), <bang>0)
 
 " Minimal colors
