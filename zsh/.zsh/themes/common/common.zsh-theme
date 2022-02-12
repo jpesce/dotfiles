@@ -1,5 +1,5 @@
 # Prompt symbol
-COMMON_PROMPT_SYMBOL="  ◯"
+COMMON_PROMPT_SYMBOL="  ○"
 
 # Colors
 COMMON_COLORS_CURRENT_DIR=none
