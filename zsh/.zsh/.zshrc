@@ -64,6 +64,11 @@ export PATH=/usr/local/opt/openssl/bin:$PATH
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # }}}
 
+# Node {{{
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# }}}
+
 # Aliases {{{
 # Enter directory even without typing cd
 setopt AUTO_CD
@@ -73,9 +78,11 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias c='clear'
 alias grep='grep  --color=auto'
+
 # LS Colors (see: https://gist.github.com/thomd/7667642)
 LS_COLORS='fi=0:di=34:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ex=32:ow=31'
 export LS_COLORS
+
 # Use coreutils ls (gls)
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
@@ -86,9 +93,15 @@ alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launc
 # Go to projects git root
 alias root='cd `git rev-parse --show-toplevel`'
 
-ZETTLE_DIR='/Users/joaopesce/Projects/pesce.cc/source/'
-alias z='cd $ZETTLE_DIR && nvim'
+# Go to notes and open vim
+NOTES_DIR='/Users/joaopesce/Projects/pesce.cc/source/'
+alias z='cd $NOTES_DIR && nvim'
 
+# Go to cheatsheet and open vim with Rg to search them
 CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
 alias cheat='cd $CHEATSHEET_DIR && vim "+Rg"'
+
+TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
+alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
+alias tmux-pesce='$TMUX_SESSIONS/pesce_cc.sh'
 # }}}
