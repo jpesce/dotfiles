@@ -79,3 +79,6 @@
 [submodule "nvim/site/pack/plugins/opt/vim-prj"]
 	path = nvim/site/pack/plugins/opt/vim-prj
 	url = https://github.com/emersonmx/vim-prj
+[submodule "nvim/site/pack/plugins/opt/vim-sonic-pi"]
+	path = nvim/site/pack/plugins/opt/vim-sonic-pi
+	url = https://github.com/lilyinstarlight/vim-sonic-pi

@@ -174,3 +174,7 @@ packadd vim-colortemplate
 " Show/hide highlight stack with :HLT!
 packadd vim-hilinks
 " }}}
+
+" Sonic Pi {{{
+packadd vim-sonic-pi
+" }}}
