@@ -79,6 +79,8 @@ alias cd..='cd ..'
 alias c='clear'
 alias grep='grep  --color=auto'
 
+alias vim='nvim'
+
 # LS Colors (see: https://gist.github.com/thomd/7667642)
 LS_COLORS='fi=0:di=34:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ex=32:ow=31'
 export LS_COLORS
@@ -86,22 +88,33 @@ export LS_COLORS
 # Use coreutils ls (gls)
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
-alias vim='nvim'
 
 # Restart OS X audio
 alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod'
-# Go to projects git root
+
+# Convert mov to gif
+function movtogif () {
+  tempfile=.mov-to-gif-$(date +"%s").png
+  ffmpeg -v quiet -i $1 -vf "scale=iw*.5:ih*.5" "${1%.mov}-resized.mov"
+  ffmpeg -v quiet -stats -y -i "${1%.mov}-resized.mov" -vf fps=10,palettegen $tempfile
+  ffmpeg -v quiet -stats -i "${1%.mov}-resized.mov" -i $tempfile -filter_complex "fps=10,paletteuse" "${1%.mov}.gif"
+  rm $tempfile "${1%.mov}-resized.mov"
+}
+
+# Go to project's git root
 alias root='cd `git rev-parse --show-toplevel`'
 
 # Go to notes and open vim
 NOTES_DIR='/Users/joaopesce/Projects/pesce.cc/source/'
 alias z='cd $NOTES_DIR && nvim'
 
-# Go to cheatsheet and open vim with Rg to search them
+# Open vim inside cheatsheet directory with Rgi to interactively ripgrep inside it
 CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
-alias cheat='cd $CHEATSHEET_DIR && vim "+Rg"'
+alias cheat='vim "+cd $CHEATSHEET_DIR" "+Rgi"'
 
+# Easy tmux setup
 TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
 alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
-alias tmux-pesce='$TMUX_SESSIONS/pesce_cc.sh'
+alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
+
 # }}}
