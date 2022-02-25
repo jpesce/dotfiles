@@ -38,6 +38,19 @@ command! -bang -nargs=* Rge
       \ call fzf#vim#grep(g:fuzzy_finder#rg_command . " -- " . shellescape(<q-args>),
       \ 1, fzf#vim#with_preview(), <bang>0)
 
+" :Rgi
+" Ripgrep interactively so every new thing you type on fzf is searched again on
+" ripgrep
+function! InteractiveRipgrepFzf(query, fullscreen)
+  let command_fmt = g:fuzzy_finder#rg_command . ' -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang Rgi call InteractiveRipgrepFzf(<q-args>, <bang>0)
+
 " Minimal colors
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
