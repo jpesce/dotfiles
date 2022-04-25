@@ -82,3 +82,24 @@
 [submodule "nvim/site/pack/plugins/opt/vim-sonic-pi"]
 	path = nvim/site/pack/plugins/opt/vim-sonic-pi
 	url = https://github.com/lilyinstarlight/vim-sonic-pi
+[submodule "nvim/site/pack/plugins/opt/ale"]
+	path = nvim/site/pack/plugins/opt/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "nvim/site/pack/plugins/opt/nvim-lspconfig"]
+	path = nvim/site/pack/plugins/opt/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim/site/pack/plugins/opt/nvim-cmp"]
+	path = nvim/site/pack/plugins/opt/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "nvim/site/pack/plugins/opt/cmp-nvim-lsp"]
+	path = nvim/site/pack/plugins/opt/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "nvim/site/pack/plugins/opt/cmp-buffer"]
+	path = nvim/site/pack/plugins/opt/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "nvim/site/pack/plugins/opt/cmp-path"]
+	path = nvim/site/pack/plugins/opt/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "nvim/site/pack/plugins/opt/cmp-cmdline"]
+	path = nvim/site/pack/plugins/opt/cmp-cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline

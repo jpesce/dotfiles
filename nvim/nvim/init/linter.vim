@@ -22,4 +22,3 @@ let g:ale_fixers = {
       \ 'css': ['stylelint'],
       \ 'json': ['jq']
       \ }
-

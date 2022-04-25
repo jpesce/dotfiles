@@ -27,7 +27,7 @@ function! GetVisualSelection() range
   return selection
 endfunction
 
-" Replace
+" Replace selection
 vmap <Leader>r <Esc>:%s/<C-r>=EscapeString(GetVisualSelection())<CR>//g<left><left>
-" Grep
+" Grep selection
 vmap <Leader>g <Esc>:Rg <C-r>=GetVisualSelection()<CR><CR>

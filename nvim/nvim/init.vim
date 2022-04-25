@@ -12,14 +12,17 @@ augroup remove_white_spaces
 augroup END
 
 " Autogenerate ctags when writing files
-au BufWritePost *.js,*.ts,*.json,*.jsonc silent! !ctags -R &
+augroup auto_manage_tags
+  autocmd!
+  autocmd BufWritePost *.json,*.jsonc silent! !ctags -R &
+augroup END
 
 " Leave (o)nly current (b)uffer open
 nnoremap <Leader>bo :%bd<bar>e#<bar>bd#<CR>
 
 " Fairly sensible Defaults {{{
 set splitright splitbelow " Defaults splitting to the right and below
-set hidden                " Buffers are only hidden, not closed
+set hidden                " Buffers are only hidden - not closed - when leaving them
 set lazyredraw            " Don't update the display when running macros
 set path+=**              " Add project's directories to path to make it easy to :find files
 set clipboard=unnamed     " Yanking, deleting and pasting work with the clipboard
@@ -45,7 +48,6 @@ set shortmess+=I
 " Redefine filling characters on vertical split and status line
 set fillchars+=vert:│
 set fillchars+=stl:-,stlnc:-
-
 
 " Statusline
 source $HOME/.config/nvim/init/statusline.vim
@@ -81,8 +83,6 @@ packadd vim-commentary
 packadd vim-eunuch
 " `%` recognize language-specific words
 packadd vim-matchup | let g:matchup_matchparen_offscreen = {}
-" Extend file explorer
-packadd vim-vinegar
 " }}}
 
 " Search {{{
@@ -127,20 +127,44 @@ source $HOME/.config/nvim/init/grep.vim
 " }}}
 
 " File explorer (:Exp) {{{
+" Extend file explorer
+packadd vim-vinegar
 " Don't show info on top
 let g:netrw_banner = 0
 " Use tree style by default
 let g:netrw_liststyle=3
+" Fixed width for :Lex
+let g:netrw_winsize = -30
+" Enable mouse on netrw
+function! NetrwMouseOn()
+  set mouse=n
+endfunction
+function! NetrwMouseOff()
+  set mouse=
+endfunction
+
+augroup enable_mouse_on_netrw
+  autocmd!
+  autocmd FileType netrw :call NetrwMouseOn()
+  autocmd FileType netrw au BufEnter <buffer> :call NetrwMouseOn()
+  autocmd FileType netrw au BufLeave <buffer> :call NetrwMouseOff()
+  " Map left click to <Return> so it opens directories and files
+  autocmd FileType netrw nmap <buffer> <LeftMouse> <LeftMouse> <CR>
+augroup END
 " }}}
 
 " Fuzzy finder {{{
 source $HOME/.config/nvim/init/fuzzyfinder.vim
 " }}}
 
-" Autocompletion {{{
+" Completion {{{
 " When completing commands, first complete as much as possible and on the next
 " <tab>, cycle through options
 set wildmode=longest:full,full
+" Don't insert the first item of the menu automatically
+set completeopt=menuone,noselect
+" Don't show messages on ruler about number of completions
+set shortmess+=c
 
 " Navigate command completions with vim keys
 cnoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
@@ -148,15 +172,30 @@ cnoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
 cnoremap <expr> <C-l> pumvisible() ? "<C-y>" : "<C-k>"
 cnoremap <expr> <C-h> pumvisible() ? "<C-e>" : "<C-k>"
 
-source $HOME/.config/nvim/init/autocomplete.vim
+" Enable OMNI Completion (<C-X><X-O) for known language keywords
+set omnifunc=syntaxcomplete#Complete
+
+" source $HOME/.config/nvim/init/autocomplete.vim
+" }}}
+
+packadd nvim-lspconfig
+packadd nvim-cmp
+packadd cmp-nvim-lsp
+packadd cmp-buffer
+packadd cmp-path
+packadd cmp-cmdline
+
+set signcolumn=yes
+
+luafile $HOME/.config/nvim/init/lsp.lua
+luafile $HOME/.config/nvim/init/lsp-autocomplete.lua
+
+" Linting {{{
+" source $HOME/.config/nvim/init/linter.vim
 " }}}
 
 " Git integration {{{
 packadd vim-fugitive
-" }}}
-
-" Linting {{{
-source $HOME/.config/nvim/init/linter.vim
 " }}}
 
 " Visual selection operations {{{

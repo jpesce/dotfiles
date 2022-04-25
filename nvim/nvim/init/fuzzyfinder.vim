@@ -66,4 +66,3 @@ let g:fzf_colors =
       \ 'marker':  ['fg', 'WarningMsg'],
       \ 'spinner': ['fg', 'Normal'],
       \ 'header':  ['fg', 'Normal'] }
-

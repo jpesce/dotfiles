@@ -120,6 +120,17 @@ hi SpellCap ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 hi SpellRare ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 hi SpellLocal ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 
+" LSP
+hi DiagnosticError ctermfg=LightGrey ctermbg=NONE cterm=NONE
+hi! link DiagnosticError DiagnosticWarn
+hi! link DiagnosticError DiagnosticInfo
+hi! link DiagnosticError DiagnosticHint
+
+hi DiagnosticSignError ctermfg=DarkRed ctermbg=NONE cterm=NONE
+hi DiagnosticSignWarn ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi DiagnosticSignInfo ctermfg=DarkCyan ctermbg=NONE cterm=NONE
+hi DiagnosticSignHint ctermfg=DarkCyan ctermbg=NONE cterm=NONE
+
 " JSON
 hi! link jsonKeyword Normal
 
