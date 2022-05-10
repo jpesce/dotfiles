@@ -115,7 +115,7 @@ hi Directory ctermfg=DarkCyan ctermbg=NONE cterm=NONE
 hi Underlined ctermfg=DarkCyan ctermbg=NONE cterm=underline
 hi DiffAdd ctermfg=DarkGreen ctermbg=NONE cterm=NONE
 hi DiffChange ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi DiffText ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi DiffText ctermfg=Black ctermbg=DarkYellow cterm=NONE
 hi DiffDelete ctermfg=DarkRed ctermbg=NONE cterm=NONE
 hi SpellBad ctermfg=DarkRed ctermbg=NONE cterm=NONE
 hi SpellCap ctermfg=DarkYellow ctermbg=NONE cterm=NONE
