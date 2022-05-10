@@ -26,12 +26,12 @@ hi! link Type Normal
 hi Comment ctermfg=LightGrey ctermbg=NONE cterm=NONE
 
 hi Constant ctermfg=NONE ctermbg=NONE cterm=italic
-hi! link Boolean Constant
 hi! link Float Constant
 hi! link Number Constant
 hi! link Character Constant
-hi! link String Constant
-hi! link String Constant
+
+hi String ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+hi! link Boolean String
 
 hi Statement ctermfg=NONE ctermbg=NONE cterm=bold
 hi! link Conditional Statement
@@ -60,6 +60,8 @@ hi PMenuThumb ctermfg=NONE ctermbg=LightGray cterm=NONE
 hi! link WildMenu PMenuSel
 
 hi TabLine ctermfg=NONE ctermbg=NONE cterm=NONE
+" Buffers that are open in other windows
+hi! link BufTabLineActive TabLine
 hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
 hi TabLineSel ctermfg=NONE ctermbg=NONE cterm=bold
 

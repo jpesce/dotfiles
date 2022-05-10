@@ -8,23 +8,17 @@ function! EscapeString (string)
   return l:string
 endfunction
 
-" Return the current visual selection
 function! GetVisualSelection() range
-  " Save the current register and clipboard
-  let l:current_reg = getreg('"')
-  let l:current_regtype = getregtype('"')
-  let l:current_clipboard = &clipboard
-  set clipboard&
+  " Save current register content
+  let l:current_register_content = @"
+  " Copy selection to the register
+  normal! gv""y
+  " Save selection to variable
+  let l:selection = @"
+  " Restore register to old content
+  let @" = l:current_register_content
 
-  " Put the current visual selection in the " register
-  normal! ""gvy
-  let l:selection = getreg('"')
-
-  " Put the saved registers and clipboards back
-  call setreg('"', l:current_reg, l:current_regtype)
-  let &clipboard = l:current_clipboard
-
-  return selection
+  return l:selection
 endfunction
 
 " Replace selection

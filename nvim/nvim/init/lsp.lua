@@ -13,13 +13,18 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 end
 
--- Setup multiple servers and execute function when server attaches
+-- Setup servers and execute function when server attaches
 local servers = { 'tsserver' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach
   }
 end
+
+require'lspconfig'.eslint.setup{
+  on_attach = on_attach,
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "jsonc", "json" }
+}
 
 -- Color number column instead of using sign column
 vim.fn.sign_define("DiagnosticSignError", {text = "", numhl = "DiagnosticSignError"})

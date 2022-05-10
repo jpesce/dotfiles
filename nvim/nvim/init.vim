@@ -5,13 +5,13 @@ let mapleader = " "
 packadd vim-prj | let g:prj_config_path = ".vim/vimrc"
 
 " Remove trailing lines and white spaces on exit
-let g:remove_white_spaces#blacklist = ['markdown']
-augroup remove_white_spaces
+let g:remove_white_spaces#blacklist = ['markdown'] " Except on these filetypes
+augroup remove_white_spaces_on_exit
   autocmd!
   autocmd BufWritePre * if index(g:remove_white_spaces#blacklist, &ft) < 0 | %s/\s\+$//e | endif
 augroup END
 
-" Autogenerate ctags when writing files
+" Autogenerate ctags when writing some files
 augroup auto_manage_tags
   autocmd!
   autocmd BufWritePost *.json,*.jsonc silent! !ctags -R &
