@@ -1,17 +1,18 @@
 # Prompt symbol
-COMMON_PROMPT_SYMBOL="  ○"
+COMMON_PROMPT_SYMBOL="" #"  ○"
 
 # Colors
 COMMON_COLORS_CURRENT_DIR=none
 COMMON_COLORS_RETURN_STATUS_TRUE=none
 COMMON_COLORS_RETURN_STATUS_FALSE=red
 COMMON_COLORS_BG_JOBS=none
+COMMON_COLORS_GIT_STATUS=8
 
 # Left Prompt
- PROMPT='$(common_return_status)$(common_current_dir) '
+ PROMPT='$(common_return_status)$(common_current_dir) ❯  '
 
 # Right Prompt
- RPROMPT='$(common_bg_jobs)'
+RPROMPT='$(common_bg_jobs) $(common_git_status)'
 
 # Show current directory relative to git repository
 common_current_dir() {
@@ -28,7 +29,30 @@ common_current_dir() {
   else
     PROMPT_PATH="%~"
   fi
-  echo -n "%F{$COMMON_COLORS_CURRENT_DIR}$PROMPT_PATH "
+  echo -n "%F{$COMMON_COLORS_CURRENT_DIR}$PROMPT_PATH%f"
+}
+
+# Git status
+common_git_status() {
+    local message=""
+    local message_color="%F{$COMMON_COLORS_GIT_STATUS}"
+
+    # https://git-scm.com/docs/git-status#_short_format
+    local staged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU]")
+    local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU? ][MADRCU?]")
+
+    if [[ -n ${staged} ]]; then
+        staged_symbol=""
+    elif [[ -n ${unstaged} ]]; then
+        staged_symbol="!"
+    fi
+
+    local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [[ -n ${branch} ]]; then
+        message+="${message_color}${staged_symbol}${branch}%f "
+    fi
+
+    echo -n "${message}"
 }
 
 # Prompt symbol

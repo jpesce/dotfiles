@@ -73,7 +73,6 @@ export NVM_DIR="$HOME/.nvm"
 # Enter directory even without typing cd
 setopt AUTO_CD
 # Easily cd to projects from anywhere
-export CDPATH='/Users/joaopesce/Projects'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias c='clear'
@@ -112,9 +111,30 @@ alias z='cd $NOTES_DIR && nvim'
 CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
 alias cheat='vim "+cd $CHEATSHEET_DIR" "+Rgi"'
 
+# Search and go to projects
+function projects () {
+  directory=$(\
+    find ~/Projects ~/Projects/oficina ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
+    sort | uniq |\
+    fzf-tmux -p 40%,85% --color 'gutter:black,marker:yellow,pointer:black,bg+:-1,prompt:white,info:black,hl+:yellow,hl:yellow,spinner:-1' --prompt='Project ❯ '\
+  )
+  # Only continue if a directoy was selected
+  if [[ ! -z "$directory" ]]
+  then
+    cd $directory
+    clear
+  fi
+}
+
+# Bind projects search to CTRL+P
+# ^U delete corrent line
+# ^M enter command
+bindkey -s "^P" '^Uprojects^M'
+
 # Easy tmux setup
 TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
 alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
 alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
-
 # }}}
+
+# vim: fdm=marker
