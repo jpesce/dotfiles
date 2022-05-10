@@ -2907,13 +2907,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.25098039215686274</real>
+				<real>0.26697748899459839</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.25098039215686274</real>
+				<real>0.26684170961380005</real>
 				<key>Red Component</key>
-				<real>0.25098039215686274</real>
+				<real>0.26693457365036011</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -3391,7 +3391,7 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>Iosevka 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
@@ -3811,7 +3811,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>Title Components</key>
 			<integer>2</integer>
 			<key>Transparency</key>
