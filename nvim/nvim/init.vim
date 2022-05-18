@@ -47,7 +47,7 @@ set shortmess+=I
 
 " Redefine filling characters on vertical split and status line
 set fillchars+=vert:│
-set fillchars+=stl:-,stlnc:-
+set fillchars+=stl:─,stlnc:─
 
 " Statusline
 source $HOME/.config/nvim/init/statusline.vim
