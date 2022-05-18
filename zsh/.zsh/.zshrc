@@ -72,7 +72,6 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases {{{
 # Enter directory even without typing cd
 setopt AUTO_CD
-# Easily cd to projects from anywhere
 alias ..='cd ..'
 alias cd..='cd ..'
 alias c='clear'
@@ -116,7 +115,7 @@ function projects () {
   directory=$(\
     find ~/Projects ~/Projects/oficina ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
     sort | uniq |\
-    fzf-tmux -p 40%,85% --color 'gutter:black,marker:yellow,pointer:black,bg+:-1,prompt:white,info:black,hl+:yellow,hl:yellow,spinner:-1' --prompt='Project ❯ '\
+    fzf-tmux -p 80,85% --color 'gutter:black,marker:yellow,pointer:black,bg+:-1,prompt:white,info:black,hl+:yellow,hl:yellow,spinner:-1' --prompt='Project ❯ '\
   )
   # Only continue if a directoy was selected
   if [[ ! -z "$directory" ]]
