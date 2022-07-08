@@ -11,6 +11,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ff', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
 -- Setup servers and execute function when server attaches
@@ -20,6 +21,15 @@ for _, lsp in pairs(servers) do
     on_attach = on_attach
   }
 end
+
+require'lspconfig'.stylelint_lsp.setup {
+  on_attach = on_attach,
+  settings = {
+    stylelintplus = {
+      autoFixOnFormat = true,
+    }
+  },
+}
 
 require'lspconfig'.eslint.setup{
   on_attach = on_attach,
