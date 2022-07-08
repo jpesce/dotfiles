@@ -30,9 +30,13 @@
     ~/.gitignore:
       path: git/.gitignore
       force: false
-    # Universal ctags
+    # universal ctags
     ~/.ctags.d:
       path: ctags
+      force: false
+    # karabiner
+    ~/.config/karabiner/assets/complex_modifications:
+      path: karabiner/complex_modifications
       force: false
 
 - create:
@@ -40,5 +44,5 @@
     - ~/.vim/undo-history
 
 - shell:
-    # Enable italics for iTerm
+    # enable italics for iterm
     - [iterm2/enable-italics.sh]
