@@ -1,3 +1,10 @@
+# Add a new line before each prompt, except the first
+precmd() {
+    precmd() {
+        echo
+    }
+}
+
 # Prompt symbol
 COMMON_PROMPT_SYMBOL="" #"  ○"
 
@@ -9,7 +16,7 @@ COMMON_COLORS_BG_JOBS=none
 COMMON_COLORS_GIT_STATUS=8
 
 # Left Prompt
- PROMPT='$(common_return_status)$(common_current_dir) ❯  '
+PROMPT='$(common_return_status)$(common_current_dir) ❯  '
 
 # Right Prompt
 RPROMPT='$(common_bg_jobs) $(common_git_status)'

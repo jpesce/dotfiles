@@ -8,20 +8,43 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # }}}
 
-# Use vi mode on shell
+# Integration with vi {{{
+# Use vi mode on prompt
 bindkey -v
+
+# Increase vi-like zsh functionality
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+# Change cursor for normal and insert mode
+VI_MODE_SET_CURSOR=true
+source $ZDOTDIR/plugins/vi-mode/vi-mode.plugin.zsh
+# V to edit command in vi
+bindkey -M vicmd 'V' edit-command-line
 
 # Set nvim as the default editor
 export EDITOR=nvim
+# }}}
 
 # Completion {{{
 autoload -Uz compinit && compinit
 setopt AUTO_MENU
+# Expand globs (*.), then default completion, then try to guess
+zstyle ':completion:*' completer _extensions _complete _approximate
 zstyle ':completion:*' menu yes select
 # Case insensitive completion (lowercase letters also match uppercase)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# Color files basted on LS_COLORS
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # Show dotfiles in completion
 setopt globdots
+# Allow keybinds specific for menu selection
+zmodload zsh/complist
+# ^hjkl navigate the completion menu
+bindkey -M menuselect '^h' vi-backward-char
+bindkey -M menuselect '^k' vi-up-line-or-history
+bindkey -M menuselect '^l' vi-forward-char
+bindkey -M menuselect '^j' vi-down-line-or-history
+# ^[ cancel completion
+bindkey -M menuselect '^[' undo
 # Suggest completion before typing tab
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -46,14 +69,21 @@ source $ZDOTDIR/themes/common/common.zsh-theme
 # Highlight commands
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Change highlight colors
-# https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/highlighters/main
+# https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/docs/highlighters
 typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[unknown-token]=none
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+# Recognized expressions (bold)
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=none,bold
+ZSH_HIGHLIGHT_STYLES[alias]=fg=none,bold
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=none,bold
+ZSH_HIGHLIGHT_STYLES[global-alias]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=none,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[command]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=none,bold
-ZSH_HIGHLIGHT_STYLES[alias]=fg=none,bold
+ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=none,bold
 # }}}
 
 # Paths {{{
