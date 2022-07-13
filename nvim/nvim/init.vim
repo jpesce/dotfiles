@@ -17,8 +17,8 @@ augroup auto_manage_tags
   autocmd BufWritePost *.json,*.jsonc silent! !ctags -R &
 augroup END
 
-" Leave (o)nly current (b)uffer open
-nnoremap <Leader>bo :%bd<bar>e#<bar>bd#<CR>
+" Leave only current (B)uffer open
+nnoremap <Leader>B :%bd<bar>e#<bar>bd#<CR>
 
 " Fairly sensible Defaults {{{
 set splitright splitbelow " Defaults splitting to the right and below
