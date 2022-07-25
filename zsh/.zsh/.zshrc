@@ -2,13 +2,13 @@
 # Use colors on zsh commands by name instead of color code
 autoload colors && colors
 # Suggest commands corrections
-setopt CORRECT CORRECT_ALL
+# setopt CORRECT CORRECT_ALL
 # Locales
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # }}}
 
-# Integration with vi {{{
+# vi integration {{{
 # Use vi mode on prompt
 bindkey -v
 
@@ -25,7 +25,15 @@ export EDITOR=nvim
 # }}}
 
 # Completion {{{
-autoload -Uz compinit && compinit
+# Suggest inline completion before typing tab
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 setopt AUTO_MENU
 # Expand globs (*.), then default completion, then try to guess
 zstyle ':completion:*' completer _extensions _complete _approximate
@@ -36,6 +44,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # Show dotfiles in completion
 setopt globdots
+
 # Allow keybinds specific for menu selection
 zmodload zsh/complist
 # ^hjkl navigate the completion menu
@@ -45,9 +54,15 @@ bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
 # ^[ cancel completion
 bindkey -M menuselect '^[' undo
-# Suggest completion before typing tab
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+
+autoload -Uz compinit
+# Only check the cached .zcompdump once a day
+# https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 # }}}
 
 # History {{{
@@ -61,10 +76,12 @@ HISTSIZE=20000
 # }}}
 
 # Visual {{{
+# Set a custom accent color on color code 16
+$ZDOTDIR/scripts/set_accent_color.sh
 # Enable calling functions in PROMPT (required for the theme)
 setopt PROMPT_SUBST
 # Set theme
-source $ZDOTDIR/themes/common/common.zsh-theme
+source $ZDOTDIR/themes/essential/essential.zsh-theme
 
 # Highlight commands
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -96,7 +113,33 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # Node {{{
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Dumb loading (use this instead of the rest if any problem arises):
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Smart loading:
+# Lazy load nvm
+nvm() {
+  echo "🚨 NVM not loaded! Loading now..."
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+  nvm $@
+}
+
+# Resolve the default node version
+DEFAULT_NODE_VER="$(cat "$NVM_DIR/alias/default" 2> /dev/null || cat ~/.nvmrc 2> /dev/null)"
+while [ -s "$NVM_DIR/alias/$DEFAULT_NODE_VER" ] && [ ! -z "$DEFAULT_NODE_VER" ]; do
+  DEFAULT_NODE_VER="$(cat "$NVM_DIR/alias/$DEFAULT_NODE_VER")"
+done
+
+# Resolve the path to the default node version
+DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
+
+# Add the default node version path to PATH so we can access globally installed
+# packages
+if [ ! -z "$DEFAULT_NODE_VER_PATH" ]; then
+  export PATH="$DEFAULT_NODE_VER_PATH/bin:$PATH"
+fi
 # }}}
 
 # Aliases {{{
@@ -140,12 +183,25 @@ alias z='cd $NOTES_DIR && nvim'
 CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
 alias cheat='vim "+cd $CHEATSHEET_DIR" "+Rgi"'
 
+# Easy tmux setup
+TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
+alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
+alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
+# }}}
+
+# Fuzzy Finder {{{
+# FZF theme
+export FZF_DEFAULT_OPTS="
+  --color=fg:-1,bg:-1,hl:yellow,fg+:-1,bg+:-1,hl+:yellow
+  --color=gutter:black,info:black,border:white,prompt:white,pointer:15,marker:yellow,spinner:-1,header:-1
+"
+
 # Search and go to projects
 function projects () {
   directory=$(\
     find ~/Projects ~/Projects/oficina ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
     sort | uniq |\
-    fzf-tmux -p 80,85% --color 'gutter:black,marker:yellow,pointer:black,bg+:-1,prompt:white,info:black,hl+:yellow,hl:yellow,spinner:-1' --prompt='Project ❯ '\
+    fzf-tmux -p 80,85% --prompt='Project ❯ '\
   )
   # Only continue if a directoy was selected
   if [[ ! -z "$directory" ]]
@@ -160,10 +216,34 @@ function projects () {
 # ^M enter command
 bindkey -s "^P" '^Uprojects^M'
 
-# Easy tmux setup
-TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
-alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
-alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
+# Grep cheatsheet directory interactively and open file when selected
+ch() {
+  RG_PREFIX="rg --column --line-number --no-heading --smart-case --color=always "
+  RG_PREFIX+="--color=always --colors 'column:fg:white' --colors 'line:fg:white' --colors 'path:fg:green' --colors 'match:fg:black' --colors 'match:bg:15'"
+
+  # Change to cheatsheet directory so rg output doesn't include the full path,
+  # making it nicer to the eyes in fzf
+  cd $CHEATSHEET_DIR
+
+  # Start fzf searching to the argument given to ch ($1)
+  location=$(\
+    eval "${RG_PREFIX} '$1'" |
+    fzf-tmux -p 90%,90% --prompt='Cheatsheet ❯ '\
+             --bind "change:reload:$RG_PREFIX {q} || true" --ansi --phony --preview "_pc {}" \
+  )
+
+  # Only continue if an option was selected
+  if [[ ! -z "$location" ]]
+  then
+    filename=$(echo $location | cut -d ':' -f1)
+    line=$(echo $location | cut -d ':' -f2)
+    column=$(echo $location | cut -d ':' -f3)
+    nvim "+call cursor($line,$column)" $filename
+  fi
+
+  # Change back to previous directory
+  # Don't output the path to terminal
+  cd - > /dev/null }
 # }}}
 
 # vim: fdm=marker

@@ -6,23 +6,23 @@ precmd() {
 }
 
 # Prompt symbol
-COMMON_PROMPT_SYMBOL="" #"  ○"
+ESSENTIAL_PROMPT_SYMBOL="" #"  ○"
 
 # Colors
-COMMON_COLORS_CURRENT_DIR=none
-COMMON_COLORS_RETURN_STATUS_TRUE=none
-COMMON_COLORS_RETURN_STATUS_FALSE=red
-COMMON_COLORS_BG_JOBS=none
-COMMON_COLORS_GIT_STATUS=8
+ESSENTIAL_COLORS_CURRENT_DIR=none
+ESSENTIAL_COLORS_RETURN_STATUS_TRUE=none
+ESSENTIAL_COLORS_RETURN_STATUS_FALSE=red
+ESSENTIAL_COLORS_BG_JOBS=none
+ESSENTIAL_COLORS_GIT_STATUS=8
 
 # Left Prompt
-PROMPT='$(common_return_status)$(common_current_dir) ❯  '
+PROMPT='%B$(essential_return_status)$(essential_current_dir) ❯%b  '
 
 # Right Prompt
-RPROMPT='$(common_bg_jobs) $(common_git_status)'
+RPROMPT='$(essential_bg_jobs) $(essential_git_status)'
 
 # Show current directory relative to git repository
-common_current_dir() {
+essential_current_dir() {
   if [[ -d $(git rev-parse --show-toplevel 2>/dev/null) ]]; then
     # We're in a git repo
     BASE="—/$(basename $(git rev-parse --show-toplevel))"
@@ -36,13 +36,13 @@ common_current_dir() {
   else
     PROMPT_PATH="%~"
   fi
-  echo -n "%F{$COMMON_COLORS_CURRENT_DIR}$PROMPT_PATH%f"
+  echo -n "%F{$ESSENTIAL_COLORS_CURRENT_DIR}$PROMPT_PATH%f"
 }
 
 # Git status
-common_git_status() {
+essential_git_status() {
     local message=""
-    local message_color="%F{$COMMON_COLORS_GIT_STATUS}"
+    local message_color="%F{$ESSENTIAL_COLORS_GIT_STATUS}"
 
     # https://git-scm.com/docs/git-status#_short_format
     local staged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU]")
@@ -63,12 +63,12 @@ common_git_status() {
 }
 
 # Prompt symbol
-common_return_status() {
-  echo -n "%(?.%F{$COMMON_COLORS_RETURN_STATUS_TRUE}.%F{$COMMON_COLORS_RETURN_STATUS_FALSE})$COMMON_PROMPT_SYMBOL%f "
+essential_return_status() {
+  echo -n "%(?.%F{$ESSENTIAL_COLORS_RETURN_STATUS_TRUE}.%F{$ESSENTIAL_COLORS_RETURN_STATUS_FALSE})$ESSENTIAL_PROMPT_SYMBOL%f "
 }
 
 # Background Jobs
-common_bg_jobs() {
-  bg_status="%{$fg[$COMMON_COLORS_BG_JOBS]%}%(1j.↓%j .)"
+essential_bg_jobs() {
+  bg_status="%{$fg[$ESSENTIAL_COLORS_BG_JOBS]%}%(1j.↓%j .)"
   echo -n $bg_status
 }
