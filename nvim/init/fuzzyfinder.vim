@@ -28,20 +28,23 @@ let g:fzf_action = {
       \ 'ctrl-x': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
-" <Alt-A> to select all results and <Alt-D> to deselect
+
+" <Opt-A> to select all results and <Opt-D> to deselect (Opt aka Alt aka Meta)
 let $FZF_DEFAULT_OPTS.=" --bind 'alt-a:select-all,alt-d:deselect-all'"
 
 nno <silent> <Leader>f :Files<CR>
 nno <silent> <Leader>b :Buffers<CR>
-nno <silent> <Leader>h :Helptags<CR>
 " Search on current buffer
 nno <silent> <Leader>s :BLines<CR>
 
-" :Files and :Rg
 " Include hidden (.) files
 " Remove .git, tags and node_modules
 let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!{.git,tags,**/node_modules}' "
-let g:fuzzyfinder#rg_command = "rg --column --line-number --no-heading --color=always --smart-case --hidden --glob '!{.git,tags,**/node_modules}' "
+
+" Ripgrep
+let g:fuzzyfinder#rg_command ="rg --column --line-number --no-heading "
+let g:fuzzyfinder#rg_command.="--smart-case --hidden --glob '!{.git,tags,**/node_modules}' "
+let g:fuzzyfinder#rg_command.="--color=always --colors 'column:fg:white' --colors 'line:fg:white' --colors 'path:fg:green' --colors 'match:fg:black' --colors 'match:bg:15' "
 
 " :Rg
 " Disable regex
@@ -56,8 +59,8 @@ command! -bang -nargs=* Rge
       \ 1, fzf#vim#with_preview(), <bang>0)
 
 " :Rgi
-" Ripgrep interactively so every new thing you type on fzf is searched again on
-" ripgrep
+" Ripgrep interactively so every new thing you type on fzf is searched again
+" through ripgrep
 function! InteractiveRipgrepFzf(query, fullscreen)
   let command_format = g:fuzzyfinder#rg_command . ' -- %s || true'
   let initial_command = printf(command_format, shellescape(a:query))
@@ -79,7 +82,7 @@ let g:fzf_colors = {
       \ 'info':    ['bg', 'Terminal'],
       \ 'border':  ['fg', 'NonText'],
       \ 'prompt':  ['fg', 'Comment'],
-      \ 'pointer': ['bg', 'Terminal'],
+      \ 'pointer': ['fg', 'Regular'],
       \ 'marker':  ['fg', 'WarningMsg'],
       \ 'spinner': ['fg', 'Normal'],
       \ 'header':  ['fg', 'Normal']

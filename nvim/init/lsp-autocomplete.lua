@@ -1,3 +1,9 @@
+vim.cmd [[packadd nvim-cmp]]
+vim.cmd [[packadd cmp-nvim-lsp]]
+vim.cmd [[packadd cmp-buffer]]
+vim.cmd [[packadd cmp-path]]
+vim.cmd [[packadd cmp-cmdline]]
+
 local cmp = require'cmp'
 
 cmp.setup {
@@ -18,7 +24,7 @@ cmp.setup {
   },
 }
 
--- Command/search autocompletions
+-- Commands
 cmp.setup.cmdline(':', {
     completion = {
       autocomplete = false,
@@ -32,6 +38,7 @@ cmp.setup.cmdline(':', {
     sources = { { name = 'cmdline' } }
   })
 
+-- Search
 cmp.setup.cmdline('/', {
     mapping = {
       ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),

@@ -1,4 +1,3 @@
-
 " Name:         Essential
 " Author:       João Pesce <joao@pesce.cc>
 " Maintainer:   João Pesce <joao@pesce.cc>
@@ -9,6 +8,12 @@ set background=dark
 
 hi clear
 let g:colors_name = 'essential2'
+
+" Custom group definitions to reuse by linking
+hi Accent ctermfg=16 ctermbg=NONE cterm=NONE
+hi AccentInverted ctermfg=Black ctermbg=16 cterm=NONE
+hi Default ctermfg=White ctermbg=Black cterm=NONE
+hi DefaultInverted ctermfg=Black ctermbg=White cterm=NONE
 
 hi! link lCursor Cursor
 
@@ -30,7 +35,7 @@ hi! link Float Constant
 hi! link Number Constant
 hi! link Character Constant
 
-hi String ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+hi! link String Accent
 hi! link Boolean String
 
 hi Statement ctermfg=NONE ctermbg=NONE cterm=bold
@@ -54,12 +59,12 @@ hi! link Debug Satatement
 
 hi! link PopupSelected Normal
 hi PMenu ctermfg=NONE ctermbg=8 cterm=NONE
-hi PMenuSel ctermfg=NONE ctermbg=8 cterm=bold
+hi PMenuSel ctermfg=Black ctermbg=White cterm=bold
 hi PMenuSbar ctermfg=NONE ctermbg=8 cterm=NONE
 hi PMenuThumb ctermfg=NONE ctermbg=LightGray cterm=NONE
 hi! link WildMenu PMenuSel
 
-hi TabLine ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLine ctermfg=LightGray ctermbg=NONE cterm=NONE
 " Buffers that are open in other windows
 hi! link BufTabLineActive TabLine
 hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE

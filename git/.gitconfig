@@ -15,7 +15,14 @@
   diffFilter = diff-so-fancy --patch
 [alias]
   graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+  ; Add repo passed as argument as submodule and add config it to ignore all
   submodule-add-ignore = "!f(){ REPO_NAME=`echo $1 | rev | cut -d \"/\" -f1 | rev`; git submodule add $1 ${GIT_PREFIX}$REPO_NAME; echo \"Adding ignore = all in config\"; git config submodule.${GIT_PREFIX}$REPO_NAME.ignore all; }; f"
+  ; Remove submodule completely (deinit + remove directory from .git/modules and
+  ; remove the directory
   submodule-purge = "!f(){ git submodule deinit -f \"${GIT_PREFIX}$1\"; rm -rf .git/modules/${GIT_PREFIX}$1; git rm --f \"${GIT_PREFIX}$1\"; }; f"
+  ; Run a given git command in all sub-directories (that are git repos)
+  subdirs = "!f(){ ls -R -d */.git | sed \"s,\\/.git,,\" | xargs -I{} bash -c \"echo -e '\\033[0;32m→\\033[0m {}' && git -C {} $1\"; }; f"
+  ; Same as above but in parallel and less pretty
+  subdirs-p = "!f(){ ls -R -d */.git | sed \"s,\\/.git,,\" | xargs -P10 -I{} git -C {} $1; }; f"
 [pull]
-	ff = only
+  ff = only

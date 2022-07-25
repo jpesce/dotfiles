@@ -12,16 +12,9 @@
     ~/.tmux.conf:
       path: tmux/.tmux.conf
       force: false
-    # vim
-    ~/.vim:
-      path: vim
-      force: false
     # nvim
-    ~/.local/share/nvim/site:
-      path: nvim/site
-      force: false
     ~/.config/nvim:
-      path: nvim/nvim
+      path: nvim
       force: false
     # git
     ~/.gitconfig:

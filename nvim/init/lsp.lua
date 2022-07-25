@@ -1,3 +1,17 @@
+vim.cmd [[packadd nvim-lspconfig]]
+
+-- Signs
+local signs = {
+  { name = "DiagnosticSignError", text = "🞄" },
+  { name = "DiagnosticSignWarn",  text = "🞄" },
+  { name = "DiagnosticSignHint",  text = "🞄" },
+  { name = "DiagnosticSignInfo",  text = "🞄" },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
+
 -- Mappings that bind only when the server is attached
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')

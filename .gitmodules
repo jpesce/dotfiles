@@ -10,96 +10,69 @@
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
   ignore = dirty
-[submodule "nvim/site/pack/filetypes/opt/vim-polyglot"]
-	path = nvim/site/pack/filetypes/opt/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-[submodule "nvim/site/pack/plugins/opt/vim-cheat40"]
-	path = nvim/site/pack/plugins/opt/vim-cheat40
-	url = https://github.com/lifepillar/vim-cheat40
-[submodule "nvim/site/pack/plugins/opt/vim-colortemplate"]
-	path = nvim/site/pack/plugins/opt/vim-colortemplate
+[submodule "nvim/pack/plugins/opt/vim-colortemplate"]
+	path = nvim/pack/plugins/opt/vim-colortemplate
 	url = https://github.com/lifepillar/vim-colortemplate
-[submodule "nvim/site/pack/plugins/opt/vim-hilinks"]
-	path = nvim/site/pack/plugins/opt/vim-hilinks
+[submodule "nvim/pack/plugins/opt/vim-hilinks"]
+	path = nvim/pack/plugins/opt/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
-[submodule "nvim/site/pack/plugins/opt/vim-matchup"]
-	path = nvim/site/pack/plugins/opt/vim-matchup
+[submodule "nvim/pack/plugins/opt/vim-matchup"]
+	path = nvim/pack/plugins/opt/vim-matchup
 	url = https://github.com/andymass/vim-matchup
-[submodule "nvim/site/pack/plugins/opt/vim-unimpaired"]
-	path = nvim/site/pack/plugins/opt/vim-unimpaired
+[submodule "nvim/pack/plugins/opt/vim-unimpaired"]
+	path = nvim/pack/plugins/opt/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule "nvim/site/pack/plugins/opt/vim-dirvish"]
-	path = nvim/site/pack/plugins/opt/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish
-[submodule "nvim/site/pack/plugins/opt/vim-buftabline"]
-	path = nvim/site/pack/plugins/opt/vim-buftabline
+[submodule "nvim/pack/plugins/opt/vim-buftabline"]
+	path = nvim/pack/plugins/opt/vim-buftabline
 	url = https://github.com/ap/vim-buftabline
-[submodule "nvim/site/pack/plugins/opt/vim-fugitive"]
-	path = nvim/site/pack/plugins/opt/vim-fugitive
+[submodule "nvim/pack/plugins/opt/vim-fugitive"]
+	path = nvim/pack/plugins/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "nvim/site/pack/plugins/opt/fzf.vim"]
-	path = nvim/site/pack/plugins/opt/fzf.vim
+[submodule "nvim/pack/plugins/opt/fzf.vim"]
+	path = nvim/pack/plugins/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "nvim/site/pack/plugins/opt/AutoComplPop"]
-	path = nvim/site/pack/plugins/opt/AutoComplPop
-	url = https://github.com/vim-scripts/AutoComplPop
-[submodule "nvim/site/pack/plugins/opt/vim-vinegar"]
-	path = nvim/site/pack/plugins/opt/vim-vinegar
+[submodule "nvim/pack/plugins/opt/vim-vinegar"]
+	path = nvim/pack/plugins/opt/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "nvim/site/pack/plugins/opt/vim-surround"]
-	path = nvim/site/pack/plugins/opt/vim-surround
+[submodule "nvim/pack/plugins/opt/vim-surround"]
+	path = nvim/pack/plugins/opt/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "nvim/site/pack/plugins/opt/vim-commentary"]
-	path = nvim/site/pack/plugins/opt/vim-commentary
+[submodule "nvim/pack/plugins/opt/vim-commentary"]
+	path = nvim/pack/plugins/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "nvim/site/pack/plugins/opt/asyncomplete.vim"]
-	path = nvim/site/pack/plugins/opt/asyncomplete.vim
-	url = https://github.com/prabirshrestha/asyncomplete.vim
-[submodule "nvim/site/pack/plugins/opt/asyncomplete-buffer.vim"]
-	path = nvim/site/pack/plugins/opt/asyncomplete-buffer.vim
-	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
-[submodule "nvim/site/pack/plugins/opt/asyncomplete-file.vim"]
-	path = nvim/site/pack/plugins/opt/asyncomplete-file.vim
-	url = https://github.com/prabirshrestha/asyncomplete-file.vim
-[submodule "nvim/site/pack/plugins/opt/asyncomplete-omni.vim"]
-	path = nvim/site/pack/plugins/opt/asyncomplete-omni.vim
-	url = https://github.com/yami-beta/asyncomplete-omni.vim
-[submodule "nvim/site/pack/plugins/opt/asyncomplete-tags.vim"]
-	path = nvim/site/pack/plugins/opt/asyncomplete-tags.vim
-	url = https://github.com/prabirshrestha/asyncomplete-tags.vim
-[submodule "nvim/site/pack/filetypes/opt/vim-jsonc"]
-	path = nvim/site/pack/filetypes/opt/vim-jsonc
-	url = https://github.com/jpesce/vim-jsonc
-[submodule "nvim/site/pack/colors/opt/onedark.nvim"]
-	path = nvim/site/pack/colors/opt/onedark.nvim
-	url = https://github.com/navarasu/onedark.nvim
-[submodule "nvim/site/pack/plugins/opt/vim-eunuch"]
-	path = nvim/site/pack/plugins/opt/vim-eunuch
+[submodule "nvim/pack/plugins/opt/vim-eunuch"]
+	path = nvim/pack/plugins/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "nvim/site/pack/plugins/opt/vim-prj"]
-	path = nvim/site/pack/plugins/opt/vim-prj
+[submodule "nvim/pack/plugins/opt/vim-prj"]
+	path = nvim/pack/plugins/opt/vim-prj
 	url = https://github.com/emersonmx/vim-prj
-[submodule "nvim/site/pack/plugins/opt/vim-sonic-pi"]
-	path = nvim/site/pack/plugins/opt/vim-sonic-pi
+[submodule "nvim/pack/plugins/opt/vim-sonic-pi"]
+	path = nvim/pack/plugins/opt/vim-sonic-pi
 	url = https://github.com/lilyinstarlight/vim-sonic-pi
-[submodule "nvim/site/pack/plugins/opt/ale"]
-	path = nvim/site/pack/plugins/opt/ale
+[submodule "nvim/pack/plugins/opt/ale"]
+	path = nvim/pack/plugins/opt/ale
 	url = https://github.com/dense-analysis/ale
-[submodule "nvim/site/pack/plugins/opt/nvim-lspconfig"]
-	path = nvim/site/pack/plugins/opt/nvim-lspconfig
+[submodule "nvim/pack/plugins/opt/nvim-lspconfig"]
+	path = nvim/pack/plugins/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
-[submodule "nvim/site/pack/plugins/opt/nvim-cmp"]
-	path = nvim/site/pack/plugins/opt/nvim-cmp
+[submodule "nvim/pack/plugins/opt/nvim-cmp"]
+	path = nvim/pack/plugins/opt/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp
-[submodule "nvim/site/pack/plugins/opt/cmp-nvim-lsp"]
-	path = nvim/site/pack/plugins/opt/cmp-nvim-lsp
+[submodule "nvim/pack/plugins/opt/cmp-nvim-lsp"]
+	path = nvim/pack/plugins/opt/cmp-nvim-lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp
-[submodule "nvim/site/pack/plugins/opt/cmp-buffer"]
-	path = nvim/site/pack/plugins/opt/cmp-buffer
+[submodule "nvim/pack/plugins/opt/cmp-buffer"]
+	path = nvim/pack/plugins/opt/cmp-buffer
 	url = https://github.com/hrsh7th/cmp-buffer
-[submodule "nvim/site/pack/plugins/opt/cmp-path"]
-	path = nvim/site/pack/plugins/opt/cmp-path
+[submodule "nvim/pack/plugins/opt/cmp-path"]
+	path = nvim/pack/plugins/opt/cmp-path
 	url = https://github.com/hrsh7th/cmp-path
-[submodule "nvim/site/pack/plugins/opt/cmp-cmdline"]
-	path = nvim/site/pack/plugins/opt/cmp-cmdline
+[submodule "nvim/pack/plugins/opt/cmp-cmdline"]
+	path = nvim/pack/plugins/opt/cmp-cmdline
 	url = https://github.com/hrsh7th/cmp-cmdline
+[submodule "nvim/pack/plugins/opt/vim-tmux-navigator"]
+	path = nvim/pack/plugins/opt/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "nvim/pack/filetypes/opt/vim-polyglot"]
+	path = nvim/pack/filetypes/opt/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot

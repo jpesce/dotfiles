@@ -20,6 +20,16 @@ augroup END
 " Leave only current (B)uffer open
 nnoremap <Leader>B :%bd<bar>e#<bar>bd#<CR>
 
+" Navigate tmux panes and vim splits with <Opt-hjkl> (aka Alt aka Meta)
+packadd vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <A-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <A-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <A-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <A-l> :TmuxNavigateRight<cr>
+
+
 " Fairly sensible Defaults {{{
 set splitright splitbelow " Defaults splitting to the right and below
 set hidden                " Buffers are only hidden - not closed - when leaving them
@@ -31,13 +41,13 @@ set clipboard=unnamed     " Yanking, deleting and pasting work with the clipboar
 " Visuals {{{
 " Color scheme
 colorscheme essential2
-" Backup color scheme
-packadd onedark.nvim
-" set termguicolors
-" colorscheme onedark
 
 " Show buffer list on tabline. Who needs tabs anyway?
-packadd vim-buftabline | let g:buftabline_indicators = 1
+packadd vim-buftabline
+" Show modified flag
+let g:buftabline_indicators = 1
+" Only show if there are more than one open buffer
+let g:buftabline_show = 1
 " Show relative line numbers except for the current line
 set relativenumber number
 " Cursor always in the middle
@@ -69,7 +79,6 @@ inoremap <CR> <CR><C-g>u
 
 " Extra file type support {{{
 packadd vim-polyglot
-packadd vim-jsonc
 " }}}
 
 " Extensions {{{
@@ -157,6 +166,11 @@ augroup END
 source $HOME/.config/nvim/init/fuzzyfinder.vim
 " }}}
 
+" LSP {{{
+set signcolumn=yes
+luafile $HOME/.config/nvim/init/lsp.lua
+" }}}
+
 " Completion {{{
 " When completing commands, first complete as much as possible and on the next
 " <tab>, cycle through options
@@ -175,20 +189,9 @@ cnoremap <expr> <C-h> pumvisible() ? "<C-e>" : "<C-k>"
 " Enable OMNI Completion (<C-X><X-O) for known language keywords
 set omnifunc=syntaxcomplete#Complete
 
-" source $HOME/.config/nvim/init/autocomplete.vim
-" }}}
-
-packadd nvim-lspconfig
-packadd nvim-cmp
-packadd cmp-nvim-lsp
-packadd cmp-buffer
-packadd cmp-path
-packadd cmp-cmdline
-
-set signcolumn=yes
-
-luafile $HOME/.config/nvim/init/lsp.lua
+" Autocompletion
 luafile $HOME/.config/nvim/init/lsp-autocomplete.lua
+" }}}
 
 " Linting {{{
 " source $HOME/.config/nvim/init/linter.vim
