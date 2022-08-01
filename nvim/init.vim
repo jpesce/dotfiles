@@ -1,3 +1,6 @@
+" Plugins for consideration:
+" https://github.com/wellle/targets.vim
+
 " Set <leader> to space
 let mapleader = " "
 
@@ -40,7 +43,7 @@ set clipboard=unnamed     " Yanking, deleting and pasting work with the clipboar
 
 " Visuals {{{
 " Color scheme
-colorscheme essential2
+colorscheme essential
 
 " Show buffer list on tabline. Who needs tabs anyway?
 packadd vim-buftabline
@@ -126,9 +129,17 @@ set formatoptions-=t
 set foldmethod=syntax
 " Start unfolded
 set foldlevelstart=99
-" Folds are displayed with only the line content and a plus sign
-let FoldText = { -> getline(v:foldstart) . ' ﹢ '  }
+
+" " Show fold column with only the fold indicator
+" set foldcolumn=1
+" set fillchars+=foldclose:▸,foldopen:▾,foldsep:\  " Hide fold separators on fold column
+" Waiting for this [PR](https://github.com/neovim/neovim/pull/17446) to hide the
+" digits as well
+
+" Folds are displayed with only the line content and the fill chars
+let FoldText = { -> getline(v:foldstart) . ' '  }
 set foldtext=FoldText()
+set fillchars+=fold:─  " Fold characters after fold text
 " }}}
 
 " Grep {{{
@@ -181,20 +192,16 @@ set completeopt=menuone,noselect
 set shortmess+=c
 
 " Navigate command completions with vim keys
-cnoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
-cnoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
-cnoremap <expr> <C-l> pumvisible() ? "<C-y>" : "<C-k>"
-cnoremap <expr> <C-h> pumvisible() ? "<C-e>" : "<C-k>"
+" cnoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
+" cnoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
+" cnoremap <expr> <C-l> pumvisible() ? "<C-y>" : "<C-k>"
+" cnoremap <expr> <C-h> pumvisible() ? "<C-e>" : "<C-k>"
 
 " Enable OMNI Completion (<C-X><X-O) for known language keywords
 set omnifunc=syntaxcomplete#Complete
 
 " Autocompletion
-luafile $HOME/.config/nvim/init/lsp-autocomplete.lua
-" }}}
-
-" Linting {{{
-" source $HOME/.config/nvim/init/linter.vim
+luafile $HOME/.config/nvim/init/autocomplete.lua
 " }}}
 
 " Git integration {{{
@@ -210,9 +217,6 @@ source $HOME/.config/nvim/init/zettelkasten.vim
 " }}}
 
 " Color scheme design {{{
-" Toolkit for color scheme design
-packadd vim-colortemplate
-
 " Show/hide highlight stack with :HLT!
 packadd vim-hilinks
 " }}}

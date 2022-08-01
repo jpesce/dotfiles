@@ -9,6 +9,11 @@ else
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 endif
 
+" Hide statusline when fzf is open
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 " Build quickfix list from selected items
 function! s:build_quickfix_list(lines)
   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
