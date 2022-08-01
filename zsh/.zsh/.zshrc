@@ -130,9 +130,10 @@ export NVM_DIR="$HOME/.nvm"
 # - Install nvm if not currently installed
 # - Upgrade nvm without losing node versions with `nvm upgrade`
 # - Only load nvm when using nvm or its installed packages or nvim (for js lsp)
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
+export NVM_LAZY=true
+export NVM_LAZY_CMD=('nvim')
 source $ZDOTDIR/plugins/ohmyzsh/plugins/nvm/nvm.plugin.zsh
+# source $ZDOTDIR/plugins/ohmyzsh/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 # }}}
 
 # Aliases {{{
