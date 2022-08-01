@@ -3,7 +3,6 @@ set laststatus=3
 
 " Status line is filename and line:column
 function! Statusline() abort
-  hi StatusLine ctermfg=white ctermbg=NONE cterm=bold
   let l:statusline ='%#StatusLine#'
   let l:statusline.=' %f %m '
   let l:statusline.='%#StatusLineNC#'

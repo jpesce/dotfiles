@@ -10,12 +10,18 @@ hi clear
 let g:colors_name = 'essential2'
 
 " Custom group definitions to reuse by linking
-hi Accent ctermfg=16 ctermbg=NONE cterm=NONE
-hi AccentInverted ctermfg=Black ctermbg=16 cterm=NONE
-hi Default ctermfg=White ctermbg=NONE cterm=NONE
-hi DefaultInverted ctermfg=Black ctermbg=White cterm=NONE
-hi DefaultBold ctermfg=White ctermbg=NONE cterm=bold
-hi DefaultItalic ctermfg=White ctermbg=NONE cterm=italic
+hi Accent           ctermfg=16 ctermbg=NONE cterm=NONE
+hi AccentInverted   ctermfg=Black ctermbg=16 cterm=NONE
+
+hi Default          ctermfg=White ctermbg=NONE cterm=NONE
+
+hi DefaultInverted  ctermfg=Black ctermbg=White cterm=NONE
+hi DefaultBold      ctermfg=White ctermbg=NONE cterm=bold
+hi DefaultItalic    ctermfg=White ctermbg=NONE cterm=italic
+
+hi BG1              ctermfg=NONE ctermbg=234 cterm=NONE
+
+hi Reverse          cterm=reverse
 
 hi! link lCursor Cursor
 
@@ -59,23 +65,22 @@ hi! link Delimiter Satatement
 hi! link SatatementComment Satatement
 hi! link Debug Satatement
 
-hi! link PopupSelected Normal
-hi PMenu ctermfg=NONE ctermbg=8 cterm=NONE
-hi PMenuSel ctermfg=Black ctermbg=White cterm=bold
-hi PMenuSbar ctermfg=NONE ctermbg=8 cterm=NONE
+hi! link PMenu BG1
+hi! link PMenuSel Reverse
+hi! link PMenuSbar BG1
 hi PMenuThumb ctermfg=NONE ctermbg=LightGray cterm=NONE
 hi! link WildMenu PMenuSel
 
 hi TabLine ctermfg=LightGray ctermbg=NONE cterm=NONE
+hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLineSel ctermfg=NONE ctermbg=NONE cterm=NONE
 " Buffers that are open in other windows
 hi! link BufTabLineActive TabLine
-hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
-hi TabLineSel ctermfg=NONE ctermbg=NONE cterm=bold
 
 hi ToolbarLine ctermfg=NONE ctermbg=NONE cterm=NONE
 hi ToolbarButton ctermfg=NONE ctermbg=NONE cterm=NONE
 
-hi StatusLine ctermfg=LightGray ctermbg=NONE cterm=NONE
+hi! link StatusLine Default
 hi StatusLineNC ctermfg=8 ctermbg=NONE cterm=NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
@@ -109,7 +114,7 @@ hi! link CursorLineNR LineNr
 hi! link SignColumn LineNr
 hi! link FoldColumn LineNr
 
-hi Visual ctermfg=NONE ctermbg=8 cterm=NONE
+hi! link Visual BG1
 hi! link CursorLine Visual
 hi! link CursorColumn Visual
 hi! link ColorColumn Visual
