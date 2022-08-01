@@ -16,7 +16,7 @@ bindkey -v
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 # Change cursor for normal and insert mode
 VI_MODE_SET_CURSOR=true
-source $ZDOTDIR/plugins/vi-mode/vi-mode.plugin.zsh
+source $ZDOTDIR/plugins/ohmyzsh/plugins/vi-mode/vi-mode.plugin.zsh
 # V to edit command in vi
 bindkey -M vicmd 'V' edit-command-line
 
@@ -29,10 +29,14 @@ export EDITOR=nvim
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Load completions
+# Homebrew completions
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
+# Faster git completion
+FPATH="${ZDOTDIR}/plugins/ohmyzsh/plugins/gitfast:${FPATH}"
 
 setopt AUTO_MENU
 # Expand globs (*.), then default completion, then try to guess
@@ -54,7 +58,6 @@ bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
 # ^[ cancel completion
 bindkey -M menuselect '^[' undo
-
 
 autoload -Uz compinit
 # Only check the cached .zcompdump once a day
@@ -78,8 +81,6 @@ HISTSIZE=20000
 # Visual {{{
 # Set a custom accent color on color code 16
 $ZDOTDIR/scripts/set_accent_color.sh
-# Enable calling functions in PROMPT (required for the theme)
-setopt PROMPT_SUBST
 # Set theme
 source $ZDOTDIR/themes/essential/essential.zsh-theme
 
@@ -91,7 +92,14 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[unknown-token]=none
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-# Recognized expressions (bold)
+
+# Strings -> 16 (accent)
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=16
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=16
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]=fg=16
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=16
+
+# Recognized expressions -> bold
 ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[alias]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=none,bold
@@ -101,6 +109,7 @@ ZSH_HIGHLIGHT_STYLES[function]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[command]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=none,bold
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 # }}}
 
 # Paths {{{
@@ -114,32 +123,16 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # Node {{{
 export NVM_DIR="$HOME/.nvm"
 
-# Dumb loading (use this instead of the rest if any problem arises):
+# Dumb loading (use this instead of the plugin if any problem arises):
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Smart loading:
-# Lazy load nvm
-nvm() {
-  echo "🚨 NVM not loaded! Loading now..."
-  unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-  nvm $@
-}
-
-# Resolve the default node version
-DEFAULT_NODE_VER="$(cat "$NVM_DIR/alias/default" 2> /dev/null || cat ~/.nvmrc 2> /dev/null)"
-while [ -s "$NVM_DIR/alias/$DEFAULT_NODE_VER" ] && [ ! -z "$DEFAULT_NODE_VER" ]; do
-  DEFAULT_NODE_VER="$(cat "$NVM_DIR/alias/$DEFAULT_NODE_VER")"
-done
-
-# Resolve the path to the default node version
-DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
-
-# Add the default node version path to PATH so we can access globally installed
-# packages
-if [ ! -z "$DEFAULT_NODE_VER_PATH" ]; then
-  export PATH="$DEFAULT_NODE_VER_PATH/bin:$PATH"
-fi
+# zsh-nvm plugin
+# - Install nvm if not currently installed
+# - Upgrade nvm without losing node versions with `nvm upgrade`
+# - Only load nvm when using nvm or its installed packages or nvim (for js lsp)
+export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
+source $ZDOTDIR/plugins/ohmyzsh/plugins/nvm/nvm.plugin.zsh
 # }}}
 
 # Aliases {{{
@@ -153,10 +146,12 @@ alias grep='grep  --color=auto'
 alias vim='nvim'
 
 # LS Colors (see: https://gist.github.com/thomd/7667642)
-LS_COLORS='fi=0:di=34:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ex=32:ow=31'
+# Directory -> color 16 (custom accent color)
+LS_COLORS='fi=0:di=01;38;5;16:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ow=31:ex=1'
 export LS_COLORS
 
 # Use coreutils ls (gls)
+alias ls='gls --color --human-readable --group-directories-first --literal'
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
 
@@ -189,32 +184,30 @@ alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
 alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
 # }}}
 
-# Fuzzy Finder {{{
+# Fuzzy Finder functions {{{
 # FZF theme
 export FZF_DEFAULT_OPTS="
   --color=fg:-1,bg:-1,hl:yellow,fg+:-1,bg+:-1,hl+:yellow
   --color=gutter:black,info:black,border:white,prompt:white,pointer:15,marker:yellow,spinner:-1,header:-1
 "
 
-# Search and go to projects
-function projects () {
+# Search directories
+alias sd='cd $(find * -type d 2>/dev/null | fzf)'
+
+# Search and go to projects with <CTRL+P>
+function projects() {
   directory=$(\
     find ~/Projects ~/Projects/oficina ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
     sort | uniq |\
     fzf-tmux -p 80,85% --prompt='Project ❯ '\
   )
-  # Only continue if a directoy was selected
-  if [[ ! -z "$directory" ]]
-  then
-    cd $directory
-    clear
-  fi
+  # Only cd if a directory was selected
+  [[ ! -z "$directory" ]] && cd $directory
 }
 
-# Bind projects search to CTRL+P
-# ^U delete corrent line
-# ^M enter command
-bindkey -s "^P" '^Uprojects^M'
+functions __projects_widget() { projects && zle accept-line }
+zle -N __projects_widget
+bindkey "^P" __projects_widget
 
 # Grep cheatsheet directory interactively and open file when selected
 ch() {
@@ -229,7 +222,7 @@ ch() {
   location=$(\
     eval "${RG_PREFIX} '$1'" |
     fzf-tmux -p 90%,90% --prompt='Cheatsheet ❯ '\
-             --bind "change:reload:$RG_PREFIX {q} || true" --ansi --phony --preview "_pc {}" \
+    --bind "change:reload:$RG_PREFIX {q} || true" --ansi --phony --preview "_pc {}" \
   )
 
   # Only continue if an option was selected
@@ -244,6 +237,30 @@ ch() {
   # Change back to previous directory
   # Don't output the path to terminal
   cd - > /dev/null }
+  # }}}
+
+# ZSH-useful functions {{{
+# Compile ZSH scripts
+zsh-compile() {
+for zfile in $ZDOTDIR/**/*.zsh(|-theme)(N-.); do
+  zcompile -R ${zfile} && print -PR "%F{green}→%f %B${zfile}:%b Compiled"
+done
+print -P '🦾 Done with compiling.'
+}
+
+# Clean compiled files
+zsh-compile-clean() {
+for zfile in $ZDOTDIR/**/*.zwc; do
+  rm -f ${zfile} && print -PR "%F{green}→%f %B${zfile}:%b Removed"
+done
+print -P '🧹 Done with cleaning.'
+}
+
+# Test zsh startup time
+zsh-startup-time() {
+shell=${1-$SHELL}
+for i in $(seq 1 4); do /usr/bin/time $shell -i -c exit; done
+}
 # }}}
 
 # vim: fdm=marker

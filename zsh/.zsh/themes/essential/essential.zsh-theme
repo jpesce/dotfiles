@@ -1,9 +1,15 @@
 # Add a new line before each prompt, except the first
+# And refresh tmux to update status bar
 precmd() {
-    precmd() {
-        echo
-    }
+  [[ "$TERM_PROGRAM" = tmux ]] && tmux refresh-client -S
+  precmd() {
+    [[ "$TERM_PROGRAM" = tmux ]] && tmux refresh-client -S
+    echo
+  }
 }
+
+# Enable calling functions in PROMPT (required for the theme)
+setopt PROMPT_SUBST
 
 # Prompt symbol
 ESSENTIAL_PROMPT_SYMBOL="" #"  ○"
@@ -19,7 +25,7 @@ ESSENTIAL_COLORS_GIT_STATUS=8
 PROMPT='%B$(essential_return_status)$(essential_current_dir) ❯%b  '
 
 # Right Prompt
-RPROMPT='$(essential_bg_jobs) $(essential_git_status)'
+RPROMPT='$(essential_bg_jobs)' # $(essential_git_status)'
 
 # Show current directory relative to git repository
 essential_current_dir() {
@@ -27,11 +33,11 @@ essential_current_dir() {
     # We're in a git repo
     BASE="—/$(basename $(git rev-parse --show-toplevel))"
     if [[ $PWD = $(git rev-parse --show-toplevel) ]]; then
-        # We're in the root
-        PROMPT_PATH="$BASE"
+      # We're in the root
+      PROMPT_PATH="$BASE"
     else
-        PROMPT_PATH="$BASE/$(git rev-parse --show-prefix)"
-        PROMPT_PATH=${PROMPT_PATH%?} # Remove trailing `/`
+      PROMPT_PATH="$BASE/$(git rev-parse --show-prefix)"
+      PROMPT_PATH=${PROMPT_PATH%?} # Remove trailing `/`
     fi
   else
     PROMPT_PATH="%~"
@@ -41,26 +47,26 @@ essential_current_dir() {
 
 # Git status
 essential_git_status() {
-    local message=""
-    local message_color="%F{$ESSENTIAL_COLORS_GIT_STATUS}"
+  local message=""
+  local message_color="%F{$ESSENTIAL_COLORS_GIT_STATUS}"
 
     # https://git-scm.com/docs/git-status#_short_format
     local staged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU]")
     local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU? ][MADRCU?]")
 
     if [[ -n ${staged} ]]; then
-        staged_symbol=""
+      staged_symbol=""
     elif [[ -n ${unstaged} ]]; then
-        staged_symbol="!"
+      staged_symbol="!"
     fi
 
     local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     if [[ -n ${branch} ]]; then
-        message+="${message_color}${staged_symbol}${branch}%f "
+      message+="${message_color}${staged_symbol}${branch}%f "
     fi
 
     echo -n "${message}"
-}
+  }
 
 # Prompt symbol
 essential_return_status() {

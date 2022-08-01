@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -n "$TMUX" ]; then
   # Tell tmux to pass the escape sequences through
   # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
@@ -19,4 +21,10 @@ else
   put_template_custom() { printf '\033]%s%s\033\\' $@; }
 fi
 
-put_template 16  "86/c3/af"
+# put_template 16  "72/de/c2" # Nataniev sea-foam aqua
+put_template 16 "b0/ba/95" # Pale Green
+# put_template 16 "95/d6/c0" # Green
+# put_template 16 "95/c6/d6" # Blue
+# put_template 16 "d6/cc/95" # Yellow
+# put_template 16 "d6/95/95" # Red
+# put_template 16 "aa/95/d6" # Purple
