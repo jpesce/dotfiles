@@ -70,7 +70,9 @@ put_template 254 "c5/c5/c5"
 put_template 255 "cc/cc/cc"
 
 # put_template 16  "72/de/c2" # Nataniev sea-foam aqua
-put_template 16 "b0/ba/95" # Pale Green
+# put_template 16 "b0/ba/95" # Pale Green
+# put_template 16 "8a/b8/98" # Green
+put_template 16 "92/b6/b1" # Pale Aqua
 # put_template 16 "95/d6/c0" # Green
 # put_template 16 "95/c6/d6" # Blue
 # put_template 16 "d6/cc/95" # Yellow

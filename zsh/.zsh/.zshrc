@@ -131,9 +131,8 @@ export NVM_DIR="$HOME/.nvm"
 # - Upgrade nvm without losing node versions with `nvm upgrade`
 # - Only load nvm when using nvm or its installed packages or nvim (for js lsp)
 export NVM_LAZY=true
-export NVM_LAZY_CMD=('nvim')
+export NVM_LAZY_CMD=(nvim vtex)
 source $ZDOTDIR/plugins/ohmyzsh/plugins/nvm/nvm.plugin.zsh
-# source $ZDOTDIR/plugins/ohmyzsh/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 # }}}
 
 # Aliases {{{
@@ -195,20 +194,22 @@ export FZF_DEFAULT_OPTS="
 # Search directories
 alias sd='cd $(find * -type d 2>/dev/null | fzf)'
 
-# Search and go to projects with <CTRL+P>
+# Search and go to projects
 function projects() {
   directory=$(\
-    find ~/Projects ~/Projects/oficina ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
+    find ~/Projects ~/Projects/oficina ~/Projects/simples ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
     sort | uniq |\
     fzf-tmux -p 80,85% --prompt='Project ❯ '\
   )
   # Only cd if a directory was selected
   [[ ! -z "$directory" ]] && cd $directory
 }
+alias prj='projects'
 
-functions __projects_widget() { projects && zle accept-line }
-zle -N __projects_widget
-bindkey "^P" __projects_widget
+# Bind projects to <CTRL+P>
+# functions __projects_widget() { projects && zle accept-line }
+# zle -N __projects_widget
+# bindkey "^P" __projects_widget
 
 # Grep cheatsheet directory interactively and open file when selected
 ch() {

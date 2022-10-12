@@ -8,10 +8,10 @@ local cmp = require'cmp'
 
 cmp.setup {
   mapping = {
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
-    ['<C-j>'] = cmp.mapping.select_next_item(),
-    ['<C-h>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
-    ['<C-l>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
+    ['<Up>'] = cmp.mapping.select_prev_item(),
+    ['<Down>'] = cmp.mapping.select_next_item(),
+    ['<Left>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
+    ['<Right>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
     ['<CR>'] = cmp.mapping.confirm { select = false }
   },
   sources = {
@@ -30,12 +30,13 @@ cmp.setup.cmdline(':', {
       autocomplete = false,
     },
     mapping = {
-    -- Tab open completion. If completion menu is already open, cycle options
+    -- Tab opens completion.
+    -- If completion menu is already open, cycle between options
     ['<Tab>'] = cmp.mapping(function()
       if cmp.visible() then cmp.select_next_item() else cmp.complete() end
     end, { 'i', 'c' }),
-    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+    ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+    ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
     ['<CR>'] = cmp.mapping.confirm { select = true }
   },
   sources = { { name = 'cmdline' } }
@@ -44,8 +45,8 @@ cmp.setup.cmdline(':', {
 -- Search
 cmp.setup.cmdline('/', {
     mapping = {
-      ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-      ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+      ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+      ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
       ['<CR>'] = cmp.mapping.confirm { select = true }
     },
     sources = { { name = 'buffer' } }

@@ -406,7 +406,7 @@
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12156862765550613</real>
+				<real>0.12549020349979401</real>
 				<key>Red Component</key>
 				<real>0.12549020349979401</real>
 			</dict>
@@ -415,13 +415,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.4597703218460083</real>
+				<real>0.45882353186607361</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.44022473692893982</real>
+				<real>0.43921568989753723</real>
 				<key>Red Component</key>
-				<real>0.80260616540908813</real>
+				<real>0.80000001192092896</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -454,13 +454,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.9158814549446106</real>
+				<real>0.91372549533843994</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.6787790060043335</real>
+				<real>0.67843139171600342</real>
 				<key>Red Component</key>
-				<real>0.45468276739120483</real>
+				<real>0.45098039507865906</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -493,13 +493,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Red Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
@@ -571,26 +571,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.47848504781723022</real>
+				<real>0.60000002384185791</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.47839945554733276</real>
+				<real>0.60000002384185791</real>
 				<key>Red Component</key>
-				<real>0.47846603393554688</real>
+				<real>0.60000002384185791</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.26697748899459839</real>
+				<real>0.3333333432674408</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.26684170961380005</real>
+				<real>0.3333333432674408</real>
 				<key>Red Component</key>
-				<real>0.26693457365036011</real>
+				<real>0.3333333432674408</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -610,13 +610,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12550833821296692</real>
+				<real>0.12549020349979401</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12547937035560608</real>
+				<real>0.12549020349979401</real>
 				<key>Red Component</key>
-				<real>0.12550190091133118</real>
+				<real>0.12549020349979401</real>
 			</dict>
 			<key>Badge Color</key>
 			<dict>
@@ -688,13 +688,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Red Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 			</dict>
 			<key>Link Color</key>
 			<dict>
@@ -718,7 +718,7 @@
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12156862765550613</real>
+				<real>0.12549020349979401</real>
 				<key>Red Component</key>
 				<real>0.12549020349979401</real>
 			</dict>
@@ -727,13 +727,380 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Red Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
+			</dict>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.31623747944831848</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.25794538855552673</real>
+				<key>Red Component</key>
+				<real>0.23653227090835571</real>
+			</dict>
+			<key>Underline Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.08628874272108078</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.086266078054904938</real>
+				<key>Red Component</key>
+				<real>0.08628370612859726</real>
+			</dict>
+		</dict>
+		<key>Essential RGBY</key>
+		<dict>
+			<key>Ansi 0 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.12549020349979401</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.12549020349979401</real>
+				<key>Red Component</key>
+				<real>0.12549020349979401</real>
+			</dict>
+			<key>Ansi 1 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.47058823704719543</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.47843137383460999</real>
+				<key>Red Component</key>
+				<real>0.7607843279838562</real>
+			</dict>
+			<key>Ansi 10 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.69411766529083252</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.7137255072593689</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 11 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.60176074504852295</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.74679040908813477</real>
+				<key>Red Component</key>
+				<real>0.89954423904418945</real>
+			</dict>
+			<key>Ansi 12 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.75294119119644165</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.69019609689712524</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 13 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.75294119119644165</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.69019609689712524</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 14 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.75294119119644165</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.69019609689712524</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 15 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86666667461395264</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.86666667461395264</real>
+				<key>Red Component</key>
+				<real>0.86666667461395264</real>
+			</dict>
+			<key>Ansi 2 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.69411766529083252</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.7137255072593689</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 3 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.60000002384185791</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.7450980544090271</real>
+				<key>Red Component</key>
+				<real>0.89803922176361084</real>
+			</dict>
+			<key>Ansi 4 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.75294119119644165</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.69019609689712524</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 5 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.75294119119644165</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.69019609689712524</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 6 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.75294119119644165</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.69019609689712524</real>
+				<key>Red Component</key>
+				<real>0.57254904508590698</real>
+			</dict>
+			<key>Ansi 7 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.60000002384185791</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.60000002384185791</real>
+				<key>Red Component</key>
+				<real>0.60000002384185791</real>
+			</dict>
+			<key>Ansi 8 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.3333333432674408</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.3333333432674408</real>
+				<key>Red Component</key>
+				<real>0.3333333432674408</real>
+			</dict>
+			<key>Ansi 9 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.47058823704719543</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.47843137383460999</real>
+				<key>Red Component</key>
+				<real>0.7607843279838562</real>
+			</dict>
+			<key>Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.12549020349979401</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.12549020349979401</real>
+				<key>Red Component</key>
+				<real>0.12549020349979401</real>
+			</dict>
+			<key>Badge Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.5</real>
+				<key>Blue Component</key>
+				<real>0.1450340747833252</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.25262764096260071</real>
+				<key>Red Component</key>
+				<real>0.91921168565750122</real>
+			</dict>
+			<key>Bold Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.99998658895492554</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.99993377923965454</real>
+				<key>Red Component</key>
+				<real>0.99999195337295532</real>
+			</dict>
+			<key>Cursor Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.7980610728263855</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.80073308944702148</real>
+				<key>Red Component</key>
+				<real>0.79836183786392212</real>
+			</dict>
+			<key>Cursor Guide Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.21808513998985291</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.20024970173835754</real>
+				<key>Red Component</key>
+				<real>0.20649078488349915</real>
+			</dict>
+			<key>Cursor Text Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.4579693078994751</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.44729137420654297</real>
+				<key>Red Component</key>
+				<real>0.45355415344238281</real>
+			</dict>
+			<key>Foreground Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86666667461395264</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.86666667461395264</real>
+				<key>Red Component</key>
+				<real>0.86666667461395264</real>
+			</dict>
+			<key>Link Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.99646884202957153</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.99980717897415161</real>
+				<key>Red Component</key>
+				<real>0.9968448281288147</real>
+			</dict>
+			<key>Selected Text Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.12549020349979401</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.12549020349979401</real>
+				<key>Red Component</key>
+				<real>0.12549020349979401</real>
+			</dict>
+			<key>Selection Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86666667461395264</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.86666667461395264</real>
+				<key>Red Component</key>
+				<real>0.86666667461395264</real>
 			</dict>
 			<key>Tab Color</key>
 			<dict>
@@ -3446,208 +3813,208 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 				<key>Red Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.47058823704719543</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.4392156862745098</real>
+				<real>0.47843137383460999</real>
 				<key>Red Component</key>
-				<real>0.80000000000000004</real>
+				<real>0.7607843279838562</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.4876975417137146</real>
+				<real>0.69411766529083252</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.72858494520187378</real>
+				<real>0.7137255072593689</real>
 				<key>Red Component</key>
-				<real>0.60224580764770508</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.49267297983169556</real>
+				<real>0.60176074504852295</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.71504181623458862</real>
+				<real>0.74679040908813477</real>
 				<key>Red Component</key>
-				<real>0.8282427191734314</real>
+				<real>0.89954423904418945</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.9158814549446106</real>
+				<real>0.75294119119644165</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.6787790060043335</real>
+				<real>0.69019609689712524</real>
 				<key>Red Component</key>
-				<real>0.45468276739120483</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.77177709341049194</real>
+				<real>0.75294119119644165</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.44428503513336182</real>
+				<real>0.69019609689712524</real>
 				<key>Red Component</key>
-				<real>0.67097258567810059</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.7527356743812561</real>
+				<real>0.75294119119644165</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.70509892702102661</real>
+				<real>0.69019609689712524</real>
 				<key>Red Component</key>
-				<real>0.43616294860839844</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Red Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.4876975417137146</real>
+				<real>0.69411766529083252</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.72858494520187378</real>
+				<real>0.7137255072593689</real>
 				<key>Red Component</key>
-				<real>0.60224580764770508</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.49267297983169556</real>
+				<real>0.60000002384185791</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.71504181623458862</real>
+				<real>0.7450980544090271</real>
 				<key>Red Component</key>
-				<real>0.8282427191734314</real>
+				<real>0.89803922176361084</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.9158814549446106</real>
+				<real>0.75294119119644165</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.6787790060043335</real>
+				<real>0.69019609689712524</real>
 				<key>Red Component</key>
-				<real>0.45468276739120483</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.77177709341049194</real>
+				<real>0.75294119119644165</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.44428503513336182</real>
+				<real>0.69019609689712524</real>
 				<key>Red Component</key>
-				<real>0.67097258567810059</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.7527356743812561</real>
+				<real>0.75294119119644165</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.70509892702102661</real>
+				<real>0.69019609689712524</real>
 				<key>Red Component</key>
-				<real>0.43616294860839844</real>
+				<real>0.57254904508590698</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.47848504781723022</real>
+				<real>0.60000002384185791</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.47839945554733276</real>
+				<real>0.60000002384185791</real>
 				<key>Red Component</key>
-				<real>0.47846603393554688</real>
+				<real>0.60000002384185791</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.26697748899459839</real>
+				<real>0.3333333432674408</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.26684170961380005</real>
+				<real>0.3333333432674408</real>
 				<key>Red Component</key>
-				<real>0.26693457365036011</real>
+				<real>0.3333333432674408</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.4597703218460083</real>
+				<real>0.47058823704719543</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.44022473692893982</real>
+				<real>0.47843137383460999</real>
 				<key>Red Component</key>
-				<real>0.80260616540908813</real>
+				<real>0.7607843279838562</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -3658,13 +4025,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 				<key>Red Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -3686,7 +4053,7 @@
 			<key>Blend</key>
 			<real>1</real>
 			<key>Blink Allowed</key>
-			<false/>
+			<true/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -3742,6 +4109,8 @@
 				<key>Red Component</key>
 				<real>0.20649078488349915</real>
 			</dict>
+			<key>Cursor Shadow</key>
+			<false/>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -3778,13 +4147,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Red Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 			</dict>
 			<key>Guid</key>
 			<string>254CF30D-2E8D-41D8-A4BB-C8394D0DB34F</string>
@@ -4142,26 +4511,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 				<key>Red Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.12549020349979401</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 				<key>Red Component</key>
-				<real>0.80000001192092896</real>
+				<real>0.86666667461395264</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
@@ -4579,7 +4948,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.6499999999999999</real>
+			<real>1.5</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -5762,208 +6131,208 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 				<key>Red Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.51263266801834106</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.57855266332626343</real>
 				<key>Red Component</key>
-				<real>0.31372549019607843</real>
+				<real>0.80371707677841187</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882353186607361</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.56862747669219971</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.59215686274509804</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.81176470588235294</real>
 				<key>Red Component</key>
-				<real>0.56862745098039214</real>
+				<real>0.92941176470588238</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.56862745098039214</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.56862745098039214</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.56862745098039214</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.81176471710205078</real>
+				<real>0.80000000000000004</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.81176471710205078</real>
+				<real>0.80000000000000004</real>
 				<key>Red Component</key>
-				<real>0.81176471710205078</real>
+				<real>0.80000000000000004</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882353186607361</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.31372549019607843</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.61964684724807739</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.81956255435943604</real>
 				<key>Red Component</key>
-				<real>0.31372549019607843</real>
+				<real>0.91060429811477661</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.31372549019607843</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.31372549019607843</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.69411764705882351</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.71372549019607845</real>
 				<key>Red Component</key>
-				<real>0.31372549019607843</real>
+				<real>0.5725490196078431</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.47843137383460999</real>
+				<real>0.40000000000000002</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.47843137383460999</real>
+				<real>0.40000000000000002</real>
 				<key>Red Component</key>
-				<real>0.47843137383460999</real>
+				<real>0.40000000000000002</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.25152873992919922</real>
+				<real>0.2493324875831604</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.25152873992919922</real>
+				<real>0.24928370118141174</real>
 				<key>Red Component</key>
-				<real>0.25152873992919922</real>
+				<real>0.24932166934013367</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.45882352941176469</real>
+				<real>0.50980392156862742</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333333333333328</real>
+				<real>0.57647058823529407</real>
 				<key>Red Component</key>
-				<real>0.56862745098039214</real>
+				<real>0.80000000000000004</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -5974,13 +6343,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 				<key>Red Component</key>
-				<real>0.12549020349979401</real>
+				<real>0.12549019607843137</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -6096,13 +6465,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.81176471710205078</real>
+				<real>0.80000000000000004</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.81176471710205078</real>
+				<real>0.80000000000000004</real>
 				<key>Red Component</key>
-				<real>0.81176471710205078</real>
+				<real>0.80000000000000004</real>
 			</dict>
 			<key>Guid</key>
 			<string>50FC16C4-60B8-4345-9816-F9F5A72967A9</string>
@@ -6434,7 +6803,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Cozette 13</string>
+			<string>CreepRegular 24</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -6458,26 +6827,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.85882353782653809</real>
+				<real>0.12549019607843137</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.89411765336990356</real>
+				<real>0.12549019607843137</real>
 				<key>Red Component</key>
-				<real>0.90588235855102539</real>
+				<real>0.12549019607843137</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.1860198974609375</real>
+				<real>0.80000000000000004</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.1860198974609375</real>
+				<real>0.80000000000000004</real>
 				<key>Red Component</key>
-				<real>0.1860198974609375</real>
+				<real>0.80000000000000004</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
@@ -6850,7 +7219,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>Title Components</key>
 			<integer>2</integer>
 			<key>Transparency</key>
@@ -6877,7 +7246,7 @@
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
-			<false/>
+			<true/>
 			<key>Use Bright Bold</key>
 			<false/>
 			<key>Use Canonical Parser</key>
@@ -6895,7 +7264,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.75</real>
+			<real>1.5</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -6959,6 +7328,10 @@
 	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
+	<key>SmartCursorColorBgThreshold</key>
+	<real>0.5</real>
+	<key>SmartCursorColorFgThreshold</key>
+	<real>0.75</real>
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SoundForEsc</key>
@@ -7019,6 +7392,316 @@
 	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
+	<key>kCPFavoritesUserDefaultsKey</key>
+	<array>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFVCbGFja9USExQV
+		FhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJOU0N1
+		c3RvbUNvbG9yU3BhY2VWJGNsYXNzRzAgMCAwIDFGMCAwIDAAEAGAA4AG0x0W
+		Hh8gIVVOU0lDQ1lOU1NwYWNlSUSABIAFEAxPEQIkAAACJGFwcGwEAAAAbW50
+		clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAA
+		AAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAA
+		AWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZ
+		WgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAg
+		Z1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBB
+		cHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAA
+		AACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgA
+		ABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAA
+		AAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7SJCUmJ1ok
+		Y2xhc3NuYW1lWCRjbGFzc2VzXE5TQ29sb3JTcGFjZaIoKVxOU0NvbG9yU3Bh
+		Y2VYTlNPYmplY3TSJCUrLFdOU0NvbG9yoisp0hYuLzBZTlMuc3RyaW5ngAhf
+		ECRGNTk5RDQyMC0wQTU3LTRCMUMtQjUzOC0zRTE3NUM1M0JDNzXSJCUyM18Q
+		D05TTXV0YWJsZVN0cmluZ6MyNClYTlNTdHJpbmcACAARABoAJAApADIANwBJ
+		AFAAVQBbAGYAaABqAGwAdgB8AIIAjQCaAKAArQDCAMkA0QDYANoA3ADeAOUA
+		6wD1APcA+QD7AyMDKAMzAzwDSQNMA1kDYgNnA28DcgN3A4EDgwOqA68DwQPF
+		AAAAAAAAAgEAAAAAAAAANQAAAAAAAAAAAAAAAAAAA84=
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFgxMCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuMSAwLjEgMC4xIDFPECgwLjA3
+		NzUxNTY1NDI3IDAuMDc3NTMwMTY4IDAuMDc3NTEyMDcwNTQAEAGAA4AG0x0W
+		Hh8gIVVOU0lDQ1lOU1NwYWNlSUSABIAFEAxPEQIkAAACJGFwcGwEAAAAbW50
+		clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAA
+		AAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAA
+		AWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZ
+		WgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAg
+		Z1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBB
+		cHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAA
+		AACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgA
+		ABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAA
+		AAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7SJCUmJ1ok
+		Y2xhc3NuYW1lWCRjbGFzc2VzXE5TQ29sb3JTcGFjZaIoKVxOU0NvbG9yU3Bh
+		Y2VYTlNPYmplY3TSJCUrLFdOU0NvbG9yoisp0hYuLzBZTlMuc3RyaW5ngAhf
+		ECRFRUI5QkZBNy1FQjU3LTQ3NkEtOEIyQy1FMTYyNjNFMkE3NDbSJCUyM18Q
+		D05TTXV0YWJsZVN0cmluZ6MyNClYTlNTdHJpbmcACAARABoAJAApADIANwBJ
+		AFAAVQBbAGYAaABqAGwAdgB8AIUAkACdAKMAsADFAMwA2gEFAQcBCQELARIB
+		GAEiASQBJgEoA1ADVQNgA2kDdgN5A4YDjwOUA5wDnwOkA64DsAPXA9wD7gPy
+		AAAAAAAAAgEAAAAAAAAANQAAAAAAAAAAAAAAAAAAA/s=
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFgyMCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuMiAwLjIgMC4yIDFPECcwLjE1
+		MDU0NTM0MzggMC4xNTA1NzM1NjY2IDAuMTUwNTM4Mzk5OAAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAiQAAAIkYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH4QAHAAcADQAWACBhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzKGpWCJX8QTTiZE9XR6hWCAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAGVjcHJ0AAAB
+		ZAAAACN3dHB0AAABiAAAABRyWFlaAAABnAAAABRnWFlaAAABsAAAABRiWFla
+		AAABxAAAABRyVFJDAAAB2AAAACBjaGFkAAAB+AAAACxiVFJDAAAB2AAAACBn
+		VFJDAAAB2AAAACBkZXNjAAAAAAAAAAtEaXNwbGF5IFAzAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRleHQAAAAAQ29weXJpZ2h0IEFw
+		cGxlIEluYy4sIDIwMTcAAFhZWiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAA
+		AIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAA
+		EQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAA
+		AAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRj
+		bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFj
+		ZVhOU09iamVjdNIkJSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8Q
+		JDJDNzREQzcwLTdBQkQtNDZENy1BMkNBLTBFMTQ1MzQ5RDBDQ9IkJTIzXxAP
+		TlNNdXRhYmxlU3RyaW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkA
+		UABVAFsAZgBoAGoAbAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEX
+		ASEBIwElAScDTwNUA18DaAN1A3gDhQOOA5MDmwOeA6MDrQOvA9YD2wPtA/EA
+		AAAAAAACAQAAAAAAAAA1AAAAAAAAAAAAAAAAAAAD+g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFgzMCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuMyAwLjMgMC4zIDFPECYwLjIz
+		NDAxOTI3OTUgMC4yMzQwNjMxNzgzIDAuMjM0MDA4NDkxABABgAOABtMdFh4f
+		ICFVTlNJQ0NZTlNTcGFjZUlEgASABRAMTxECJAAAAiRhcHBsBAAAAG1udHJS
+		R0IgWFlaIAfhAAcABwANABYAIGFjc3BBUFBMAAAAAEFQUEwAAAAAAAAAAAAA
+		AAAAAAAAAAD21gABAAAAANMtYXBwbMoalYIlfxBNOJkT1dHqFYIAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmRlc2MAAAD8AAAAZWNwcnQAAAFk
+		AAAAI3d0cHQAAAGIAAAAFHJYWVoAAAGcAAAAFGdYWVoAAAGwAAAAFGJYWVoA
+		AAHEAAAAFHJUUkMAAAHYAAAAIGNoYWQAAAH4AAAALGJUUkMAAAHYAAAAIGdU
+		UkMAAAHYAAAAIGRlc2MAAAAAAAAAC0Rpc3BsYXkgUDMAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdGV4dAAAAABDb3B5cmlnaHQgQXBw
+		bGUgSW5jLiwgMjAxNwAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAA
+		g98AAD2/////u1hZWiAAAAAAAABKvwAAsTcAAAq5WFlaIAAAAAAAACg4AAAR
+		CwAAyLlwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW3NmMzIAAAAA
+		AAEMQgAABd7///MmAAAHkwAA/ZD///ui///9owAAA9wAAMBu0iQlJidaJGNs
+		YXNzbmFtZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2WiKClcTlNDb2xvclNwYWNl
+		WE5TT2JqZWN00iQlKyxXTlNDb2xvcqIrKdIWLi8wWU5TLnN0cmluZ4AIXxAk
+		MzIwNkMyMzEtODZERS00NEU4LUJGREItMENERTE5MEE0REI30iQlMjNfEA9O
+		U011dGFibGVTdHJpbmejMjQpWE5TU3RyaW5nAAgAEQAaACQAKQAyADcASQBQ
+		AFUAWwBmAGgAagBsAHYAfACFAJAAnQCjALAAxQDMANoBAwEFAQcBCQEQARYB
+		IAEiASQBJgNOA1MDXgNnA3QDdwOEA40DkgOaA50DogOsA64D1QPaA+wD8AAA
+		AAAAAAIBAAAAAAAAADUAAAAAAAAAAAAAAAAAAAP5
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg0MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNCAwLjQgMC40IDFPECcwLjMy
+		NTgwODQ2NTUgMC4zMjU4Njk1NjAyIDAuMzI1NzkzMzg1NQAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAiQAAAIkYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH4QAHAAcADQAWACBhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzKGpWCJX8QTTiZE9XR6hWCAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAGVjcHJ0AAAB
+		ZAAAACN3dHB0AAABiAAAABRyWFlaAAABnAAAABRnWFlaAAABsAAAABRiWFla
+		AAABxAAAABRyVFJDAAAB2AAAACBjaGFkAAAB+AAAACxiVFJDAAAB2AAAACBn
+		VFJDAAAB2AAAACBkZXNjAAAAAAAAAAtEaXNwbGF5IFAzAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRleHQAAAAAQ29weXJpZ2h0IEFw
+		cGxlIEluYy4sIDIwMTcAAFhZWiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAA
+		AIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAA
+		EQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAA
+		AAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRj
+		bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFj
+		ZVhOU09iamVjdNIkJSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8Q
+		JDg2RkMzQkU1LTE0QjgtNDRCNS1BMDA3LUM1MTMyMjMwQzZFMdIkJTIzXxAP
+		TlNNdXRhYmxlU3RyaW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkA
+		UABVAFsAZgBoAGoAbAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEX
+		ASEBIwElAScDTwNUA18DaAN1A3gDhQOOA5MDmwOeA6MDrQOvA9YD2wPtA/EA
+		AAAAAAACAQAAAAAAAAA1AAAAAAAAAAAAAAAAAAAD+g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg1MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNSAwLjUgMC41IDFPECYwLjQy
+		NDYyNDAyNTggMC40MjQ3MDM1OTggMC40MjQ2MDQzNTYzABABgAOABtMdFh4f
+		ICFVTlNJQ0NZTlNTcGFjZUlEgASABRAMTxECJAAAAiRhcHBsBAAAAG1udHJS
+		R0IgWFlaIAfhAAcABwANABYAIGFjc3BBUFBMAAAAAEFQUEwAAAAAAAAAAAAA
+		AAAAAAAAAAD21gABAAAAANMtYXBwbMoalYIlfxBNOJkT1dHqFYIAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmRlc2MAAAD8AAAAZWNwcnQAAAFk
+		AAAAI3d0cHQAAAGIAAAAFHJYWVoAAAGcAAAAFGdYWVoAAAGwAAAAFGJYWVoA
+		AAHEAAAAFHJUUkMAAAHYAAAAIGNoYWQAAAH4AAAALGJUUkMAAAHYAAAAIGdU
+		UkMAAAHYAAAAIGRlc2MAAAAAAAAAC0Rpc3BsYXkgUDMAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdGV4dAAAAABDb3B5cmlnaHQgQXBw
+		bGUgSW5jLiwgMjAxNwAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAA
+		g98AAD2/////u1hZWiAAAAAAAABKvwAAsTcAAAq5WFlaIAAAAAAAACg4AAAR
+		CwAAyLlwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW3NmMzIAAAAA
+		AAEMQgAABd7///MmAAAHkwAA/ZD///ui///9owAAA9wAAMBu0iQlJidaJGNs
+		YXNzbmFtZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2WiKClcTlNDb2xvclNwYWNl
+		WE5TT2JqZWN00iQlKyxXTlNDb2xvcqIrKdIWLi8wWU5TLnN0cmluZ4AIXxAk
+		REEzMTE1N0UtMzE3MS00OTBCLUIzMEUtOEVBODA4RTI4MzM40iQlMjNfEA9O
+		U011dGFibGVTdHJpbmejMjQpWE5TU3RyaW5nAAgAEQAaACQAKQAyADcASQBQ
+		AFUAWwBmAGgAagBsAHYAfACFAJAAnQCjALAAxQDMANoBAwEFAQcBCQEQARYB
+		IAEiASQBJgNOA1MDXgNnA3QDdwOEA40DkgOaA50DogOsA64D1QPaA+wD8AAA
+		AAAAAAIBAAAAAAAAADUAAAAAAAAAAAAAAAAAAAP5
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg2MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNiAwLjYgMC42IDFPECcwLjUy
+		OTU4NTAwMzkgMC41Mjk2ODQyNDU2IDAuNTI5NTYwNTA2MwAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAiQAAAIkYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH4QAHAAcADQAWACBhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzKGpWCJX8QTTiZE9XR6hWCAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAGVjcHJ0AAAB
+		ZAAAACN3dHB0AAABiAAAABRyWFlaAAABnAAAABRnWFlaAAABsAAAABRiWFla
+		AAABxAAAABRyVFJDAAAB2AAAACBjaGFkAAAB+AAAACxiVFJDAAAB2AAAACBn
+		VFJDAAAB2AAAACBkZXNjAAAAAAAAAAtEaXNwbGF5IFAzAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRleHQAAAAAQ29weXJpZ2h0IEFw
+		cGxlIEluYy4sIDIwMTcAAFhZWiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAA
+		AIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAA
+		EQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAA
+		AAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRj
+		bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFj
+		ZVhOU09iamVjdNIkJSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8Q
+		JEVGNzA2QTJGLUU3RjgtNDM1Qy1CNkY3LTY1MUE2NzZBOTU1NtIkJTIzXxAP
+		TlNNdXRhYmxlU3RyaW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkA
+		UABVAFsAZgBoAGoAbAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEX
+		ASEBIwElAScDTwNUA18DaAN1A3gDhQOOA5MDmwOeA6MDrQOvA9YD2wPtA/EA
+		AAAAAAACAQAAAAAAAAA1AAAAAAAAAAAAAAAAAAAD+g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg3MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNyAwLjcgMC43IDFPECUwLjY0
+		MDA0Mzk3MzkgMC42NDAxNjQwMTc3IDAuNjQwMDE0NDEAEAGAA4AG0x0WHh8g
+		IVVOU0lDQ1lOU1NwYWNlSUSABIAFEAxPEQIkAAACJGFwcGwEAAAAbW50clJH
+		QiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAA
+		AAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQA
+		AAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAA
+		AcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RS
+		QwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBs
+		ZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD
+		3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABEL
+		AADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAA
+		AQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7SJCUmJ1okY2xh
+		c3NuYW1lWCRjbGFzc2VzXE5TQ29sb3JTcGFjZaIoKVxOU0NvbG9yU3BhY2VY
+		TlNPYmplY3TSJCUrLFdOU0NvbG9yoisp0hYuLzBZTlMuc3RyaW5ngAhfECQz
+		QjVFMzgzNy03N0FGLTQ5QjgtODdFOS1BN0ZCQ0FBQ0M3METSJCUyM18QD05T
+		TXV0YWJsZVN0cmluZ6MyNClYTlNTdHJpbmcACAARABoAJAApADIANwBJAFAA
+		VQBbAGYAaABqAGwAdgB8AIUAkACdAKMAsADFAMwA2gECAQQBBgEIAQ8BFQEf
+		ASEBIwElA00DUgNdA2YDcwN2A4MDjAORA5kDnAOhA6sDrQPUA9kD6wPvAAAA
+		AAAAAgEAAAAAAAAANQAAAAAAAAAAAAAAAAAAA/g=
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg4MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuOCAwLjggMC44IDFPECcwLjc1
+		NTUwMTYyNzkgMC43NTU2NDMyNDg2IDAuNzU1NDY2NzU5MgAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAiQAAAIkYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH4QAHAAcADQAWACBhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzKGpWCJX8QTTiZE9XR6hWCAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAGVjcHJ0AAAB
+		ZAAAACN3dHB0AAABiAAAABRyWFlaAAABnAAAABRnWFlaAAABsAAAABRiWFla
+		AAABxAAAABRyVFJDAAAB2AAAACBjaGFkAAAB+AAAACxiVFJDAAAB2AAAACBn
+		VFJDAAAB2AAAACBkZXNjAAAAAAAAAAtEaXNwbGF5IFAzAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRleHQAAAAAQ29weXJpZ2h0IEFw
+		cGxlIEluYy4sIDIwMTcAAFhZWiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAA
+		AIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAA
+		EQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAA
+		AAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRj
+		bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFj
+		ZVhOU09iamVjdNIkJSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8Q
+		JDU5NTVGOEQ0LUEzRjktNDUxOS04NjU1LTk1MzEwMERCNTBDMtIkJTIzXxAP
+		TlNNdXRhYmxlU3RyaW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkA
+		UABVAFsAZgBoAGoAbAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEX
+		ASEBIwElAScDTwNUA18DaAN1A3gDhQOOA5MDmwOeA6MDrQOvA9YD2wPtA/EA
+		AAAAAAACAQAAAAAAAAA1AAAAAAAAAAAAAAAAAAAD+g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg5MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuOSAwLjkgMC45IDFPECcwLjg3
+		NTU1ODI1NzEgMC44NzU3MjI0MDgzIDAuODc1NTE3ODQ1MgAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAiQAAAIkYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH4QAHAAcADQAWACBhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzKGpWCJX8QTTiZE9XR6hWCAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAGVjcHJ0AAAB
+		ZAAAACN3dHB0AAABiAAAABRyWFlaAAABnAAAABRnWFlaAAABsAAAABRiWFla
+		AAABxAAAABRyVFJDAAAB2AAAACBjaGFkAAAB+AAAACxiVFJDAAAB2AAAACBn
+		VFJDAAAB2AAAACBkZXNjAAAAAAAAAAtEaXNwbGF5IFAzAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRleHQAAAAAQ29weXJpZ2h0IEFw
+		cGxlIEluYy4sIDIwMTcAAFhZWiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAA
+		AIPfAAA9v////7tYWVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAA
+		EQsAAMi5cGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAA
+		AAABDEIAAAXe///zJgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRj
+		bGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFj
+		ZVhOU09iamVjdNIkJSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8Q
+		JDEwNTQxM0Q0LTg5QTAtNEI1NC04MEM5LTA4N0U0QzBEMzNBM9IkJTIzXxAP
+		TlNNdXRhYmxlU3RyaW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkA
+		UABVAFsAZgBoAGoAbAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEX
+		ASEBIwElAScDTwNUA18DaAN1A3gDhQOOA5MDmwOeA6MDrQOvA9YD2wPtA/EA
+		AAAAAAACAQAAAAAAAAA1AAAAAAAAAAAAAAAAAAAD+g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFVXaGl0ZdUSExQV
+		FhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJOU0N1
+		c3RvbUNvbG9yU3BhY2VWJGNsYXNzRzEgMSAxIDFPEBwwLjk5OTg4NjA5NTUg
+		MSAwLjk5OTgzOTg0MjMAEAGAA4AG0x0WHh8gIVVOU0lDQ1lOU1NwYWNlSUSA
+		BIAFEAxPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAg
+		YWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1h
+		cHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZ
+		WgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAg
+		Y2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAA
+		AAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVog
+		AAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAA
+		AEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAAC
+		ZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9
+		kP//+6L///2jAAAD3AAAwG7SJCUmJ1okY2xhc3NuYW1lWCRjbGFzc2VzXE5T
+		Q29sb3JTcGFjZaIoKVxOU0NvbG9yU3BhY2VYTlNPYmplY3TSJCUrLFdOU0Nv
+		bG9yoisp0hYuLzBZTlMuc3RyaW5ngAhfECQ2QkI2OEZFMC1EMkFCLTQzMDUt
+		OUJCQi05QUY1QkJGOTcyMzbSJCUyM18QD05TTXV0YWJsZVN0cmluZ6MyNClY
+		TlNTdHJpbmcACAARABoAJAApADIANwBJAFAAVQBbAGYAaABqAGwAdgB8AIIA
+		jQCaAKAArQDCAMkA0QDwAPIA9AD2AP0BAwENAQ8BEQETAzsDQANLA1QDYQNk
+		A3EDegN/A4cDigOPA5kDmwPCA8cD2QPdAAAAAAAAAgEAAAAAAAAANQAAAAAA
+		AAAAAAAAAAAAA+Y=
+		</data>
+	</array>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

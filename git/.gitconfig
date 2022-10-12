@@ -8,8 +8,12 @@
   interactive = auto
   ui = true
   pager = true
+[color "diff"]
+  meta = 7
+  frag = 7 bold
+  func = 7 bold
 [core]
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=2 -RFX
 	excludesfile = ~/.gitignore
 [interactive]
   diffFilter = diff-so-fancy --patch

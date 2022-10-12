@@ -60,7 +60,7 @@ set shortmess+=I
 
 " Redefine filling characters on vertical split and status line
 set fillchars+=vert:│
-set fillchars+=stl:─,stlnc:─
+set fillchars+=stl:\ ,stlnc:\  " Hide status line fill
 
 " Statusline
 source $HOME/.config/nvim/init/statusline.vim
@@ -81,6 +81,8 @@ inoremap <CR> <CR><C-g>u
 " }}}
 
 " Extra file type support {{{
+" Native support for jsonc is better than polyglot
+let g:polyglot_disabled = ['jsonc']
 packadd vim-polyglot
 " }}}
 
@@ -192,10 +194,10 @@ set completeopt=menuone,noselect
 set shortmess+=c
 
 " Navigate command completions with vim keys
-" cnoremap <expr> <C-j> pumvisible() ? "<C-n>" : "<C-j>"
-" cnoremap <expr> <C-k> pumvisible() ? "<C-p>" : "<C-k>"
-" cnoremap <expr> <C-l> pumvisible() ? "<C-y>" : "<C-k>"
-" cnoremap <expr> <C-h> pumvisible() ? "<C-e>" : "<C-k>"
+" cnoremap <expr> <Down> pumvisible()  ? "<C-n>" : "<C-j>"
+" cnoremap <expr> <Up> pumvisible()    ? "<C-p>" : "<C-k>"
+" cnoremap <expr> <Right> pumvisible() ? "<C-y>" : "<C-k>"
+" cnoremap <expr> <Left> pumvisible()  ? "<C-e>" : "<C-k>"
 
 " Enable OMNI Completion (<C-X><X-O) for known language keywords
 set omnifunc=syntaxcomplete#Complete
