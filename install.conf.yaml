@@ -1,6 +1,14 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
+    # silence shell login message (Last Login: etc)
+    ~/.hushlogin:
+      path: hushlogin
+      force: false
     # zsh
     ~/.zshenv:
       path: zsh/.zshenv
@@ -30,6 +38,7 @@
     # karabiner
     ~/.config/karabiner/assets/complex_modifications:
       path: karabiner/complex_modifications
+      create: true
       force: false
 
 - create:
