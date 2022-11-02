@@ -1,3 +1,4 @@
+" Use FZF for fuzzy finding
 packadd fzf.vim
 set rtp+=/usr/local/opt/fzf
 
@@ -37,16 +38,21 @@ let g:fzf_action = {
 " <Opt-A> to select all results and <Opt-D> to deselect (Opt aka Alt aka Meta)
 let $FZF_DEFAULT_OPTS.=" --bind 'alt-a:select-all,alt-d:deselect-all'"
 
+" Find files
 nno <silent> <Leader>f :Files<CR>
+" Find buffer
 nno <silent> <Leader>b :Buffers<CR>
-" Search on current buffer
+" Search current buffer
 nno <silent> <Leader>s :BLines<CR>
 
+" File search {{{
 " Include hidden (.) files
 " Remove .git, tags and node_modules
 let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!{.git,tags,**/node_modules}' "
+" }}}
 
-" Ripgrep
+" Project grep {{{
+" Ripgrep options
 let g:fuzzyfinder#rg_command ="rg --column --line-number --no-heading "
 let g:fuzzyfinder#rg_command.="--smart-case --hidden --glob '!{.git,tags,**/node_modules}' "
 let g:fuzzyfinder#rg_command.="--color=always --colors 'column:fg:white' --colors 'line:fg:white' --colors 'path:fg:green' --colors 'match:fg:black' --colors 'match:bg:15' "
@@ -75,6 +81,7 @@ function! InteractiveRipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang Rgi call InteractiveRipgrepFzf(<q-args>, <bang>0)
+" }}}
 
 " Minimal colors
 let g:fzf_colors = {
