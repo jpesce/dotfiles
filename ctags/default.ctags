@@ -1,6 +1,4 @@
 --exclude=.git
 --exclude=node_modules
 
---langdef=jsonc
---langmap=jsonc:.jsonc
---regex-jsonc=/^[ \t]*"(.*)"[ \t]*:[ \t]*{/\1/k,key,keys/
+--langmap=json:+.jsonc
