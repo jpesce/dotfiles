@@ -1,7 +1,7 @@
 " Use ripgrep as :grep program
 if executable("rg")
   set grepprg=rg\ --vimgrep\ --no-heading\ --fixed-strings\ --
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
+  set grepformat+=%f:%l:%c:%m
 endif
 
 " Grep silently
