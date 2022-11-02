@@ -184,7 +184,7 @@ alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
 alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
 # }}}
 
-# Fuzzy Finder functions {{{
+# Fuzzy Finder-based functions {{{
 # FZF theme
 export FZF_DEFAULT_OPTS="
   --color=fg:-1,bg:-1,hl:yellow,fg+:-1,bg+:-1,hl+:yellow
