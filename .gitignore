@@ -8,6 +8,4 @@ zsh/.zsh/.zcompcache
 zsh/.zsh/.zcompdump
 zsh/.zsh/.zsh_sessions
 
-tmux/sessions
-
 /com.googlecode.iterm2.plist
