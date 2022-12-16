@@ -27,10 +27,10 @@ nnoremap <Leader>B :%bd<bar>e#<bar>bd#<CR>
 packadd vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <A-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <A-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <A-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <A-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <A-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <A-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <A-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <A-l> :TmuxNavigateRight<CR>
 
 
 " Fairly sensible Defaults {{{
@@ -208,6 +208,13 @@ luafile $HOME/.config/nvim/init/autocomplete.lua
 
 " Git integration {{{
 packadd vim-fugitive
+
+" Get diff in a three-way vertical split
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+" Get change from left (h) pane
+nnoremap <leader>gdh :diffget //2<CR>
+" Get change from right (l) pane
+nnoremap <leader>gdl :diffget //3<CR>
 " }}}
 
 " Visual selection operations {{{
