@@ -30,3 +30,5 @@
   subdirs-p = "!f(){ ls -R -d */.git | sed \"s,\\/.git,,\" | xargs -P10 -I{} git -C {} $1; }; f"
 [pull]
   ff = only
+[push]
+	autoSetupRemote = true
