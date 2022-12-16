@@ -180,15 +180,14 @@ alias cheat='vim "+cd $CHEATSHEET_DIR" "+Rgi"'
 
 # Easy tmux setup
 TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
-alias tmux-vtex='$TMUX_SESSIONS/vtex-theme.sh'
-alias tmux-pesce='$TMUX_SESSIONS/pesce-cc.sh'
+alias tmux-vtex='$TMUX_SESSIONS/vtex.sh'
 # }}}
 
 # Fuzzy Finder-based functions {{{
 # FZF theme
 export FZF_DEFAULT_OPTS="
   --color=fg:-1,bg:-1,hl:yellow,fg+:-1,bg+:-1,hl+:yellow
-  --color=gutter:black,info:black,border:white,prompt:white,pointer:15,marker:yellow,spinner:-1,header:-1
+  --color=gutter:black,info:white,border:white,prompt:white,pointer:-1,marker:yellow,spinner:-1,header:-1
 "
 
 # Search directories
