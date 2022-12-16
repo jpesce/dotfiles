@@ -91,7 +91,7 @@ let g:fzf_colors = {
       \ 'fg+':     ['fg', 'Normal'],
       \ 'bg+':     ['bg', 'Terminal'],
       \ 'hl+':     ['fg', 'Search'],
-      \ 'info':    ['bg', 'Terminal'],
+      \ 'info':    ['fg', 'Normal'],
       \ 'border':  ['fg', 'NonText'],
       \ 'prompt':  ['fg', 'Comment'],
       \ 'pointer': ['fg', 'Regular'],
