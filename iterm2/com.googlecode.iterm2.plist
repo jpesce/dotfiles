@@ -4511,13 +4511,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.069434531033039093</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.069434531033039093</real>
 				<key>Red Component</key>
-				<real>0.12549019607843137</real>
+				<real>0.069434531033039093</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
@@ -6803,7 +6803,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>CreepRegular 24</string>
+			<string>AuxMono-Regular 12</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
