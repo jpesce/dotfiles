@@ -72,9 +72,9 @@ hi! link PMenuSbar BG1
 hi PMenuThumb ctermfg=NONE ctermbg=LightGray cterm=NONE
 hi! link WildMenu PMenuSel
 
-hi TabLine ctermfg=LightGray ctermbg=NONE cterm=NONE
+hi TabLine     ctermfg=LightGray ctermbg=NONE cterm=NONE
 hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
-hi TabLineSel ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLineSel  ctermfg=NONE ctermbg=NONE cterm=NONE
 " Buffers that are open in other windows
 hi! link BufTabLineActive TabLine
 
@@ -100,10 +100,10 @@ hi! link RedrawDebugClear WarningMsg
 hi! link Question WarningMsg
 hi Todo ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 
-hi Search ctermfg=DarkYellow ctermbg=Black cterm=NONE
+hi Search    ctermfg=DarkYellow ctermbg=Black cterm=NONE
 hi IncSearch ctermfg=Black ctermbg=DarkYellow cterm=NONE
 
-hi Ignore ctermfg=8 ctermbg=NONE cterm=NONE
+hi Ignore      ctermfg=8 ctermbg=NONE cterm=NONE
 hi EndOfBuffer ctermfg=Black ctermbg=NONE cterm=NONE
 
 hi Conceal ctermfg=LightGray ctermbg=NONE cterm=NONE
@@ -122,19 +122,19 @@ hi! link ColorColumn Visual
 hi! link QuickFixLine Visual
 
 hi MatchParen ctermfg=NONE ctermbg=NONE cterm=underline
-hi Folded ctermfg=NONE ctermbg=NONE cterm=NONE
-hi MoreMsg ctermfg=DarkGreen ctermbg=NONE cterm=NONE
-hi Directory ctermfg=DarkCyan ctermbg=NONE cterm=NONE
+hi Folded     ctermfg=NONE ctermbg=NONE cterm=NONE
+hi MoreMsg    ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+hi Directory  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
 hi Underlined ctermfg=DarkCyan ctermbg=NONE cterm=underline
 
-hi DiffAdd ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+hi DiffAdd    ctermfg=DarkGreen ctermbg=NONE cterm=NONE
 hi DiffChange ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi DiffText ctermfg=Black ctermbg=DarkYellow cterm=NONE
+hi DiffText   ctermfg=Black ctermbg=DarkYellow cterm=NONE
 hi DiffDelete ctermfg=DarkRed ctermbg=NONE cterm=NONE
 
-hi SpellBad ctermfg=DarkRed ctermbg=NONE cterm=NONE
-hi SpellCap ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi SpellRare ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi SpellBad   ctermfg=DarkRed ctermbg=NONE cterm=NONE
+hi SpellCap   ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi SpellRare  ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 hi SpellLocal ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 
 " LSP
@@ -144,9 +144,9 @@ hi! link DiagnosticError DiagnosticInfo
 hi! link DiagnosticError DiagnosticHint
 
 hi DiagnosticSignError ctermfg=DarkRed ctermbg=NONE cterm=NONE
-hi DiagnosticSignWarn ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi DiagnosticSignInfo ctermfg=DarkCyan ctermbg=NONE cterm=NONE
-hi DiagnosticSignHint ctermfg=DarkCyan ctermbg=NONE cterm=NONE
+hi DiagnosticSignWarn  ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi DiagnosticSignInfo  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
+hi DiagnosticSignHint  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
 
 " JSON
 hi! link jsonKeyword Normal
@@ -158,6 +158,7 @@ hi! link vimHiAttrib Normal
 hi! link cssVendor Normal
 
 " Git
-hi diffLine    ctermfg=LightGrey ctermbg=NONE cterm=NONE
-hi diffAdded   ctermfg=DarkGreen ctermbg=NONE cterm=NONE
-hi diffRemoved ctermfg=DarkRed   ctermbg=NONE cterm=NONE
+hi diffLine          ctermfg=LightGrey ctermbg=NONE cterm=NONE
+hi diffAdded         ctermfg=DarkGreen ctermbg=NONE cterm=NONE
+hi diffRemoved       ctermfg=DarkRed   ctermbg=NONE cterm=NONE
+hi gitcommitOverflow ctermfg=DarkRed   ctermbg=NONE cterm=NONE
