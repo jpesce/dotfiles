@@ -130,8 +130,8 @@ export NVM_DIR="$HOME/.nvm"
 # - Install nvm if not currently installed
 # - Upgrade nvm without losing node versions with `nvm upgrade`
 # - Only load nvm when using nvm or its installed packages or nvim (for js lsp)
-export NVM_LAZY=true
-export NVM_LAZY_CMD=(nvim vtex)
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd nvim vtex browser-sync
 source $ZDOTDIR/plugins/ohmyzsh/plugins/nvm/nvm.plugin.zsh
 # }}}
 
@@ -160,11 +160,15 @@ alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launc
 
 # Convert mov to gif
 function movtogif () {
-  tempfile=.mov-to-gif-$(date +"%s").png
-  ffmpeg -v quiet -i $1 -vf "scale=iw*.5:ih*.5" "${1%.mov}-resized.mov"
-  ffmpeg -v quiet -stats -y -i "${1%.mov}-resized.mov" -vf fps=10,palettegen $tempfile
-  ffmpeg -v quiet -stats -i "${1%.mov}-resized.mov" -i $tempfile -filter_complex "fps=10,paletteuse" "${1%.mov}.gif"
-  rm $tempfile "${1%.mov}-resized.mov"
+  local width=${2:-720}
+  local filename="${1%.*}"
+  local extension="${1##*.}"
+
+  palette_file="${filename}-palette.png"
+  ffmpeg -v quiet -i $1 -vf "scale=-2:${width}" "${filename}-resized.mov"
+  ffmpeg -v quiet -stats -y -i "${filename}-resized.mov" -vf fps=10,palettegen $palette_file
+  ffmpeg -v quiet -stats -i "${filename}-resized.mov" -i $palette_file -filter_complex "fps=10,paletteuse" "${filename}.gif"
+  rm $palette_file "${filename}-resized.mov"
 }
 
 # Go to project's git root
