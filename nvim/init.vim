@@ -35,7 +35,6 @@ nnoremap <silent> <A-l> :TmuxNavigateRight<CR>
 
 " Fairly sensible Defaults {{{
 set splitright splitbelow " Defaults splitting to the right and below
-set hidden                " Buffers are only hidden - not closed - when leaving them
 set lazyredraw            " Don't update the display when running macros
 set path+=**              " Add project's directories to path to make it easy to :find files
 set clipboard=unnamed     " Yanking, deleting and pasting work with the clipboard
@@ -49,12 +48,14 @@ colorscheme essential
 packadd vim-buftabline
 " Show modified flag
 let g:buftabline_indicators = 1
-" Only show if there are more than one open buffer
+" Only show if there is more than one open buffer
 let g:buftabline_show = 1
+
 " Show relative line numbers except for the current line
 set relativenumber number
 " Cursor always in the middle
 set scrolloff=1000
+
 " Hide vim intro
 set shortmess+=I
 
@@ -62,8 +63,32 @@ set shortmess+=I
 set fillchars+=vert:│
 set fillchars+=stl:\ ,stlnc:\  " Hide status line fill
 
+" Statuscolumn
+" 1. Relative line number or actual line number if we're in the current line
+" 2. Sign column
+" 3. Caret right if fold is open, caret down if fold is closed
+let &statuscolumn='%=%{line(".") == v:lnum ? v:lnum : v:relnum}%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "▶ " : "▼ ") : "  " }'
+
 " Statusline
 source $HOME/.config/nvim/init/statusline.vim
+" }}}
+
+" Folding {{{
+set foldmethod=syntax
+" Start unfolded
+set foldlevelstart=99
+
+" Commenting because foldcolumn behavior currently being set by statuscolumn
+" Show fold column with only the fold indicator
+" set foldcolumn=1
+" set fillchars+=foldclose:▸,foldopen:▾,foldsep:\  " Hide fold separators on fold column
+
+" Folds are displayed with only the line content and the fill chars
+let FoldText = { -> getline(v:foldstart) . ' '  }
+set foldtext=FoldText()
+set fillchars+=fold:─  " Fold characters after fold text
+" Waiting for this PR to highlight folded lines:
+" https://github.com/neovim/neovim/pull/20750
 " }}}
 
 " Backup {{{
@@ -125,23 +150,6 @@ vno < <gv
 set textwidth=80
 " Don't automatically break text upon reaching it. Use `gq` where and when needed.
 set formatoptions-=t
-" }}}
-
-" Folding {{{
-set foldmethod=syntax
-" Start unfolded
-set foldlevelstart=99
-
-" " Show fold column with only the fold indicator
-" set foldcolumn=1
-" set fillchars+=foldclose:▸,foldopen:▾,foldsep:\  " Hide fold separators on fold column
-" Waiting for this [PR](https://github.com/neovim/neovim/pull/17446) to hide the
-" digits as well
-
-" Folds are displayed with only the line content and the fill chars
-let FoldText = { -> getline(v:foldstart) . ' '  }
-set foldtext=FoldText()
-set fillchars+=fold:─  " Fold characters after fold text
 " }}}
 
 " Grep {{{

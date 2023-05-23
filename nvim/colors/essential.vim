@@ -98,7 +98,7 @@ hi WarningMsg ctermfg=DarkYellow ctermbg=NONE cterm=NONE
 hi! link RedrawDebugClear WarningMsg
 
 hi! link Question WarningMsg
-hi Todo ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi Todo ctermfg=White ctermbg=NONE cterm=bold
 
 hi Search    ctermfg=DarkYellow ctermbg=Black cterm=NONE
 hi IncSearch ctermfg=Black ctermbg=DarkYellow cterm=NONE
