@@ -23,7 +23,10 @@ augroup END
 " Leave only current (B)uffer open
 nnoremap <Leader>B :%bd<bar>e#<bar>bd#<CR>
 
-" Navigate tmux panes and vim splits with <Opt-hjkl> (aka Alt aka Meta)
+" Paste in visual mode without changing the clipboard
+xnoremap <Leader>p "_dP
+
+" Navigate tmux panes and vim splits with <Opt-hjkl>
 packadd vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 
@@ -67,7 +70,7 @@ set fillchars+=stl:\ ,stlnc:\  " Hide status line fill
 " 1. Relative line number or actual line number if we're in the current line
 " 2. Sign column
 " 3. Caret right if fold is open, caret down if fold is closed
-let &statuscolumn='%=%{line(".") == v:lnum ? v:lnum : v:relnum}%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "▶ " : "▼ ") : "  " }'
+let &statuscolumn='%s%=%{line(".") == v:lnum ? v:lnum : v:relnum}%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "▾ " : "▸ ") : "  " }'
 
 " Statusline
 source $HOME/.config/nvim/init/statusline.vim
