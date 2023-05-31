@@ -2,7 +2,7 @@
 " Author:       João Pesce <joao@pesce.cc>
 " Maintainer:   João Pesce <joao@pesce.cc>
 " License:      Vim License (see `:help license`)
-" Last Updated: Mon Jul  5 09:18:33 2021
+" Last Updated: Wed May 31 20:21:29 2023
 
 set background=dark
 
@@ -10,18 +10,18 @@ hi clear
 let g:colors_name = 'essential2'
 
 " Custom group definitions to reuse by linking
-hi Accent           ctermfg=16        ctermbg=NONE  cterm=NONE
-hi AccentInverted   ctermfg=Black     ctermbg=16    cterm=NONE
+hi Accent           ctermfg=16         ctermbg=NONE   cterm=NONE
+hi AccentInverted   ctermfg=Black      ctermbg=16     cterm=NONE
 
-hi Default          ctermfg=White     ctermbg=NONE  cterm=NONE
-hi DefaultInverted  ctermfg=Black     ctermbg=White cterm=NONE
-hi DefaultBold      ctermfg=White     ctermbg=NONE  cterm=bold
-hi DefaultItalic    ctermfg=White     ctermbg=NONE  cterm=italic
+hi Default          ctermfg=White      ctermbg=NONE   cterm=NONE
+hi DefaultInverted  ctermfg=Black      ctermbg=White  cterm=NONE
+hi DefaultBold      ctermfg=White      ctermbg=NONE   cterm=bold
+hi DefaultItalic    ctermfg=White      ctermbg=NONE   cterm=italic
 
-hi Secondary        ctermfg=LightGrey ctermbg=NONE  cterm=NONE
-hi Tertiary         ctermfg=8         ctermbg=NONE  cterm=NONE
+hi Secondary        ctermfg=LightGrey  ctermbg=NONE   cterm=NONE
+hi Tertiary         ctermfg=8          ctermbg=NONE   cterm=NONE
 
-hi BG1              ctermfg=NONE ctermbg=234 cterm=NONE
+hi Elevation        ctermfg=NONE       ctermbg=234    cterm=NONE
 
 hi Reverse          cterm=reverse
 
@@ -66,9 +66,9 @@ hi! link Delimiter Satatement
 hi! link SatatementComment Satatement
 hi! link Debug Satatement
 
-hi! link PMenu BG1
+hi! link PMenu Elevation
 hi! link PMenuSel Reverse
-hi! link PMenuSbar BG1
+hi! link PMenuSbar Elevation
 hi PMenuThumb ctermfg=NONE ctermbg=LightGray cterm=NONE
 hi! link WildMenu PMenuSel
 
@@ -115,7 +115,7 @@ hi! link CursorLineNR LineNr
 hi! link SignColumn LineNr
 hi! link FoldColumn LineNr
 
-hi! link Visual BG1
+hi! link Visual Elevation
 hi! link CursorLine Visual
 hi! link CursorColumn Visual
 hi! link ColorColumn Visual
