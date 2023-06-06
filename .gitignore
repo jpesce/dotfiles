@@ -1,7 +1,9 @@
 .DS_Store
 
-vim/undo-history
-vim/.netrwhist
+nvim/undo-history
+nvim/.netrwhist
+nvim/pack
+nvim/plugin
 
 zsh/.zsh/.zsh_history
 zsh/.zsh/.zcompcache

@@ -7,21 +7,22 @@
 set background=dark
 
 hi clear
-let g:colors_name = 'essential2'
+let g:colors_name = 'essential'
 
 " Custom group definitions to reuse by linking
-hi Accent           ctermfg=16         ctermbg=NONE   cterm=NONE
-hi AccentInverted   ctermfg=Black      ctermbg=16     cterm=NONE
+hi Accent           ctermfg=16          ctermbg=NONE   cterm=NONE
+hi AccentInverted   ctermfg=Black       ctermbg=16     cterm=NONE
 
-hi Default          ctermfg=White      ctermbg=NONE   cterm=NONE
-hi DefaultInverted  ctermfg=Black      ctermbg=White  cterm=NONE
-hi DefaultBold      ctermfg=White      ctermbg=NONE   cterm=bold
-hi DefaultItalic    ctermfg=White      ctermbg=NONE   cterm=italic
+hi Default          ctermfg=White       ctermbg=NONE   cterm=NONE
+hi DefaultInverted  ctermfg=Black       ctermbg=White  cterm=NONE
+hi DefaultBold      ctermfg=White       ctermbg=NONE   cterm=bold
+hi DefaultItalic    ctermfg=White       ctermbg=NONE   cterm=italic
 
-hi Secondary        ctermfg=LightGrey  ctermbg=NONE   cterm=NONE
-hi Tertiary         ctermfg=8          ctermbg=NONE   cterm=NONE
+hi Secondary        ctermfg=LightGrey   ctermbg=NONE   cterm=NONE
+hi Tertiary         ctermfg=8           ctermbg=NONE   cterm=NONE
 
-hi Elevation        ctermfg=NONE       ctermbg=234    cterm=NONE
+hi Depth            ctermfg=NONE        ctermbg=232
+hi Elevation        ctermfg=NONE        ctermbg=234    cterm=NONE
 
 hi Reverse          cterm=reverse
 
@@ -121,8 +122,8 @@ hi! link CursorColumn Visual
 hi! link ColorColumn Visual
 hi! link QuickFixLine Visual
 
+hi! link Folded Default
 hi MatchParen ctermfg=NONE ctermbg=NONE cterm=underline
-hi Folded     ctermfg=NONE ctermbg=NONE cterm=NONE
 hi MoreMsg    ctermfg=DarkGreen ctermbg=NONE cterm=NONE
 hi Directory  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
 hi Underlined ctermfg=DarkCyan ctermbg=NONE cterm=underline

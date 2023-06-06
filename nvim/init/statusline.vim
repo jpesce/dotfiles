@@ -1,7 +1,9 @@
+set fillchars+=stl:\ ,stlnc:\  " Don't fill statusline with chars
+
 " Show only one statusline for the whole window
 set laststatus=3
 
-" Status line is filename and line:column
+" Status line shows filename and line:column
 function! Statusline() abort
   let l:statusline ='%#StatusLine#'
   let l:statusline.=' %f %m '

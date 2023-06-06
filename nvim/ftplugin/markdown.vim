@@ -14,7 +14,7 @@ endfunction
 setlocal foldmethod=expr
 setlocal foldexpr=MarkdownFolds()
 
-" Add c surround movement. For example:
+" Add c surround movement for code blocks. For example:
 " V to select line
 " S to start surround
 " c to add code block signs around it (``` ```)

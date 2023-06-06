@@ -1,5 +1,3 @@
-" Use FZF for fuzzy finding
-packadd fzf.vim
 set rtp+=/usr/local/opt/fzf
 
 if exists('$TMUX')
@@ -51,7 +49,7 @@ nno <silent> <Leader>s :BLines<CR>
 let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!{.git,tags,**/node_modules}' "
 " }}}
 
-" Project grep {{{
+" Grep {{{
 " Ripgrep options
 let g:fuzzyfinder#rg_command ="rg --column --line-number --no-heading "
 let g:fuzzyfinder#rg_command.="--smart-case --hidden --glob '!{.git,tags,**/node_modules}' "
