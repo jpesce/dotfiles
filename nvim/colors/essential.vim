@@ -10,45 +10,42 @@ hi clear
 let g:colors_name = 'essential'
 
 " Custom group definitions to reuse by linking
-hi Accent           ctermfg=16          ctermbg=NONE   cterm=NONE
-hi AccentInverted   ctermfg=Black       ctermbg=16     cterm=NONE
+hi Accent           ctermfg=16          ctermbg=NONE    cterm=NONE
+hi AccentInverted   ctermfg=Black       ctermbg=16      cterm=NONE
 
-hi Default          ctermfg=White       ctermbg=NONE   cterm=NONE
-hi DefaultInverted  ctermfg=Black       ctermbg=White  cterm=NONE
-hi DefaultBold      ctermfg=White       ctermbg=NONE   cterm=bold
-hi DefaultItalic    ctermfg=White       ctermbg=NONE   cterm=italic
+hi Default          ctermfg=White       ctermbg=NONE    cterm=NONE
+hi DefaultInverted  ctermfg=Black       ctermbg=White   cterm=NONE
+hi DefaultBold      ctermfg=White       ctermbg=NONE    cterm=bold
+hi DefaultItalic    ctermfg=White       ctermbg=NONE    cterm=italic
 
-hi Secondary        ctermfg=LightGrey   ctermbg=NONE   cterm=NONE
-hi Tertiary         ctermfg=8           ctermbg=NONE   cterm=NONE
+hi Secondary        ctermfg=LightGrey   ctermbg=NONE    cterm=NONE
+hi Tertiary         ctermfg=8           ctermbg=NONE    cterm=NONE
 
 hi Depth            ctermfg=NONE        ctermbg=232
-hi Elevation        ctermfg=NONE        ctermbg=234    cterm=NONE
+hi Elevation        ctermfg=NONE        ctermbg=234     cterm=NONE
 
 hi Reverse          cterm=reverse
 
+hi Terminal         ctermfg=LightGrey   ctermbg=Black   cterm=NONE
 
-hi Terminal ctermfg=LightGrey ctermbg=Black cterm=NONE
-
-hi Normal ctermfg=NONE ctermbg=NONE cterm=NONE
+hi Normal           ctermfg=NONE        ctermbg=NONE    cterm=NONE
 hi! link StorageClass Normal
 hi! link Structure Normal
 hi! link Typedef Normal
 hi! link Identifier Normal
 hi! link Function Normal
-hi! link Constant Normal
 hi! link Type Normal
 
-hi Comment ctermfg=LightGrey ctermbg=NONE cterm=NONE
-
-hi! link Constant DefaultItalic
-hi! link Float Constant
-hi! link Number Constant
-hi! link Character Constant
+hi Comment          ctermfg=LightGrey   ctermbg=NONE    cterm=NONE
 
 hi! link String Accent
 hi! link Boolean String
+hi! link Float String
+hi! link Number String
+hi! link Character String
 
 hi! link Statement DefaultBold
+hi! link Constant Statement
 hi! link Conditional Statement
 hi! link Repeat Statement
 hi! link Label Statement
@@ -123,20 +120,20 @@ hi! link ColorColumn Visual
 hi! link QuickFixLine Visual
 
 hi! link Folded Default
-hi MatchParen ctermfg=NONE ctermbg=NONE cterm=underline
-hi MoreMsg    ctermfg=DarkGreen ctermbg=NONE cterm=NONE
-hi Directory  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
-hi Underlined ctermfg=DarkCyan ctermbg=NONE cterm=underline
+hi MatchParen ctermfg=NONE        ctermbg=NONE cterm=underline
+hi MoreMsg    ctermfg=DarkGreen   ctermbg=NONE cterm=NONE
+hi Directory  ctermfg=DarkCyan    ctermbg=NONE cterm=NONE
+hi Underlined ctermfg=DarkCyan    ctermbg=NONE cterm=underline
 
-hi DiffAdd    ctermfg=DarkGreen ctermbg=NONE cterm=NONE
-hi DiffChange ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi DiffText   ctermfg=Black ctermbg=DarkYellow cterm=NONE
-hi DiffDelete ctermfg=DarkRed ctermbg=NONE cterm=NONE
+hi DiffAdd    ctermfg=DarkGreen   ctermbg=NONE cterm=NONE
+hi DiffChange ctermfg=DarkYellow  ctermbg=NONE cterm=NONE
+hi DiffText   ctermfg=Black       ctermbg=DarkYellow cterm=NONE
+hi DiffDelete ctermfg=DarkRed     ctermbg=NONE cterm=NONE
 
-hi SpellBad   ctermfg=DarkRed ctermbg=NONE cterm=NONE
-hi SpellCap   ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi SpellRare  ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi SpellLocal ctermfg=DarkYellow ctermbg=NONE cterm=NONE
+hi SpellBad   ctermfg=DarkRed     ctermbg=NONE cterm=NONE
+hi SpellCap   ctermfg=DarkYellow  ctermbg=NONE cterm=NONE
+hi SpellRare  ctermfg=DarkYellow  ctermbg=NONE cterm=NONE
+hi SpellLocal ctermfg=DarkYellow  ctermbg=NONE cterm=NONE
 
 " LSP
 hi DiagnosticError ctermfg=LightGrey ctermbg=NONE cterm=NONE
@@ -144,10 +141,10 @@ hi! link DiagnosticError DiagnosticWarn
 hi! link DiagnosticError DiagnosticInfo
 hi! link DiagnosticError DiagnosticHint
 
-hi DiagnosticSignError ctermfg=DarkRed ctermbg=NONE cterm=NONE
+hi DiagnosticSignError ctermfg=DarkRed    ctermbg=NONE cterm=NONE
 hi DiagnosticSignWarn  ctermfg=DarkYellow ctermbg=NONE cterm=NONE
-hi DiagnosticSignInfo  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
-hi DiagnosticSignHint  ctermfg=DarkCyan ctermbg=NONE cterm=NONE
+hi DiagnosticSignInfo  ctermfg=DarkCyan   ctermbg=NONE cterm=NONE
+hi DiagnosticSignHint  ctermfg=DarkCyan   ctermbg=NONE cterm=NONE
 
 " JSON
 hi! link jsonKeyword Normal

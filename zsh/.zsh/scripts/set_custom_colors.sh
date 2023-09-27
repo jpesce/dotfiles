@@ -49,7 +49,10 @@ put_template 254 "c4/c4/c4"
 put_template 255 "cc/cc/cc"
 
 # Add accent color to color 16
-put_template 16 "92/b6/b1" # Pale Aqua
+# put_template 16 "ed/75/47" # Bright orange
+put_template 16 "4f/94/e1" # Blue
+# put_template 16 "5f/b7/f8" # Bright blue/cyan
+# put_template 16 "92/b6/b1" # Pale Aqua
 # put_template 16  "72/de/c2" # Nataniev sea-foam aqua
 # put_template 16 "b0/ba/95" # Pale Green
 # put_template 16 "8a/b8/98" # Green

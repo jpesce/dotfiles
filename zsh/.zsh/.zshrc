@@ -80,7 +80,7 @@ HISTSIZE=20000
 
 # Visual {{{
 # Set a custom accent color on color code 16
-$ZDOTDIR/scripts/set_accent_color.sh
+$ZDOTDIR/scripts/set_custom_colors.sh
 # Set theme
 source $ZDOTDIR/themes/essential/essential.zsh-theme
 
@@ -200,7 +200,7 @@ alias sd='cd $(find * -type d 2>/dev/null | fzf)'
 # Search and go to projects
 function projects() {
   directory=$(\
-    find ~/Projects ~/Projects/oficina ~/Projects/simples ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
+    find ~/Projects ~/Projects/oficina ~/Projects/simples ~/Projects/arco ~/Projects/vtex ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
     sort | uniq |\
     fzf-tmux -p 80,85% --prompt='Project ❯ '\
   )

@@ -53,7 +53,7 @@ let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!{.git,tags,**/no
 " Ripgrep options
 let g:fuzzyfinder#rg_command ="rg --column --line-number --no-heading "
 let g:fuzzyfinder#rg_command.="--smart-case --hidden --glob '!{.git,tags,**/node_modules}' "
-let g:fuzzyfinder#rg_command.="--color=always --colors 'column:fg:white' --colors 'line:fg:white' --colors 'path:fg:green' --colors 'match:fg:black' --colors 'match:bg:15' "
+let g:fuzzyfinder#rg_command.="--color=always --colors 'column:fg:white' --colors 'line:fg:white' --colors 'path:fg:7' --colors 'match:fg:black' --colors 'match:bg:16' "
 
 " :Rg
 " Disable regex
