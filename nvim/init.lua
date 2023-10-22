@@ -16,7 +16,7 @@ require "tabs"
 require "fold"
 require "statusline"
 
-packer.use "junegunn/fzf.vim"
+packer.use { "junegunn/fzf.vim", requires = { 'junegunn/fzf', run = ':call fzf#install()' } }
 vim.cmd("source $HOME/.config/nvim/init/fuzzyfinder.vim")
 require "tree-sitter"
 require "lsp"
