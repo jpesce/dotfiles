@@ -125,7 +125,7 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export NVM_DIR="$HOME/.nvm"
 
 # Dumb loading (use this instead of the plugin if any problem arises):
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 # zsh-nvm plugin
 # - Install nvm if not currently installed
