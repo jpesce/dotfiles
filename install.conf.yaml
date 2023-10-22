@@ -46,5 +46,5 @@
     - ~/.vim/undo-history
 
 - shell:
-    # enable italics for iterm
-    - [iterm2/enable-italics.sh]
+    - [iterm2/enable-italics.sh, Enabling italics for iTerm]
+    - [git submodule update --init --recursive, Installing submodules]
