@@ -1,4 +1,4 @@
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/bin/fzf
 
 if exists('$TMUX')
   " Use tmux popup if possible
