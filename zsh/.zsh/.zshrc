@@ -124,16 +124,16 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # Node {{{
 export NVM_DIR="$HOME/.nvm"
 
-# Dumb loading (use this instead of the plugin if any problem arises):
-# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# Load nvm asynchronously
+source $ZDOTDIR/plugins/zsh-async/async.zsh
 
-# zsh-nvm plugin
-# - Install nvm if not currently installed
-# - Upgrade nvm without losing node versions with `nvm upgrade`
-# - Only load nvm when using nvm or its installed packages or nvim (for js lsp)
-zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd nvim vtex browser-sync
-source $ZDOTDIR/plugins/ohmyzsh/plugins/nvm/nvm.plugin.zsh
+function load_nvm() {
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+}
+
+async_start_worker nvm_worker -n
+async_register_callback nvm_worker load_nvm
+async_job nvm_worker sleep 0.1
 # }}}
 
 # Aliases {{{
@@ -201,7 +201,7 @@ alias sd='cd $(find * -type d 2>/dev/null | fzf)'
 # Search and go to projects
 function projects() {
   directory=$(\
-    find ~/Projects ~/Projects/oficina ~/Projects/simples ~/Projects/arco ~/Projects/vtex ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d |\
+    find ~/Projects ~/Projects/oficina ~/Projects/simples ~/Projects/arco ~/Projects/vtex ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d 2> /dev/null |\
     sort | uniq |\
     fzf-tmux -p 80,85% --prompt='Project ❯ '\
   )
