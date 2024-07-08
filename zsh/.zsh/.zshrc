@@ -114,7 +114,7 @@ ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 
 # Paths {{{
 # Homebrew sbin
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 # Use homebrew open SSL instead of libressl
 export PATH=/usr/local/opt/openssl/bin:$PATH
