@@ -2,8 +2,8 @@
 
 # ---- Override the local entry for xterm-256color
 # https://eddieantonio.ca/blog/2015/04/16/iterm-italics/
-# Only affects your machine so remote machines won’t display italics. WARNING:
-# you might have a problem sshing into your Mac.
+# Only affects local machine so remote machines still won’t be able to display italics.
+# WARN: might have a problem sshing into your Mac.
 infocmp xterm-256color > /tmp/xterm-256color.terminfo
 printf '\tsitm=\\E[3m, ritm=\\E[23m,\n' >> /tmp/xterm-256color.terminfo
 tic /tmp/xterm-256color.terminfo
