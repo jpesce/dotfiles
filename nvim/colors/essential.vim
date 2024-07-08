@@ -2,14 +2,14 @@
 " Author:       João Pesce <joao@pesce.cc>
 " Maintainer:   João Pesce <joao@pesce.cc>
 " License:      Vim License (see `:help license`)
-" Last Updated: Wed May 31 20:21:29 2023
+" Last Updated: Tue Mar 12 18:57:10 2024
 
 set background=dark
 
 hi clear
 let g:colors_name = 'essential'
 
-" Custom group definitions to reuse by linking
+" Custom groups to reuse by linking
 hi Accent           ctermfg=16          ctermbg=NONE    cterm=NONE
 hi AccentInverted   ctermfg=Black       ctermbg=16      cterm=NONE
 
@@ -19,13 +19,16 @@ hi DefaultBold      ctermfg=White       ctermbg=NONE    cterm=bold
 hi DefaultItalic    ctermfg=White       ctermbg=NONE    cterm=italic
 
 hi Secondary        ctermfg=LightGrey   ctermbg=NONE    cterm=NONE
-hi Tertiary         ctermfg=8           ctermbg=NONE    cterm=NONE
+hi SecondaryItalic  ctermfg=LightGrey   ctermbg=NONE    cterm=italic
 
-hi Depth            ctermfg=NONE        ctermbg=232
+hi Tertiary         ctermfg=8           ctermbg=NONE    cterm=NONE
+hi TertiaryItalic   ctermfg=8           ctermbg=NONE    cterm=italic
+
 hi Elevation        ctermfg=NONE        ctermbg=234     cterm=NONE
 
 hi Reverse          cterm=reverse
 
+" Color scheme
 hi Terminal         ctermfg=LightGrey   ctermbg=Black   cterm=NONE
 
 hi Normal           ctermfg=NONE        ctermbg=NONE    cterm=NONE
@@ -36,7 +39,7 @@ hi! link Identifier Normal
 hi! link Function Normal
 hi! link Type Normal
 
-hi Comment          ctermfg=LightGrey   ctermbg=NONE    cterm=NONE
+hi! link Comment Tertiary
 
 hi! link String Accent
 hi! link Boolean String
@@ -44,7 +47,7 @@ hi! link Float String
 hi! link Number String
 hi! link Character String
 
-hi! link Statement DefaultBold
+hi! link Statement Secondary
 hi! link Constant Statement
 hi! link Conditional Statement
 hi! link Repeat Statement
@@ -136,10 +139,12 @@ hi SpellRare  ctermfg=DarkYellow  ctermbg=NONE cterm=NONE
 hi SpellLocal ctermfg=DarkYellow  ctermbg=NONE cterm=NONE
 
 " LSP
-hi DiagnosticError ctermfg=LightGrey ctermbg=NONE cterm=NONE
-hi! link DiagnosticError DiagnosticWarn
-hi! link DiagnosticError DiagnosticInfo
-hi! link DiagnosticError DiagnosticHint
+hi! link DiagnosticError Tertiary
+
+hi! link DiagnosticVirtualTextError Tertiary
+hi! link DiagnosticVirtualTextWarn  Tertiary
+hi! link DiagnosticVirtualTextInfo  Tertiary
+hi! link DiagnosticVirtualTextHint  Tertiary
 
 hi DiagnosticSignError ctermfg=DarkRed    ctermbg=NONE cterm=NONE
 hi DiagnosticSignWarn  ctermfg=DarkYellow ctermbg=NONE cterm=NONE
@@ -160,3 +165,14 @@ hi diffLine          ctermfg=LightGrey ctermbg=NONE cterm=NONE
 hi diffAdded         ctermfg=DarkGreen ctermbg=NONE cterm=NONE
 hi diffRemoved       ctermfg=DarkRed   ctermbg=NONE cterm=NONE
 hi gitcommitOverflow ctermfg=DarkRed   ctermbg=NONE cterm=NONE
+
+" Telescope
+hi! link TelescopeBorder Tertiary
+
+" Mini tabline
+hi! link MiniTablineCurrent         Normal
+hi! link MiniTablineVisible         Tertiary
+hi! link MiniTablineHidden          Tertiary
+hi! link MiniTablineModifiedCurrent DefaultItalic
+hi! link MiniTablineModifiedVisible TertiaryItalic
+hi! link MiniTablineModifiedHidden  TertiaryItalic
