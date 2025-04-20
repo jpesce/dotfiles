@@ -115,10 +115,8 @@ ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 # Paths {{{
 # Homebrew sbin
 export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
-# Use homebrew open SSL instead of libressl
-export PATH=/usr/local/opt/openssl/bin:$PATH
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+# pipx binaries
+export PATH="$HOME/.local/bin:$PATH"
 # }}}
 
 # Node {{{
@@ -134,6 +132,11 @@ function load_nvm() {
 async_start_worker nvm_worker -n
 async_register_callback nvm_worker load_nvm
 async_job nvm_worker sleep 0.1
+# }}}
+
+# ASDF {{{
+# General purpose version manager
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 # }}}
 
 # Aliases {{{
