@@ -104,6 +104,7 @@ return {
         gopls = {},
         tailwindcss = {},
         cssls = {},
+        -- solargraph = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -155,11 +156,11 @@ return {
         documentRangeFormattingProvider = false,
       }
       tsserver_capabilities = vim.tbl_deep_extend('force', {}, capabilities, tsserver_capabilities or {})
-      nvim_lspconfig.tsserver.setup {
-        root_dir = nvim_lspconfig.util.root_pattern 'package.json',
-        capabilities = tsserver_capabilities,
-        single_file_support = false,
-      }
+      -- nvim_lspconfig.tsserver.setup {
+      --   root_dir = nvim_lspconfig.util.root_pattern 'package.json',
+      --   capabilities = tsserver_capabilities,
+      --   single_file_support = false,
+      -- }
       nvim_lspconfig.denols.setup {
         root_dir = nvim_lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
         capabilities = capabilities,

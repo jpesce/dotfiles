@@ -22,18 +22,19 @@ require('lazy').setup({
       require('which-key').setup()
 
       -- Normal mode
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]iagnostic', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-        ['<leader>l'] = { name = '[L]ist', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>c', group = '[C]ode' },
+        { '<leader>d', group = '[D]iagnostic' },
+        { '<leader>g', group = '[G]it' },
+        { '<leader>l', group = '[L]ist' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>w', group = '[W]orkspace' },
       }
       -- Visual mode
-      require('which-key').register({
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-      }, { mode = 'v' })
+      require('which-key').add {
+        { '<leader>s', group = '[S]earch', mode = 'v' },
+        { '<leader>s_', hidden = true, mode = 'v' },
+      }
     end,
   },
 
@@ -170,6 +171,10 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      -- Go forward/backward with square brackets
+      --
+      -- - [B [b ]b ]B - Buffer
+      -- - [D [d ]d ]D - Diagnostic
       require('mini.bracketed').setup()
 
       -- Show buffers in tabline
