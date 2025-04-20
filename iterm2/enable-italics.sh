@@ -5,7 +5,7 @@
 # Only affects local machine so remote machines still won’t be able to display italics.
 # WARN: might have a problem sshing into your Mac.
 infocmp xterm-256color > /tmp/xterm-256color.terminfo
-printf '\tsitm=\\E[3m, ritm=\\E[23m,\n' >> /tmp/xterm-256color.terminfo
+# printf '\tsitm=\\E[3m, ritm=\\E[23m,\n' >> /tmp/xterm-256color.terminfo
 tic /tmp/xterm-256color.terminfo
 
 # Or if you prefere to create a new terminfo and have an ssh alias:
