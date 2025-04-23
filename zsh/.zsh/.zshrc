@@ -1,3 +1,10 @@
+# Paths {{{
+# Homebrew sbin
+export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
+# pipx binaries
+export PATH="$HOME/.local/bin:$PATH"
+# }}}
+
 # Sensible defaults {{{
 # Use colors on zsh commands by name instead of color code
 autoload colors && colors
@@ -59,6 +66,7 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 # ^[ cancel completion
 bindkey -M menuselect '^[' undo
 
+fpath+=("$(brew --prefix asdf)/share/zsh/site-functions")
 autoload -Uz compinit
 # Only check the cached .zcompdump once a day
 # https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206
@@ -112,12 +120,6 @@ ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 # }}}
 
-# Paths {{{
-# Homebrew sbin
-export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
-# pipx binaries
-export PATH="$HOME/.local/bin:$PATH"
-# }}}
 
 # Node {{{
 export NVM_DIR="$HOME/.nvm"
@@ -135,8 +137,8 @@ async_job nvm_worker sleep 0.1
 # }}}
 
 # ASDF {{{
-# General purpose version manager
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# General purpose tool/runtime version manager
+. "$(brew --prefix asdf)/libexec/asdf.sh"
 # }}}
 
 # Aliases {{{
@@ -147,7 +149,7 @@ alias cd..='cd ..'
 alias c='clear'
 alias grep='grep  --color=auto'
 
-alias vim='nvim'
+alias cvim='nvim --clean'
 
 # LS Colors (see: https://gist.github.com/thomd/7667642)
 # Directory -> color 16 (custom accent color)
@@ -155,6 +157,8 @@ LS_COLORS='fi=0:di=01;38;5;16:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ow=31:ex=1'
 export LS_COLORS
 
 # Use coreutils ls (gls)
+# alias l='ls -h'
+# alias ll='ls -lah'
 alias ls='gls --color --human-readable --group-directories-first --literal'
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
