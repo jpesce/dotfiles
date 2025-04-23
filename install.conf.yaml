@@ -24,6 +24,14 @@
     ~/.config/nvim:
       path: nvim
       force: false
+    # nvim app
+    /Applications/nvim.app:
+      path: nvim/nvim.app
+      force: false
+    # vim app
+    /Applications/vim.app:
+      path: nvim/vim.app
+      force: false
     # git
     ~/.gitconfig:
       path: git/.gitconfig
