@@ -59,6 +59,11 @@ return {
           --  See `:help K` for why this keymap
           map('K', vim.lsp.buf.hover, 'Loo[K]up Documentation')
 
+          -- Diagnostic configurations
+          vim.diagnostic.config {
+            virtual_text = true,
+          }
+
           -- Define signs
           local signs = {
             { name = 'DiagnosticSignError', text = '🞄' },
@@ -101,7 +106,7 @@ return {
             'json',
           },
         },
-        gopls = {},
+        -- gopls = {},
         tailwindcss = {},
         cssls = {},
         -- solargraph = {},
@@ -137,6 +142,8 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = {},
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}

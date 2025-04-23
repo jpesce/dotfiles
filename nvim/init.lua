@@ -3,7 +3,7 @@
 vim.g.mapleader = ' ' -- <space> as the leader key
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
-vim.opt.termguicolors = false
+vim.opt.termguicolors = false -- Use cterm colors
 vim.cmd.colorscheme 'essential'
 
 require 'options' -- Neovim options
