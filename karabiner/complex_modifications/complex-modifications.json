@@ -203,7 +203,7 @@
         ]
     },
     {
-      "description": "CTRL+ESC: ESC",
+      "description": "CTRL+ESC: ESC (For Keychron K7 that doesn't have a dedicated ESC key)",
         "manipulators": [
           {
             "type": "basic",
