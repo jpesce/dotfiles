@@ -39,10 +39,10 @@ local function get_line_number()
 
   -- Return a visual placeholder if line is wrapped
   if vim.v.virtnum ~= 0 then
-    return '-'
+    return ' '
   end
 
-  -- Get absolute lnum if is current line, else relnum
+  -- Get absolute line number if is current line or else get relative num
   cur_num = vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum
   cur_num = tostring(cur_num)
 
@@ -50,11 +50,32 @@ local function get_line_number()
 end
 
 local function get_signs()
-  local buffer = vim.api.nvim_win_get_buf(vim.g.statusline_winid)
+  local buffer = vim.api.nvim_win_get_buf(vim.api.nvim_get_current_win()) -- vim.api.nvim_win_get_buf(vim.g.statusline_winid)
+  local lnum = vim.v.lnum
 
-  return vim.tbl_map(function(sign)
-    return vim.fn.sign_getdefined(sign.name)[1]
-  end, vim.fn.sign_getplaced(buffer, { group = '*', lnum = vim.v.lnum })[1].signs)
+  local signs = {}
+  local extmarks = vim.api.nvim_buf_get_extmarks(buffer, -1, { lnum - 1, 0 }, { lnum - 1, -1 }, { details = true, type = 'sign' })
+  for _, extmark in pairs(extmarks) do
+    signs[#signs + 1] = {
+      name = extmark[4].sign_hl_group or '',
+      text = extmark[4].sign_text,
+      texthl = extmark[4].sign_hl_group,
+      priority = extmark[4].priority,
+    }
+  end
+
+  return signs
+end
+
+local function get_sign_from_name(signs, name)
+  local desired_sign
+  for _, sign in ipairs(signs) do
+    if sign.name:find(name) and desired_sign == nil then
+      desired_sign = sign
+    end
+  end
+
+  return desired_sign
 end
 
 -- Print sign
@@ -64,14 +85,9 @@ local function print_sign(sign)
 end
 
 vim.opt.number = false
-_G.get_statuscol = function()
-  local diag_sign
-  for _, sign_table in ipairs(get_signs()) do
-    if sign_table.name:find 'DiagnosticSign' and diag_sign == nil then
-      diag_sign = sign_table
-    end
-  end
+_G.render_statuscol = function()
+  local signs = get_signs()
 
-  return print_sign(diag_sign) .. get_line_number() .. ' ' .. get_fold(vim.v.lnum) .. ' '
+  return print_sign(get_sign_from_name(signs, 'DiagnosticSign')) .. get_line_number() .. ' ' .. get_fold(vim.v.lnum) .. ' '
 end
-vim.o.statuscolumn = '%!v:lua.get_statuscol()'
+vim.o.statuscolumn = '%!v:lua.render_statuscol()'
