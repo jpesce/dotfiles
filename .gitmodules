@@ -10,66 +10,6 @@
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
   ignore = dirty
-[submodule "nvim/pack/plugins/opt/vim-hilinks"]
-	path = nvim/pack/plugins/opt/vim-hilinks
-	url = https://github.com/kergoth/vim-hilinks
-[submodule "nvim/pack/plugins/opt/vim-matchup"]
-	path = nvim/pack/plugins/opt/vim-matchup
-	url = https://github.com/andymass/vim-matchup
-[submodule "nvim/pack/plugins/opt/vim-unimpaired"]
-	path = nvim/pack/plugins/opt/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-[submodule "nvim/pack/plugins/opt/vim-buftabline"]
-	path = nvim/pack/plugins/opt/vim-buftabline
-	url = https://github.com/ap/vim-buftabline
-[submodule "nvim/pack/plugins/opt/vim-fugitive"]
-	path = nvim/pack/plugins/opt/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "nvim/pack/plugins/opt/fzf.vim"]
-	path = nvim/pack/plugins/opt/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
-[submodule "nvim/pack/plugins/opt/vim-vinegar"]
-	path = nvim/pack/plugins/opt/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
-[submodule "nvim/pack/plugins/opt/vim-surround"]
-	path = nvim/pack/plugins/opt/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "nvim/pack/plugins/opt/vim-commentary"]
-	path = nvim/pack/plugins/opt/vim-commentary
-	url = https://github.com/tpope/vim-commentary
-[submodule "nvim/pack/plugins/opt/vim-eunuch"]
-	path = nvim/pack/plugins/opt/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch
-[submodule "nvim/pack/plugins/opt/vim-prj"]
-	path = nvim/pack/plugins/opt/vim-prj
-	url = https://github.com/emersonmx/vim-prj
-[submodule "nvim/pack/plugins/opt/vim-sonic-pi"]
-	path = nvim/pack/plugins/opt/vim-sonic-pi
-	url = https://github.com/lilyinstarlight/vim-sonic-pi
-[submodule "nvim/pack/plugins/opt/nvim-lspconfig"]
-	path = nvim/pack/plugins/opt/nvim-lspconfig
-	url = https://github.com/neovim/nvim-lspconfig
-[submodule "nvim/pack/plugins/opt/nvim-cmp"]
-	path = nvim/pack/plugins/opt/nvim-cmp
-	url = https://github.com/hrsh7th/nvim-cmp
-[submodule "nvim/pack/plugins/opt/cmp-nvim-lsp"]
-	path = nvim/pack/plugins/opt/cmp-nvim-lsp
-	url = https://github.com/hrsh7th/cmp-nvim-lsp
-[submodule "nvim/pack/plugins/opt/cmp-buffer"]
-	path = nvim/pack/plugins/opt/cmp-buffer
-	url = https://github.com/hrsh7th/cmp-buffer
-[submodule "nvim/pack/plugins/opt/cmp-path"]
-	path = nvim/pack/plugins/opt/cmp-path
-	url = https://github.com/hrsh7th/cmp-path
-[submodule "nvim/pack/plugins/opt/cmp-cmdline"]
-	path = nvim/pack/plugins/opt/cmp-cmdline
-	url = https://github.com/hrsh7th/cmp-cmdline
-[submodule "nvim/pack/plugins/opt/vim-tmux-navigator"]
-	path = nvim/pack/plugins/opt/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
-[submodule "nvim/pack/filetypes/opt/vim-polyglot"]
-	path = nvim/pack/filetypes/opt/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
 [submodule "zsh/.zsh/plugins/ohmyzsh"]
 	path = zsh/.zsh/plugins/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh
