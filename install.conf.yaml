@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      force: false
 
 - clean: ['~']
 
@@ -8,46 +9,38 @@
     # silence shell login message (Last Login: etc)
     ~/.hushlogin:
       path: hushlogin
-      force: false
     # zsh
     ~/.zshenv:
       path: zsh/.zshenv
-      force: false
     ~/.zsh:
       path: zsh/.zsh
-      force: false
     # tmux
     ~/.tmux.conf:
       path: tmux/.tmux.conf
-      force: false
     # nvim
     ~/.config/nvim:
       path: nvim
-      force: false
     # nvim app
     /Applications/nvim.app:
       path: nvim/nvim.app
-      force: false
     # vim app
     /Applications/vim.app:
       path: nvim/vim.app
-      force: false
     # git
     ~/.gitconfig:
       path: git/.gitconfig
-      force: false
     ~/.gitignore:
       path: git/.gitignore
-      force: false
     # universal ctags
     ~/.ctags.d:
       path: ctags
-      force: false
     # karabiner
     ~/.config/karabiner/assets/complex_modifications:
       path: karabiner/complex_modifications
       create: true
-      force: false
+    # homebrew backup file
+    ~/.brewfile:
+      path: homebrew/Brewfile
 
 - create:
     # vim
