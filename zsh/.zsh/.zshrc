@@ -120,7 +120,6 @@ ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 # }}}
 
-
 # Node {{{
 export NVM_DIR="$HOME/.nvm"
 
@@ -156,9 +155,7 @@ alias cvim='nvim --clean'
 LS_COLORS='fi=0:di=01;38;5;16:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ow=31:ex=1'
 export LS_COLORS
 
-# Use coreutils ls (gls)
-# alias l='ls -h'
-# alias ll='ls -lah'
+# Use coreutils ls (gls) (requires `brew install coreutils`)
 alias ls='gls --color --human-readable --group-directories-first --literal'
 alias l='gls --color --human-readable --group-directories-first --literal'
 alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
@@ -206,15 +203,15 @@ mas() {
 alias root='cd `git rev-parse --show-toplevel`'
 
 # Go to notes and open vim
-NOTES_DIR='/Users/joaopesce/Projects/pesce.cc/source/'
+NOTES_DIR="${HOME}/Projects/pesce.cc/source/"
 alias z='cd $NOTES_DIR && nvim'
 
 # Open vim inside cheatsheet directory with Rgi to interactively ripgrep inside it
-CHEATSHEET_DIR='/Users/joaopesce/Projects/cheatsheet'
+CHEATSHEET_DIR="${HOME}/Projects/cheatsheet"
 alias cheat='vim "+cd $CHEATSHEET_DIR" "+Rgi"'
 
 # Easy tmux setup
-TMUX_SESSIONS='/Users/joaopesce/Projects/dotfiles/tmux/sessions/'
+TMUX_SESSIONS="${HOME}/Projects/dotfiles/tmux/sessions/"
 alias tmux-vtex='$TMUX_SESSIONS/vtex.sh'
 # }}}
 
