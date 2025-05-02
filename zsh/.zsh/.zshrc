@@ -155,10 +155,21 @@ alias cvim='nvim --clean'
 LS_COLORS='fi=0:di=01;38;5;16:ln=3:pi=0:so=0:bd=0:cd=0:or=31:mi=31:ow=31:ex=1'
 export LS_COLORS
 
-# Use coreutils ls (gls) (requires `brew install coreutils`)
-alias ls='gls --color --human-readable --group-directories-first --literal'
-alias l='gls --color --human-readable --group-directories-first --literal'
-alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
+# LS
+if command -v gls &>/dev/null; then
+  # Use coreutils ls (gls) (requires `brew install coreutils`)
+  alias ls='gls --color --human-readable --group-directories-first --literal'
+  alias l='gls --color --human-readable --group-directories-first --literal'
+  alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
+else
+  # -G: color output
+  # -h: human readable size formats
+  # -l: long format, one file per line with more info
+  # -A: show almost all items including dotfiles, except for `.` and `..`
+  alias ls='ls -Gh'  
+  alias l='ls -Gh'
+  alias ll='ls -GhlA'
+fi
 
 # Restart OS X audio
 alias restartaudio='sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod'
