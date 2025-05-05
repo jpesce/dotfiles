@@ -237,7 +237,10 @@ TMUX_SESSIONS="${HOME}/Projects/dotfiles/tmux/sessions/"
 alias tmux-vtex='$TMUX_SESSIONS/vtex.sh'
 # }}}
 
-# Fuzzy Finder-based functions {{{
+# Fuzzy Finder {{{
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # FZF theme
 export FZF_DEFAULT_OPTS="
   --color=fg:-1,bg:-1,hl:yellow,fg+:-1,bg+:-1,hl+:yellow
