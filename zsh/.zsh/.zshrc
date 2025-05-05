@@ -251,6 +251,7 @@ export FZF_DEFAULT_OPTS="
 alias sd='cd $(find * -type d 2>/dev/null | fzf)'
 
 # Search and go to projects
+alias ch='cheatsheet'
 function projects() {
   directory=$(\
     find ~/Projects ~/Projects/oficina ~/Projects/simples ~/Projects/arco ~/Projects/vtex ~/Projects/dotfiles -not -path '*/.*' -maxdepth 1 -type d 2> /dev/null |\
@@ -262,13 +263,13 @@ function projects() {
 }
 alias prj='projects'
 
-# Bind projects to <CTRL+P>
-# functions __projects_widget() { projects && zle accept-line }
-# zle -N __projects_widget
-# bindkey "^P" __projects_widget
-
 # Grep cheatsheet directory interactively and open file when selected
-ch() {
+# Usage: ch <query>
+# Example: 
+#  - ch
+#  - ch "git"
+alias ch='cheatsheet'
+cheatsheet() {
   RG_PREFIX="rg --column --line-number --no-heading --smart-case --color=always "
   RG_PREFIX+="--color=always --colors 'column:fg:white' --colors 'line:fg:white' --colors 'path:fg:green' --colors 'match:fg:black' --colors 'match:bg:15'"
 
@@ -276,7 +277,7 @@ ch() {
   # making it nicer to the eyes in fzf
   cd $CHEATSHEET_DIR
 
-  # Start fzf searching to the argument given to ch ($1)
+  # Start fzf searching for the argument given to cheatsheet ($1)
   location=$(\
     eval "${RG_PREFIX} '$1'" |
     fzf-tmux -p 90%,90% --prompt='Cheatsheet ❯ '\
@@ -294,8 +295,9 @@ ch() {
 
   # Change back to previous directory
   # Don't output the path to terminal
-  cd - > /dev/null }
-  # }}}
+  cd - > /dev/null 
+}
+# }}}
 
 # ZSH-useful functions {{{
 # Compile ZSH scripts
