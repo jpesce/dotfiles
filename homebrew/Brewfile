@@ -1,9 +1,10 @@
 tap "mhaeuser/mhaeuser"
 tap "zackelia/formulae"
 brew "asdf"
+brew "ffmpeg"
+brew "bazarr"
 brew "coreutils"
 brew "diff-so-fancy"
-brew "ffmpeg"
 brew "fswatch"
 brew "fzf"
 brew "htop"
@@ -55,3 +56,4 @@ cask "vlc"
 cask "whatsapp"
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "GarageBand", id: 682658836
+vscode "vscodevim.vim"
