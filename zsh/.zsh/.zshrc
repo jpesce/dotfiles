@@ -232,7 +232,7 @@ alias z='cd $NOTES_DIR && nvim'
 CHEATSHEET_DIR="${HOME}/Projects/cheatsheet"
 alias cheat='vim "+cd $CHEATSHEET_DIR" "+Rgi"'
 
-# Easy tmux setup
+# Pre-configured tmux sessions
 TMUX_SESSIONS="${HOME}/Projects/dotfiles/tmux/sessions/"
 alias tmux-vtex='$TMUX_SESSIONS/vtex.sh'
 # }}}
