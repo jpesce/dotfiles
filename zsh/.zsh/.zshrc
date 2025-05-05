@@ -180,27 +180,27 @@ function movtogif () {
   rm $palette_file "${filename}-resized.mov"
 }
 
-# Automatically dump brewfile for backup
-brew() {
-  local dump_commands=('install' 'uninstall' 'tap' 'untap')
-  local main_command="${1}"
+# Helper function to dump brewfile after certain commands
+__dump_brewfile() {
+  local main_command="$1"
+  local trigger_commands=("${@:2}")  # All arguments except the first one
 
-  command brew "$@"
-
-  for command in "${dump_commands[@]}"; do
+  for command in "${trigger_commands[@]}"; do
     [[ "${command}" == "${main_command}" ]] && brew bundle dump --file="${HOME}/.brewfile" --force
   done
 }
 
+# Automatically dump brewfile for backup
+brew() {
+  local trigger_commands=('install' 'uninstall' 'tap' 'untap')
+  command brew "$@"
+  __dump_brewfile "$1" "${trigger_commands[@]}"
+}
+
 mas() {
-  local dump_commands=('install' 'uninstall')
-  local main_command="${1}"
-
+  local trigger_commands=('install' 'uninstall')
   command mas "$@"
-
-  for command in "${dump_commands[@]}"; do
-    [[ "${command}" == "${main_command}" ]] && brew bundle dump --file="${HOME}/.brewfile" --force
-  done
+  __dump_brewfile "$1" "${trigger_commands[@]}"
 }
 
 # Go to project's git root
