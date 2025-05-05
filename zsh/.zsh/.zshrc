@@ -109,21 +109,6 @@ ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 # }}}
 
-# Node {{{
-export NVM_DIR="$HOME/.nvm"
-
-# Load nvm asynchronously
-source $ZDOTDIR/plugins/zsh-async/async.zsh
-
-function load_nvm() {
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-}
-
-async_start_worker nvm_worker -n
-async_register_callback nvm_worker load_nvm
-async_job nvm_worker sleep 0.1
-# }}}
-
 # ASDF {{{
 # General purpose tool/runtime version manager
 . "$(brew --prefix asdf)/libexec/asdf.sh"
