@@ -206,6 +206,24 @@ mas() {
 # Go to project's git root
 alias root='cd `git rev-parse --show-toplevel`'
 
+# List open ports
+lports() {
+  sudo echo 'Processes currently listening on TCP ports'
+  sudo lsof -nP -iTCP -sTCP:LISTEN | awk '
+  BEGIN {
+      printf "%-20s %-10s %-30s\n", "COMMAND", "PID", "ADDRESS";
+  }
+  NR > 1 {
+      key = $1 ":" $2;
+      if (key != prev) {
+          printf "%-20s %-10s %-30s\n", $1, $2, $9;
+          prev = key;
+      } else {
+          printf "%-20s %-10s %-30s\n", "", "", $9;
+      }
+  }'
+}
+
 # Go to notes and open vim
 NOTES_DIR="${HOME}/Projects/pesce.cc/source/"
 alias z='cd $NOTES_DIR && nvim'
