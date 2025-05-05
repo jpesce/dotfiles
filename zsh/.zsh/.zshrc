@@ -1,8 +1,6 @@
 # Paths {{{
-# Homebrew sbin
-export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
-# pipx binaries
-export PATH="$HOME/.local/bin:$PATH"
+# Sets PATH, MANPATH, and INFOPATH to include Homebrew's locations
+eval "$(brew shellenv)"
 # }}}
 
 # Sensible defaults {{{
