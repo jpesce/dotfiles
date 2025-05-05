@@ -121,6 +121,26 @@ alias cd..='cd ..'
 alias c='clear'
 alias grep='grep  --color=auto'
 
+# Start all *arr services
+alias arr-start='open /Applications/Prowlarr.app && open /Applications/Radarr.app && (bazarr > /tmp/bazarr.log 2>&1 &) 2>/dev/null'
+
+# Stop all *arr services
+arr-stop() {
+  pkill -INT -f Prowlarr
+  pkill -INT -f Radarr
+  pkill -INT -f "Python.*bazarr"
+  
+  echo "Waiting for services to terminate gracefully..."
+  while pgrep -f Prowlarr > /dev/null || pgrep -f Radarr > /dev/null || pgrep -f "Python.*bazarr" > /dev/null; do
+    sleep 0.1
+  done
+  echo "All services terminated."
+}
+
+# Bring a process to foreground by name
+fgp() { fg %$(pgrep -f "$1") }
+
+# Open nvim with clean state
 alias cvim='nvim --clean'
 
 # LS Colors (see: https://gist.github.com/thomd/7667642)
