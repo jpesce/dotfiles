@@ -109,8 +109,7 @@ ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=none,bold
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=none,bold
 # }}}
 
-# ASDF {{{
-# General purpose tool/runtime version manager
+# ASDF: General purpose version manager for tools and runtimes such as Node.js, Ruby, Python, etc. {{{
 . "$(brew --prefix asdf)/libexec/asdf.sh"
 # }}}
 
