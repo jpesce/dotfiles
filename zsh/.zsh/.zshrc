@@ -35,14 +35,6 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Load completions
-# Homebrew completions
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
-# Faster git completion
-FPATH="${ZDOTDIR}/plugins/ohmyzsh/plugins/gitfast:${FPATH}"
-
 setopt AUTO_MENU
 # Expand globs (*.), then default completion, then try to guess
 zstyle ':completion:*' completer _extensions _complete _approximate
@@ -64,7 +56,11 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 # ^[ cancel completion
 bindkey -M menuselect '^[' undo
 
-fpath+=("$(brew --prefix asdf)/share/zsh/site-functions")
+# Completions for Homebrew and Homebrew-installed packages
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 autoload -Uz compinit
 # Only check the cached .zcompdump once a day
 # https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206
