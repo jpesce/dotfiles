@@ -12,11 +12,11 @@ precmd() {
 setopt PROMPT_SUBST
 
 # Prompt symbol
-ESSENTIAL_PROMPT_SYMBOL="" #"  ○"
+ESSENTIAL_PROMPT_SYMBOL="•"
 
 # Colors
 ESSENTIAL_COLORS_CURRENT_DIR=none
-ESSENTIAL_COLORS_RETURN_STATUS_TRUE=none
+ESSENTIAL_COLORS_RETURN_STATUS_TRUE=16
 ESSENTIAL_COLORS_RETURN_STATUS_FALSE=red
 ESSENTIAL_COLORS_BG_JOBS=none
 ESSENTIAL_COLORS_GIT_STATUS=8
@@ -75,6 +75,5 @@ essential_return_status() {
 
 # Background Jobs
 essential_bg_jobs() {
-  bg_status="%{$fg[$ESSENTIAL_COLORS_BG_JOBS]%}%(1j.↓%j .)"
-  echo -n $bg_status
+  echo -n "%F{$ESSENTIAL_COLORS_BG_JOBS}%(1j.↓%j .)%f"
 }
