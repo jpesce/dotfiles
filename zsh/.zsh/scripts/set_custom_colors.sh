@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# This script customizes the color palette in 256-color terminals by modifying
+# the grayscale ramp and color 16, to be used as an accent color. It's
+# particularly useful for creating a consistent, visually pleasing terminal
+# experience across different terminal emulators.
+# 
+# The script automatically detects the terminal environment (tmux, screen,
+# linux, or standard) and uses the appropriate escape sequences to set the
+# colors. This ensures compatibility across different terminal setups.
+
+
 # Create put_template function according to environment
 if [ -n "$TMUX" ]; then
   # Tell tmux to pass the escape sequences through
@@ -49,8 +59,8 @@ put_template 254 "c4/c4/c4"
 put_template 255 "cc/cc/cc"
 
 # Add accent color to color 16
-# put_template 16 "ed/75/47" # Bright orange
-put_template 16 "4f/94/e1" # Blue
+# put_template 16 "4f/94/e1" # Blue
+put_template 16 "ed/75/47" # Bright orange
 # put_template 16 "5f/b7/f8" # Bright blue/cyan
 # put_template 16 "92/b6/b1" # Pale Aqua
 # put_template 16  "72/de/c2" # Nataniev sea-foam aqua
@@ -61,3 +71,6 @@ put_template 16 "4f/94/e1" # Blue
 # put_template 16 "d6/cc/95" # Yellow
 # put_template 16 "d6/95/95" # Red
 # put_template 16 "aa/95/d6" # Purple
+
+# Clean up functions after use
+unset -f put_template put_template_var put_template_custom
