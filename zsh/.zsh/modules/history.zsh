@@ -1,0 +1,8 @@
+# History
+# Store history in file
+HISTFILE=$ZDOTDIR/.zsh_history
+# See https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
+setopt EXTENDED_HISTORY SHARE_HISTORY APPEND_HISTORY INC_APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS
+SAVEHIST=100000
+HISTSIZE=20000 
