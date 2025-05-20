@@ -13,6 +13,7 @@ MODULES_DIR=$ZDOTDIR/modules
 PROJECTS_DIR=$HOME/Projects
 
 # Load all modules explicitly in order
+source $MODULES_DIR/homebrew.zsh
 source $MODULES_DIR/vi.zsh
 source $MODULES_DIR/completion.zsh
 source $MODULES_DIR/history.zsh
