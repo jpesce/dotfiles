@@ -26,10 +26,14 @@ elif [ "${TERM%%-*}" = "linux" ]; then
   put_template() { [ $1 -lt 16 ] && printf "\e]P%x%s" $1 $(echo $2 | sed 's/\///g'); }
   put_template_var() { true; }
   put_template_custom() { true; }
-else
+elif [ "${TERM%%-*}" = "xterm" ]; then
   put_template() { printf '\033]4;%d;rgb:%s\033\\' $@; }
   put_template_var() { printf '\033]%d;rgb:%s\033\\' $@; }
   put_template_custom() { printf '\033]%s%s\033\\' $@; }
+else
+  put_template() { }
+  put_template_var() { }
+  put_template_custom() { }
 fi
 
 # In vim, `:r!%:p:h/get_gray_ramp.sh` to input the gray ramp below
