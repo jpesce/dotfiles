@@ -22,5 +22,6 @@ source $MODULES_DIR/aliases.zsh
 source $MODULES_DIR/fzf.zsh
 source $MODULES_DIR/cheatsheet.zsh
 source $MODULES_DIR/utils.zsh
+source $MODULES_DIR/tmux.zsh
 
 # vim: fdm=marker
