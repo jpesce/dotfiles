@@ -181,7 +181,7 @@
         ]
     },
     {
-      "description": "CTRL+DEL and SHIFT+DEL: Delete Forward",
+      "description": "CTRL+DEL: Delete Forward",
         "manipulators": [
           {
             "type": "basic",
@@ -189,23 +189,6 @@
               "modifiers": {
                 "mandatory": [
                   "left_control"
-                ]
-              },
-              "key_code": "delete_or_backspace"
-            },
-            "to": [
-              {
-                "repeat": true,
-                "key_code": "delete_forward"
-              }
-            ]
-          },
-          {
-            "type": "basic",
-            "from": {
-              "modifiers": {
-                "mandatory": [
-                  "shift"
                 ]
               },
               "key_code": "delete_or_backspace"
