@@ -1,10 +1,16 @@
 #!/bin/bash
 
 branch=$(git -C $1 rev-parse --abbrev-ref HEAD 2>/dev/null)
-[[ ! -z "${branch}" ]] && text=" ${branch} "
+if [ -n "${branch}" ]; then
+    text=" ${branch} "
+fi
 
 color="#[fg=white]"
 
-# Add space to text so it has always 30 characters
-# See https://unix.stackexchange.com/a/594880 for the arcane
+# Ensure text is exactly 30 characters, truncating with ellipsis if needed
+if [ ${#text} -gt 30 ]; then
+    text="${text:0:29}…"
+fi
+
+# Add spaces to the left to make it exactly 30 characters
 printf '%*s%s%s' "$((30-${#text}))" "" "$color" "$text"
