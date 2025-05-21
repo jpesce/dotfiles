@@ -40,7 +40,7 @@
       create: true
     # homebrew backup file
     ~/.brewfile:
-      path: homebrew/Brewfile
+      path: homebrew/Brewfile.auto
 
 - create:
     # vim

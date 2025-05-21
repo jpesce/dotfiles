@@ -1,22 +1,27 @@
 Programs managed by Homebrew and [mas](https://github.com/mas-cli/mas) are
-listed in the [Brewfile](https://docs.brew.sh/Brew-Bundle-and-Brewfile).
+listed in Brewfiles ([see docs](https://docs.brew.sh/Brew-Bundle-and-Brewfile)).
+
+* [Brewfile.manual](./Brewfile.manual) contains a curated, categorized and annotated list of
+programs 
+* [Brewfile.auto](./Brewfile.auto) is automatically updated at every install and uninstall (see
+[this file](../zsh/.zsh/modules/homebrew.zsh)).
+
+Run `./report.sh` to spot differences between them an decide if we need install, uninstall or add
+any programs to Brewfile.manual
 
 # Usage
 
-Run these commands from the `homebrew` directory (or use `--file` to specify
-the path to it).
+**Install everything from a Brewfile**
+```sh
+brew bundle install --file <Brewfile>
+```
+
+**Remove anything not listed in Brewfile**
+```sh
+brew bundle cleanup --file <Brewfile>
+```
 
 **Update `Brewfile` with current installs**
 ```sh
-brew bundle dump --force
-```
-
-**Install everything from `Brewfile`**
-```sh
-brew bundle install
-```
-
-**Remove anything not listed in `Brewfile`**
-```sh
-brew bundle cleanup
+brew bundle dump --force --file <Brewfile>
 ```

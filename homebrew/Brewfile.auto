@@ -1,0 +1,119 @@
+tap "mhaeuser/mhaeuser"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Companion to Sonarr and Radarr for managing and downloading subtitles
+brew "bazarr"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Git extension for versioning large files
+brew "git-lfs"
+# Improved top (interactive process viewer)
+brew "htop"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Library for encoding and decoding .avif files
+brew "libavif"
+# Mac App Store command-line interface
+brew "mas"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Terminal multiplexer
+brew "tmux"
+# Maintained ctags implementation
+brew "universal-ctags"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Collection of apps and services for photography, design, video, web, and UX
+cask "adobe-creative-cloud"
+# Application uninstaller
+cask "appcleaner"
+# Chromium based browser
+cask "arc"
+# Control the platform power state of your Apple Silicon device
+cask "battery-toolkit"
+# E-books management software
+cask "calibre"
+# Write, edit, and chat about your code with AI
+cask "cursor"
+# Server and cloud storage browser
+cask "cyberduck"
+# Voice and text chat software
+cask "discord"
+# Collaborative team software
+cask "figma"
+cask "font-geist-mono-nerd-font"
+cask "font-go-mono-nerd-font"
+cask "font-iosevka"
+# GIT client
+cask "fork"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Open-source video transcoder
+cask "handbrake"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Media system
+cask "jellyfin"
+# Keyboard customiser
+cask "karabiner-elements"
+# File archiver
+cask "keka"
+# App to write, plan, collaborate, and get organised
+cask "notion"
+# Open-source software for live streaming and screen recording
+cask "obs"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Collaboration platform for API development
+cask "postman"
+# Indexer manager/proxy for various PVR apps
+cask "prowlarr"
+# Fork of Sonarr to work with movies à la Couchpotato
+cask "radarr"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Team communication and collaboration software
+cask "slack"
+# Open-source media center
+cask "stremio"
+# Native GUI tool for relational databases
+cask "tableplus"
+# Remote support for computers and mobile devices
+cask "teamviewer-quicksupport"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Unpacks archive files
+cask "the-unarchiver"
+# Music streaming service with high fidelity sound and hi-def video quality
+cask "tidal"
+# Open-source BitTorrent client
+cask "transmission"
+# Multimedia player
+cask "vlc"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+# Video communication and virtual meeting platform
+cask "zoom"
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "GarageBand", id: 682658836
+vscode "vscodevim.vim"
