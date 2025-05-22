@@ -10,7 +10,7 @@ local function status_line()
   local default_highlight = '%#StatusLine#'
   local filename = '  %f %m  '
   local space = '%='
-  local line_and_column = '    %l:%c = '
+  local line_and_column = '    %l:%c \u{2261} '
 
   return table.concat {
     mode_highlight,

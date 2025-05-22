@@ -101,8 +101,8 @@ hi! link RedrawDebugClear WarningMsg
 hi! link Question WarningMsg
 hi Todo ctermfg=White ctermbg=NONE cterm=bold
 
-hi Search    ctermfg=DarkYellow ctermbg=Black cterm=NONE
-hi IncSearch ctermfg=Black ctermbg=DarkYellow cterm=NONE
+hi Search    ctermfg=NONE ctermbg=237 cterm=NONE
+hi IncSearch ctermfg=Black ctermbg=16 cterm=NONE
 
 hi Ignore      ctermfg=8 ctermbg=NONE cterm=NONE
 hi EndOfBuffer ctermfg=Black ctermbg=NONE cterm=NONE
