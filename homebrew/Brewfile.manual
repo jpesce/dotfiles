@@ -5,9 +5,7 @@ brew "mas" # Mac App Store command line interface
 cask "appcleaner" # App uninstaller
 cask "1password" # Password manager
 cask "arc" # Modern web browser
-# cask "keka" # Archive file extractor
-cask "test"
-cask "the-unarchiver" # Archive file extractor
+cask "keka" # Archive file extractor
 
 # PLAYERS
 cask "vlc" # Media player
@@ -29,6 +27,7 @@ cask "google-drive" # Cloud storage service
 
 # DOCUMENT
 cask "notion" # Note-taking and collaboration tool
+cask "obsidian" # Wiki-like note-taking in markdown
 
 # MESSAGING
 cask "slack" # Team communication platform
@@ -38,7 +37,7 @@ cask "telegram" # Messaging app
 cask "zoom" # Video conferencing tool
 
 # IMAGE/VIDEO TRANSCODERS
-cask "handbrake" # Video transcoder
+cask "handbrake-app" # Video transcoder
 brew "imagemagick" # Image manipulation command line tool
 brew "ffmpeg" # Command-line tool for processing video and audio files
 brew "libavif" # Library for AV1 Image File Format
@@ -57,8 +56,7 @@ cask "figma" # Design and prototyping tool
 # === CODE ====
 # CODE EDITOR
 brew "neovim" # Modern Vim-based text editor
-cask "cursor" # Modern code editor
-vscode "vscodevim.vim" # Vim keybindings for VS Code
+cask "cursor" # Modern AI-first code editor
 
 # PROGRAMMING
 cask "iterm2" # Terminal emulator
