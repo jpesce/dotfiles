@@ -21,4 +21,11 @@ mas() {
   command mas "$@"
   __dump_brewfile "$1" "${trigger_commands[@]}"
 }
+
+cursor() {
+  local trigger_commands=('--uninstall-extension')
+  command cursor "$@"
+  __dump_brewfile "$1" "${trigger_commands[@]}"
+}
+
 # }}}
