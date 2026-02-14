@@ -1,109 +1,15 @@
 {
-  "title": "Complex Modifications",
+  "title": "Caps Lock Modifications",
   "rules": [
     {
-      "description": "CAPS+H/J/K/L: ←↓↑→ / CAPS: ESC",
+      "description": "Caps Lock: Escape (tap) / Modifier (hold) / Nothing (held too long)",
       "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "name": "caps_lock pressed",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "down_arrow"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "name": "caps_lock pressed",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "up_arrow"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "name": "caps_lock pressed",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "h",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "name": "caps_lock pressed",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow"
-            }
-          ]
-        },
         {
           "type": "basic",
           "from": {
             "key_code": "caps_lock",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
@@ -126,12 +32,130 @@
             {
               "key_code": "escape"
             }
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 300
+          }
+        }
+      ]
+    },
+    {
+      "description": "Caps Lock + HJKL: Arrow Keys (Vim-style)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "caps_lock pressed",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "caps_lock pressed",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "caps_lock pressed",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "caps_lock pressed",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
           ]
         }
       ]
     },
     {
-      "description": "CAPS+↩︎: CAPS",
+      "description": "Caps Lock + [: Escape",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "name": "caps_lock pressed",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Caps Lock + Enter: Caps Lock",
       "manipulators": [
         {
           "type": "basic",
@@ -145,9 +169,7 @@
           "from": {
             "key_code": "return_or_enter",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
@@ -157,72 +179,6 @@
           ]
         }
       ]
-    },
-    {
-      "description": "CTRL+[: ESC",
-        "manipulators": [
-          {
-            "type": "basic",
-            "from": {
-              "modifiers": {
-                "mandatory": [
-                  "left_control"
-                ]
-              },
-              "key_code": "open_bracket"
-            },
-            "to": [
-              {
-                "repeat": true,
-                "key_code": "escape"
-              }
-            ]
-          }
-        ]
-    },
-    {
-      "description": "CTRL+DEL: Delete Forward",
-        "manipulators": [
-          {
-            "type": "basic",
-            "from": {
-              "modifiers": {
-                "mandatory": [
-                  "left_control"
-                ]
-              },
-              "key_code": "delete_or_backspace"
-            },
-            "to": [
-              {
-                "repeat": true,
-                "key_code": "delete_forward"
-              }
-            ]
-          }
-        ]
-    },
-    {
-      "description": "CTRL+ESC: ESC (For Keychron K7 that doesn't have a dedicated ESC key)",
-        "manipulators": [
-          {
-            "type": "basic",
-            "from": {
-              "modifiers": {
-                "mandatory": [
-                  "left_control"
-                ]
-              },
-              "key_code": "grave_accent_and_tilde"
-            },
-            "to": [
-              {
-                "repeat": true,
-                "key_code": "escape"
-              }
-            ]
-          }
-        ]
     }
   ]
 }

@@ -1,5 +1,8 @@
 [Karabiner](https://karabiner-elements.pqrs.org/) configuration for custom key
-mappings — mainly remaps `Caps Lock` to `Esc`, and `Caps + HJKL` to arrow keys.
+mappings — remaps <kbd>Caps Lock</kbd> into a modifier layer: tap for
+<kbd>Esc</kbd>, hold + <kbd>H</kbd><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd> for
+arrow keys, <kbd>[</kbd> for <kbd>Esc</kbd>, and <kbd>Enter</kbd> to toggle
+Caps Lock.
 
 # Usage
 
