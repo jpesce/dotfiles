@@ -41,6 +41,28 @@
     # homebrew backup file
     ~/.brewfile:
       path: homebrew/Brewfile.auto
+    # claude code
+    ~/.claude/settings.json:
+      path: claude/settings.json
+      create: true
+    ~/.claude/CLAUDE.md:
+      path: claude/CLAUDE.md
+      create: true
+    ~/.claude/agents:
+      path: claude/agents
+      create: true
+    ~/.claude/commands:
+      path: claude/commands
+      create: true
+    ~/.claude/skills:
+      path: claude/skills
+      create: true
+    ~/.claude/rules:
+      path: claude/rules
+      create: true
+    ~/.claude/keybindings.json:
+      path: claude/keybindings.json
+      create: true
 
 - create:
     # vim
