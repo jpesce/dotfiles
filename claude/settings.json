@@ -5,7 +5,24 @@
   },
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(ls *)",
+      "Bash(wc *)",
+      "Bash(find *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(which *)",
+      "Bash(file *)",
+      "Bash(du *)",
+      "Bash(df *)",
+      "Bash(whoami)",
+      "Bash(uname *)",
+      "Bash(env)",
+      "Bash(pwd)",
+      "Bash(stat *)",
+      "Bash(diff *)",
+      "Bash(tree *)"
     ]
   }
 }
