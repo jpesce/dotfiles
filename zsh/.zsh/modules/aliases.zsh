@@ -17,7 +17,7 @@ alias ..='cd ..'
 alias cd..='cd ..'
 
 # Go to project's git root
-alias root='cd `git rev-parse --show-toplevel`'
+alias root='cd $(git rev-parse --show-toplevel)'
 # }}}
 
 # Directory content listing {{{
@@ -127,11 +127,11 @@ function movtogif () {
   local filename="${1%.*}"
   local extension="${1##*.}"
 
-  palette_file="${filename}-palette.png"
-  ffmpeg -v quiet -i $1 -vf "scale=-2:${width}" "${filename}-resized.mov"
-  ffmpeg -v quiet -stats -y -i "${filename}-resized.mov" -vf fps=10,palettegen $palette_file
-  ffmpeg -v quiet -stats -i "${filename}-resized.mov" -i $palette_file -filter_complex "fps=10,paletteuse" "${filename}.gif"
-  rm $palette_file "${filename}-resized.mov"
+  local palette_file="${filename}-palette.png"
+  ffmpeg -v quiet -i "$1" -vf "scale=-2:${width}" "${filename}-resized.mov"
+  ffmpeg -v quiet -stats -y -i "${filename}-resized.mov" -vf fps=10,palettegen "$palette_file"
+  ffmpeg -v quiet -stats -i "${filename}-resized.mov" -i "$palette_file" -filter_complex "fps=10,paletteuse" "${filename}.gif"
+  rm "$palette_file" "${filename}-resized.mov"
 }
 # }}}
 

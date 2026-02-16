@@ -1,4 +1,4 @@
-# Cheatsheet 
+# Cheatsheet
 # Requires fzf, ripgrep, and Neovim
 
 # Open Neovim inside cheatsheet directory with Rgi to interactively ripgrep inside it
@@ -18,22 +18,23 @@ cheatsheet() {
 
   # Change to cheatsheet directory so rg output doesn't include the full path,
   # making it nicer to the eyes in fzf
-  cd $CHEATSHEET_DIR
+  cd "$CHEATSHEET_DIR"
 
   # Start fzf searching for the argument given to cheatsheet ($1)
   location=$(\
     eval "${RG_PREFIX} '$1'" |
     fzf-tmux -p 90%,90% --prompt='Cheatsheet ❯ '\
-    --bind "change:reload:$RG_PREFIX {q} || true" --ansi --phony --preview "_pc {}" \
+    --bind "change:reload:$RG_PREFIX {q} || true" --ansi --phony --preview "$ZDOTDIR/scripts/cheatsheet/preview.sh {}" \
   )
 
   # Only continue if an option was selected
   if [[ ! -z "$location" ]]
   then
-    filename=$(echo $location | cut -d ':' -f1)
-    line=$(echo $location | cut -d ':' -f2)
-    column=$(echo $location | cut -d ':' -f3)
-    nvim "+call cursor($line,$column)" $filename
+    local parts=("${(@s/:/)location}")
+    local filename="${parts[1]}"
+    local line="${parts[2]}"
+    local column="${parts[3]}"
+    nvim "+call cursor($line,$column)" "$filename"
   fi
 
   # Change back to previous directory

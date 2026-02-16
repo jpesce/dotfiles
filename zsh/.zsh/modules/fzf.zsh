@@ -33,5 +33,5 @@ function projects() {
   )
 
   # Only cd if the selected option is a directory
-  [[ ! -z "$directory" ]] && cd $directory
+  [[ ! -z "$directory" ]] && cd "$directory"
 } 

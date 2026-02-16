@@ -27,17 +27,57 @@ PROMPT='%B$(essential_return_status)$(essential_current_dir) ❯%b  '
 # Right Prompt
 RPROMPT='$(essential_bg_jobs)' # $(essential_git_status)'
 
+# Cache git info on directory change instead of every prompt render
+__essential_git_cache=()
+
+_essential_update_git_info() {
+  local toplevel
+  toplevel=$(git rev-parse --show-toplevel 2>/dev/null) || { __essential_git_cache=(); return }
+  __essential_git_cache=(
+    "$toplevel"
+    "$(basename "$toplevel")"
+    "$(git rev-parse --show-prefix 2>/dev/null)"
+  )
+}
+
+# Lightweight precmd check: only re-run the full update if git state changed
+_essential_validate_git_cache() {
+  if [[ -n "$GIT_DIR" ]]; then
+    # GIT_DIR overrides — just check if it still/now exists
+    if [[ -n "${__essential_git_cache[1]}" ]]; then
+      [[ -e "$GIT_DIR" ]] || _essential_update_git_info
+    else
+      [[ -e "$GIT_DIR" ]] && _essential_update_git_info
+    fi
+  elif [[ -n "${__essential_git_cache[1]}" ]]; then
+    # Had a cached repo — verify .git still exists
+    [[ -e "${__essential_git_cache[1]}/.git" ]] || _essential_update_git_info
+  else
+    # No cache — walk up to check if a repo was initialized above us
+    local dir="$PWD"
+    while [[ "$dir" != "/" ]]; do
+      if [[ -e "$dir/.git" ]]; then
+        _essential_update_git_info
+        break
+      fi
+      dir="${dir:h}"
+    done
+  fi
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd _essential_update_git_info
+add-zsh-hook precmd _essential_validate_git_cache
+_essential_update_git_info  # run once at startup
+
 # Show current directory relative to git repository
 essential_current_dir() {
-  if [[ -d $(git rev-parse --show-toplevel 2>/dev/null) ]]; then
-    # We're in a git repo
-    BASE="—/$(basename $(git rev-parse --show-toplevel))"
-    if [[ $PWD = $(git rev-parse --show-toplevel) ]]; then
-      # We're in the root
-      PROMPT_PATH="$BASE"
+  if [[ -n "${__essential_git_cache[1]}" ]]; then
+    local base="—/${__essential_git_cache[2]}"
+    if [[ "$PWD" = "${__essential_git_cache[1]}" ]]; then
+      PROMPT_PATH="$base"
     else
-      PROMPT_PATH="$BASE/$(git rev-parse --show-prefix)"
-      PROMPT_PATH=${PROMPT_PATH%?} # Remove trailing `/`
+      PROMPT_PATH="$base/${__essential_git_cache[3]%/}"
     fi
   else
     PROMPT_PATH="%~"
@@ -51,8 +91,10 @@ essential_git_status() {
   local message_color="%F{$ESSENTIAL_COLORS_GIT_STATUS}"
 
     # https://git-scm.com/docs/git-status#_short_format
-    local staged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU]")
-    local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU? ][MADRCU?]")
+    local porcelain
+    porcelain=$(git status --porcelain 2>/dev/null) || return
+    local staged=$(echo "$porcelain" | grep -e "^[MADRCU]")
+    local unstaged=$(echo "$porcelain" | grep -e "^[MADRCU? ][MADRCU?]")
 
     if [[ -n ${staged} ]]; then
       staged_symbol=""

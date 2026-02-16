@@ -26,8 +26,8 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 bindkey -M menuselect '^[' undo
 
 # Completions for Homebrew and Homebrew-installed packages
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if [[ -n "$HOMEBREW_PREFIX" ]]; then
+  FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 fi
 
 autoload -Uz compinit
