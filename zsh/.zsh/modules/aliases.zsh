@@ -33,13 +33,13 @@ if command -v gls &>/dev/null; then
   alias l='gls --color --human-readable --group-directories-first --literal'
   alias ll='gls --color --human-readable --group-directories-first --literal -l --almost-all --time-style="+%y-%m-%d %H:%M"'
 else
-  echo "⚠️ To properly use ls aliases, please install GNU Coreutils (brew install coreutils)"
-  #
+  echo "\033[33m!\033[0m \033[1mgls\033[0m not found — falling back to macOS ls. Install with \033[1mbrew install coreutils\033[0m"
+  # Fallback to macOS ls
   # -G: color output 🌈
   # -h: human readable size formats
   # -l: long format, one file per line with more info
   # -A: show almost all items including dotfiles, except for `.` and `..`
-  alias ls='echo ls -Gh'  
+  alias ls='ls -Gh'
   alias l='ls -Gh'
   alias ll='ls -GhlA'
 fi

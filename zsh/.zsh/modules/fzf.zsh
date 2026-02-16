@@ -1,6 +1,11 @@
 # Fuzzy Finder
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh)
+else
+  echo "\033[33m!\033[0m \033[1mfzf\033[0m not found. Install with \033[1mbrew install fzf\033[0m"
+  return
+fi
 
 # fzf theme
 export FZF_DEFAULT_OPTS="
