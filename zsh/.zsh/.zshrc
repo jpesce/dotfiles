@@ -12,17 +12,22 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 MODULES_DIR=$ZDOTDIR/modules
 PROJECTS_DIR=$HOME/Projects
 
-# Load all modules explicitly in order
-source $MODULES_DIR/homebrew.zsh
+# Deferred loading
+source $ZDOTDIR/plugins/zsh-defer/zsh-defer.plugin.zsh
+
+# Load critical modules immediately
 source $MODULES_DIR/vi.zsh
-source $MODULES_DIR/completion.zsh
 source $MODULES_DIR/history.zsh
+source $MODULES_DIR/completion.zsh
 source $MODULES_DIR/visual.zsh
-source $MODULES_DIR/asdf.zsh
-source $MODULES_DIR/aliases.zsh
-source $MODULES_DIR/fzf.zsh
-source $MODULES_DIR/cheatsheet.zsh
-source $MODULES_DIR/utils.zsh
-source $MODULES_DIR/tmux.zsh
+
+# Defer non-critical modules (loaded right after first prompt)
+zsh-defer source $MODULES_DIR/homebrew.zsh
+zsh-defer source $MODULES_DIR/asdf.zsh
+zsh-defer source $MODULES_DIR/aliases.zsh
+zsh-defer source $MODULES_DIR/fzf.zsh
+zsh-defer source $MODULES_DIR/cheatsheet.zsh
+zsh-defer source $MODULES_DIR/utils.zsh
+zsh-defer source $MODULES_DIR/tmux.zsh
 
 # vim: fdm=marker
