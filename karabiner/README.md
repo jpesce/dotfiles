@@ -1,4 +1,6 @@
-# Karabiner
+<p align="center">
+  <h1 align="center">Karabiner</h1>
+</p>
 
 Configuration for [Karabiner-Elements](https://karabiner-elements.pqrs.org/), a keyboard customizer for macOS.
 

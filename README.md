@@ -1,8 +1,10 @@
-# dotfiles
+<p align="center">
+  <h1 align="center">dotfiles</h1>
+</p>
 
 Configuration files for macOS tools and programs, versioned and symlinked to keep things reproducible across machines — [everything in its right place](https://www.youtube.com/watch?v=NUnXxh5U25Y).
 
-| | |
+| Directory | Tool |
 |---|---|
 | [claude](claude/) | Claude Code CLI |
 | [ctags](ctags/) | Universal Ctags |
@@ -12,6 +14,7 @@ Configuration files for macOS tools and programs, versioned and symlinked to kee
 | [iterm2](iterm2/) | iTerm2 |
 | [karabiner](karabiner/) | Karabiner-Elements |
 | [nvim](nvim/) | Neovim |
+| [raycast](raycast/) | Raycast |
 | [tmux](tmux/) | tmux |
 | [zsh](zsh/) | Zsh |
 

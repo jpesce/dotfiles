@@ -1,4 +1,6 @@
-# Neovim
+<p align="center">
+  <h1 align="center">Neovim</h1>
+</p>
 
 Configuration for [Neovim](https://neovim.io/).
 

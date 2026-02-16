@@ -1,4 +1,6 @@
-# Font
+<p align="center">
+  <h1 align="center">Font</h1>
+</p>
 
 [Commit Mono](https://commitmono.com/) v1.43 — a customizable coding font.
 

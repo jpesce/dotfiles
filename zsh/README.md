@@ -1,4 +1,6 @@
-# Zsh
+<p align="center">
+  <h1 align="center">Zsh</h1>
+</p>
 
 Configuration for [Zsh](https://zsh.sourceforge.io/Doc/).
 

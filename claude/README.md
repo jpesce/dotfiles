@@ -1,4 +1,6 @@
-# Claude Code
+<p align="center">
+  <h1 align="center">Claude Code</h1>
+</p>
 
 Configuration for [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's CLI for Claude.
 

@@ -1,4 +1,6 @@
-# Homebrew
+<p align="center">
+  <h1 align="center">Homebrew</h1>
+</p>
 
 Programs managed by [Homebrew](https://brew.sh/) and [mas](https://github.com/mas-cli/mas) are listed in Brewfiles ([see docs](https://docs.brew.sh/Brew-Bundle-and-Brewfile)).
 

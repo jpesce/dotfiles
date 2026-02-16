@@ -1,4 +1,6 @@
-# Git
+<p align="center">
+  <h1 align="center">Git</h1>
+</p>
 
 Configuration for [Git](https://git-scm.com/doc).
 

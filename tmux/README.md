@@ -1,4 +1,6 @@
-# tmux
+<p align="center">
+  <h1 align="center">tmux</h1>
+</p>
 
 Configuration for [tmux](https://github.com/tmux/tmux).
 

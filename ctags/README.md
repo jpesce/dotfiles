@@ -1,4 +1,6 @@
-# Ctags
+<p align="center">
+  <h1 align="center">Ctags</h1>
+</p>
 
 Configuration for [Universal Ctags](https://github.com/universal-ctags/ctags), a source code indexing tool.
 

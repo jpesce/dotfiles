@@ -1,4 +1,6 @@
-# iTerm2
+<p align="center">
+  <h1 align="center">iTerm2</h1>
+</p>
 
 Terminal emulator for macOS. See the [official website](https://iterm2.com/) for features and documentation.
 
