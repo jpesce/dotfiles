@@ -11,7 +11,11 @@ vim.keymap.set('n', ']p', '<Cmd>put<CR>', { desc = 'Paste below' })
 vim.keymap.set('n', '<C-l>', ':nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>', { desc = 'C[l]ear search and rerender syntax' })
 -- }}}
 
--- CLOSE BUFFERS {{{
+-- BUFFER NAVIGATION {{{
+vim.keymap.set('n', '<M-S-[>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<M-S-]>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<M-S-{>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<M-S-}>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
 --  Leave only current [b]uffer open
 vim.keymap.set('n', '<Leader>B', ':%bd<bar>e#<bar>bd#<CR>', { desc = 'Leave only current [B]uffer open' })
 -- }}}
