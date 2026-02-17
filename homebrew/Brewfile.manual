@@ -1,107 +1,90 @@
 # === APP STORE ===
-brew "mas" # Mac App Store command line interface
+brew "mas"                                        # Mac App Store command line interface
+
 
 # === ESSENTIALS ===
-cask "appcleaner" # App uninstaller
-cask "1password" # Password manager
-cask "arc" # Modern web browser
-cask "keka" # Archive file extractor
+cask "appcleaner"                                 # App uninstaller
+cask "1password"                                  # Password manager
+cask "keka"                                       # Archive file extractor
+mas "Microsoft Excel", id: 462058435              # Spreadsheet program
+mas "Microsoft PowerPoint", id: 462062816         # Presentation program
+cask "transmission"                               # BitTorrent client
 
-# PLAYERS
-cask "vlc" # Media player
-cask "tidal" # Music streaming service
-cask "stremio" # Streaming media player
+# MEDIA PLAYERS
+cask "vlc"                                        # Media player
+cask "tidal"                                      # Music streaming service
 
 
 # === UTILITIES ===
-cask "raycast" # Spotlight replacement and productivity tool
-brew "yt-dlp" # (Raycast) YouTube video downloader for Download Video action
-cask "hiddenbar" # Menu bar manager
-cask "karabiner-elements" # Keyboard customizer
-tap  "mhaeuser/mhaeuser" # Homebrew tap for battery-toolkit
-cask "battery-toolkit" # Battery health monitoring tool
-mas  "Blackmagic Disk Speed Test", id: 425264550 # Disk speed testing tool
-cask "obs" # Screen recording and streaming software
-cask "cyberduck" # FTP and cloud storage client
-cask "google-drive" # Cloud storage service
+cask "raycast"                                    # Spotlight replacement and productivity tool
+brew "yt-dlp"                                     # (Raycast) YouTube video downloader for Download Video action
+cask "karabiner-elements"                         # Keyboard customizer
+mas "Blackmagic Disk Speed Test", id: 425264550   # Disk speed testing tool
+cask "obs"                                        # Screen recording and streaming software
+cask "cyberduck"                                  # FTP and cloud storage client
+cask "google-drive"                               # Cloud storage service
 
 # DOCUMENT
-cask "notion" # Note-taking and collaboration tool
-cask "obsidian" # Wiki-like note-taking in markdown
+cask "notion"                                     # Note-taking and collaboration tool
+cask "obsidian"                                   # Wiki-like note-taking in markdown
 
 # MESSAGING
-cask "slack" # Team communication platform
-cask "discord" # Chat and communication platform
-cask "whatsapp" # Messaging app
-cask "telegram" # Messaging app
-cask "zoom" # Video conferencing tool
+cask "slack"                                      # Team communication platform
+cask "discord"                                    # Chat and communication platform
+cask "whatsapp"                                   # Messaging app
+cask "telegram"                                   # Messaging app
+cask "zoom"                                       # Video conferencing tool
 
 # IMAGE/VIDEO TRANSCODERS
-cask "handbrake-app" # Video transcoder
-brew "imagemagick" # Image manipulation command line tool
-brew "ffmpeg" # Command-line tool for processing video and audio files
-brew "libavif" # Library for AV1 Image File Format
-
-
-# === MUSIC ===
-mas  "GarageBand", id: 682658836 # Music creation software
+cask "handbrake-app"                              # Video transcoder
+brew "imagemagick"                                # Image manipulation command line tool
+brew "ffmpeg"                                     # Command-line tool for processing video and audio files
+brew "libavif"                                    # Library for AV1 Image File Format
 
 
 # === DESIGN ===
 # IMAGE EDITING
-cask "adobe-creative-cloud" # Adobe creative suite
-cask "figma" # Design and prototyping tool
+cask "adobe-creative-cloud"                       # Adobe creative suite
+cask "figma"                                      # Design and prototyping tool
 
 
 # === CODE ====
 # CODE EDITOR
-brew "neovim" # Modern Vim-based text editor
-cask "cursor" # Modern AI-first code editor
+brew "neovim"                                     # Modern Vim-based text editor
+cask "claude-code"                                # AI CLI coding agent
 
 # PROGRAMMING
-cask "iterm2" # Terminal emulator
-cask "postman" # API development platform
-cask "tableplus" # Database management tool
-cask "orbstack" # Docker and Kubernetes development environment
-brew "asdf" # Version manager for multiple programming languages runtimes
+cask "iterm2"                                     # Terminal emulator
+cask "postman"                                    # API development platform
+cask "tableplus"                                  # Database management tool
+brew "asdf"                                       # Version manager for multiple programming languages runtimes
 
 # TERMINAL UTILITIES
-brew "tmux" # Terminal multiplexer
-brew "fzf" # Fuzzy finder for command line
-brew "ripgrep" # Fast line-oriented search tool
-brew "coreutils" # GNU core utilities for basic file operations (used for better ls colors)
-brew "diff-so-fancy" # Better diff visualization tool (used as default git diff)
-brew "htop" # Interactive process viewer
-brew "fswatch" # File system event monitoring tool
-brew "jq" # Lightweight JSON processor
-brew "universal-ctags" # Universal ctags generator for indexing jumping to code without LSPs
+brew "tmux"                                       # Terminal multiplexer
+brew "fzf"                                        # Fuzzy finder for command line
+brew "ripgrep"                                    # Fast line-oriented search tool
+brew "coreutils"                                  # GNU core utilities for basic file operations (used for better ls colors)
+brew "wget"                                       # Download files from the internet
+brew "diff-so-fancy"                              # Better diff visualization tool (used as default git diff)
+brew "htop"                                       # Interactive process viewer
+brew "fswatch"                                    # File system event monitoring tool
+brew "jq"                                         # Lightweight JSON processor
+brew "universal-ctags"                            # Universal ctags generator for indexing jumping to code without LSPs
 
 # GIT
-cask "fork" # Git client
-brew "git-filter-repo" # Git repository filtering and rewriting tool
-brew "git-lfs" # Git extension for versioning large files
-brew "gh" # GitHub CLI tool
+brew "git"                                        # Up-to-date Git (macOS bundled version is often outdated)
+cask "fork"                                       # Git client
+brew "git-filter-repo"                            # Git repository filtering and rewriting tool
+brew "git-lfs"                                    # Git extension for versioning large files
+brew "gh"                                         # GitHub CLI tool
 
 
 # === MEDIA ===
-# E-BOOK 
-cask "calibre" # E-book management software
-
-# TORRENT
-cask "transmission" # BitTorrent client
-
-# MEDIA SERVER
-cask "jellyfin" # Media server
-cask "radarr" # Movie management tool
-brew "bazarr" # Subtitle management tool
-cask "prowlarr" # Indexer manager
+cask "calibre"                                    # E-book management software
 
 
-# === FONTS ===
-cask "font-geist-mono-nerd-font" # Monospace font with programming ligatures
-cask "font-go-mono-nerd-font" # Monospace font with programming ligatures
-cask "font-iosevka" # Monospace font
-
+# == HOME SERVER ==
+cask "tailscale-app"                              # Family VPN
 
 # == WORK ==
-cask "teamviewer-quicksupport" # Remote support tool
+cask "teamviewer-quicksupport"                    # Remote support tool
