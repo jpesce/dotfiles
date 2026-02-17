@@ -22,7 +22,14 @@
       "Bash(pwd)",
       "Bash(stat *)",
       "Bash(diff *)",
-      "Bash(tree *)"
+      "Bash(tree *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git status *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git tag *)",
+      "Bash(git remote *)"
     ]
   }
 }
