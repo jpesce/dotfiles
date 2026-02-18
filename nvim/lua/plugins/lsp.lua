@@ -74,9 +74,7 @@ return {
         end,
       })
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      -- Add completion capability
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       --  Add any additional override configuration in the following tables. Available keys are:
       --  - cmd (table): Override the default command used to start the server
