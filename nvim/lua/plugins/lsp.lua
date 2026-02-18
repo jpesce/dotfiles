@@ -21,31 +21,31 @@ return {
 
           -- Go to the definition of the word under your cursor
           --  To jump back in the taglist, press <C-T>
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]o to [D]efinition')
+          map('gd', Picker.lsp_definitions, '[G]o to [D]efinition')
 
           -- Go to declaration, WARN: This is not Go to Definition (see gd)
           --  For example, in C this would take you to the header
           map('gD', vim.lsp.buf.declaration, '[G]o to [D]eclaration')
 
           -- Go to references for the word under your cursor
-          map('gr', require('telescope.builtin').lsp_references, '[G]o to [R]eferences')
+          map('gr', Picker.lsp_references, '[G]o to [R]eferences')
 
           -- Go to the implementation of the word under your cursor
           --  Useful when your language has ways of declaring types without an actual implementation
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]o to [I]mplementation')
+          map('gI', Picker.lsp_implementations, '[G]o to [I]mplementation')
 
           -- Go to the type of the word under your cursor
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('gy', require('telescope.builtin').lsp_type_definitions, '[G]o to t[Y]pe definition')
+          map('gy', Picker.lsp_type_definitions, '[G]o to t[Y]pe definition')
 
           -- List all the symbols in your current document
           --  Symbols are things like variables, functions, types, etc
-          map('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[L]ist buffer [S]ymbols')
+          map('<leader>ls', Picker.lsp_document_symbols, '[L]ist buffer [S]ymbols')
 
           -- List all the symbols in your current workspace
           --  Similar to document symbols, except searches over your whole project
-          map('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[L]ist workspace [S]ymbols')
+          map('<leader>lS', Picker.lsp_workspace_symbols, '[L]ist workspace [S]ymbols')
 
           -- Replace the variable under your cursor
           --  Most Language Servers support renaming across files, etc

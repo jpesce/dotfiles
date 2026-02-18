@@ -1,1 +1,1 @@
-TelescopeFileIgnorePatterns = { 'public' }
+FzfFileIgnorePatterns = { 'public' }

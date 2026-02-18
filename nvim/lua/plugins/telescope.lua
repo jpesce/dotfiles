@@ -1,8 +1,7 @@
 return {
-  { -- FUZZY FINDER
+  {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
@@ -18,7 +17,6 @@ return {
     config = function()
       require('telescope').setup {
         defaults = {
-          file_ignore_patterns = TelescopeFileIgnorePatterns or {},
           color_devicons = false,
           layout_config = { width = 0.95 },
           mappings = {
@@ -48,7 +46,22 @@ return {
         },
       }
 
-      -- Get current visual selection to use in telescope commands
+      pcall(require('telescope').load_extension, 'fzf')
+      pcall(require('telescope').load_extension, 'ui-select')
+
+      local builtin = require 'telescope.builtin'
+
+      -- Generic picker interface (used by other modules like lsp.lua)
+      _G.Picker = {
+        lsp_definitions = builtin.lsp_definitions,
+        lsp_references = builtin.lsp_references,
+        lsp_implementations = builtin.lsp_implementations,
+        lsp_type_definitions = builtin.lsp_type_definitions,
+        lsp_document_symbols = builtin.lsp_document_symbols,
+        lsp_workspace_symbols = builtin.lsp_dynamic_workspace_symbols,
+      }
+
+      -- Get current visual selection to use in picker commands
       local function getVisualSelection()
         vim.cmd 'noau normal! "vy"'
         local text = vim.fn.getreg 'v'
@@ -62,14 +75,8 @@ return {
         end
       end
 
-      -- Enable telescope extensions, if they are installed
-      pcall(require('telescope').load_extension, 'fzf')
-      pcall(require('telescope').load_extension, 'ui-select')
-
-      local builtin = require 'telescope.builtin'
-
       -- LIST
-      vim.keymap.set('n', '<leader>lt', builtin.builtin, { desc = '[L]ist [T]elescope capabilties' })
+      vim.keymap.set('n', '<leader>lz', builtin.builtin, { desc = '[L]ist Telescope capabilties' })
 
       vim.keymap.set('n', '<leader>lf', builtin.find_files, { desc = '[L]ist [F]iles in workspace' })
       vim.keymap.set('n', '<leader>lb', builtin.buffers, { desc = '[L]ist [B]uffers' })
@@ -87,7 +94,7 @@ return {
       -- SEARCH (GREP)
       vim.keymap.set('n', '<leader>sb', function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
+          -- winblend = 10, -- only works with termguicolors
           previewer = false,
         })
       end, { desc = '[S]earch in [B]uffer' })
@@ -97,13 +104,13 @@ return {
           prompt_title = 'Live grep in open buffers',
         }
       end, { desc = '[S]earch in [O]pen buffers' })
-      vim.keymap.set('n', '<leader>sw', builtin.live_grep, { desc = '[S]earch in [W]workspace' })
+      vim.keymap.set('n', '<leader>sw', builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
 
       -- VISUAL GREP
       vim.keymap.set('v', '<space>sb', function()
         local text = getVisualSelection()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
+          -- winblend = 10, -- only works with termguicolors
           previewer = false,
           default_text = text,
         })

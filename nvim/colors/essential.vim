@@ -169,6 +169,9 @@ hi gitcommitOverflow ctermfg=DarkRed   ctermbg=NONE cterm=NONE
 " Telescope
 hi! link TelescopeBorder Tertiary
 
+" fzf-lua
+hi! link FzfLuaBorder Tertiary
+
 " Mini tabline
 hi! link MiniTablineCurrent         Normal
 hi! link MiniTablineVisible         Tertiary
