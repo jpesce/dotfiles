@@ -46,7 +46,8 @@ local function get_line_number()
   cur_num = vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum
   cur_num = tostring(cur_num)
 
-  return pad_string(cur_num, 4, 'right')
+  local width = math.max(3, #tostring(vim.api.nvim_buf_line_count(0)))
+  return pad_string(cur_num, width + 1, 'right')
 end
 
 local function get_signs()
@@ -88,6 +89,11 @@ vim.opt.number = false
 _G.render_statuscol = function()
   local signs = get_signs()
 
-  return print_sign(get_sign_from_name(signs, 'DiagnosticSign')) .. get_line_number() .. ' ' .. get_fold(vim.v.lnum) .. ' '
+  return print_sign(get_sign_from_name(signs, 'DiagnosticSign'))
+    .. get_line_number()
+    .. ' '
+    .. print_sign(get_sign_from_name(signs, 'GitSigns') or { texthl = 'StatusColumnBorder', text = '┃ ' })
+    .. get_fold(vim.v.lnum)
+    .. ' '
 end
 vim.o.statuscolumn = '%!v:lua.render_statuscol()'
