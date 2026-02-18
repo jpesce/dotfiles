@@ -13,6 +13,7 @@ require('lazy').setup({
   require 'plugins/completion',
   require 'plugins/mini',
   require 'plugins/treesitter',
+  require 'plugins/explorer',
   require 'plugins/tmux-navigator',
 }, {
   ui = {},

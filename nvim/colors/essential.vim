@@ -175,6 +175,19 @@ hi! link TelescopeBorder Tertiary
 " fzf-lua
 hi! link FzfLuaBorder Tertiary
 
+" Neo-tree
+hi NeoTreeRootName           ctermfg=DarkCyan ctermbg=NONE cterm=bold
+hi! link NeoTreeMessage      Tertiary
+hi! link NeoTreeDimText      Tertiary
+hi! link NeoTreeGitAdded     DiffAdd
+hi! link NeoTreeGitModified  DiffChange
+hi! link NeoTreeGitDeleted   DiffDelete
+hi! link NeoTreeGitRenamed   DiffChange
+hi! link NeoTreeGitUntracked DiffAdd
+hi! link NeoTreeGitUnstaged  DiffChange
+hi! link NeoTreeGitConflict  Error
+hi! link NeoTreeGitStaged    DiffAdd
+
 " Mini tabline
 hi! link MiniTablineCurrent         Normal
 hi! link MiniTablineVisible         Tertiary

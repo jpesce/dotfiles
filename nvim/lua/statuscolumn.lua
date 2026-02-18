@@ -34,20 +34,14 @@ local function get_fold(line_number)
   return vim.fn.foldclosed(line_number) == -1 and fillchars.foldopen or fillchars.foldclose
 end
 
+local function line_number_width()
+  return math.max(3, #tostring(vim.api.nvim_buf_line_count(0)))
+end
+
 local function get_line_number()
-  local cur_num
-
-  -- Return a visual placeholder if line is wrapped
-  if vim.v.virtnum ~= 0 then
-    return ' '
-  end
-
   -- Get absolute line number if is current line or else get relative num
-  cur_num = vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum
-  cur_num = tostring(cur_num)
-
-  local width = math.max(3, #tostring(vim.api.nvim_buf_line_count(0)))
-  return pad_string(cur_num, width + 1, 'right')
+  local cur_num = vim.v.relnum == 0 and vim.v.lnum or vim.v.relnum
+  return pad_string(tostring(cur_num), line_number_width() + 1, 'right')
 end
 
 local function get_signs()
@@ -87,13 +81,26 @@ end
 
 vim.opt.number = false
 _G.render_statuscol = function()
+  if vim.bo.filetype == 'neo-tree' then
+    return ''
+  end
+
   local signs = get_signs()
+  local git_sign = get_sign_from_name(signs, 'GitSigns') or { texthl = 'StatusColumnBorder', text = '┃ ' }
+
+  if vim.v.virtnum ~= 0 then
+    return '  ' -- diagnostic sign
+      .. pad_string(' ', line_number_width() + 1, 'right')
+      .. ' '
+      .. highlight_text(git_sign.texthl, '┃ ')
+      .. '  '
+  end
 
   return print_sign(get_sign_from_name(signs, 'DiagnosticSign'))
     .. get_line_number()
     .. ' '
-    .. print_sign(get_sign_from_name(signs, 'GitSigns') or { texthl = 'StatusColumnBorder', text = '┃ ' })
+    .. print_sign(git_sign)
     .. get_fold(vim.v.lnum)
     .. ' '
 end
-vim.o.statuscolumn = '%!v:lua.render_statuscol()'
+vim.o.statuscolumn = '%{%v:lua.render_statuscol()%}'
