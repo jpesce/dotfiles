@@ -24,8 +24,8 @@ return {
         delay = 100,
       },
     },
-    config = function()
-      require('gitsigns').setup()
+    config = function(_, opts)
+      require('gitsigns').setup(opts)
       vim.keymap.set('n', '<leader>gb', '<Cmd>Gitsigns toggle_current_line_blame<CR>', { desc = '[G]it [B]lame current line' }) -- Get diff in a three-way vertical split
     end,
   },

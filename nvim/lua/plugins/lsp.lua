@@ -62,19 +62,15 @@ return {
           -- Diagnostic configurations
           vim.diagnostic.config {
             virtual_text = true,
+            signs = {
+              text = {
+                [vim.diagnostic.severity.ERROR] = '•',
+                [vim.diagnostic.severity.WARN] = '•',
+                [vim.diagnostic.severity.HINT] = '•',
+                [vim.diagnostic.severity.INFO] = '•',
+              },
+            },
           }
-
-          -- Define signs
-          local signs = {
-            { name = 'DiagnosticSignError', text = '🞄' },
-            { name = 'DiagnosticSignWarn', text = '🞄' },
-            { name = 'DiagnosticSignHint', text = '🞄' },
-            { name = 'DiagnosticSignInfo', text = '🞄' },
-          }
-
-          for _, sign in ipairs(signs) do
-            vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
-          end
         end,
       })
 

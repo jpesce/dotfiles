@@ -4,15 +4,6 @@ require('lazy').setup({
   'tpope/vim-eunuch', -- Add file commands such as :Rename :Move :Delete
   'tpope/vim-abolish', -- Smart substitutions with %S/<find>/<replace>
 
-  { -- Project-specic configurations
-    'windwp/nvim-projectconfig',
-    config = function()
-      require('nvim-projectconfig').setup {
-        silent = false,
-      }
-    end,
-  },
-
   require 'plugins/git',
 
   { -- Show you pending keybinds.
@@ -47,7 +38,7 @@ require('lazy').setup({
       notify_on_error = false,
       format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_format = 'fallback',
       },
       formatters_by_ft = {
         lua = { 'stylua' },
@@ -140,9 +131,6 @@ require('lazy').setup({
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
-      -- Comment with gc
-      require('mini.comment').setup()
-
       -- Move visual selection with <M-hjkl>
       require('mini.move').setup {
         mappings = {
