@@ -7,10 +7,6 @@ vim.keymap.set('n', '[p', '<Cmd>put!<CR>', { desc = 'Paste above' })
 vim.keymap.set('n', ']p', '<Cmd>put<CR>', { desc = 'Paste below' })
 -- }}}
 
--- RERENDER {{{
-vim.keymap.set('n', '<C-l>', ':nohlsearch<CR>:diffupdate<CR>:syntax sync fromstart<CR><C-l>', { desc = 'C[l]ear search and rerender syntax' })
--- }}}
-
 -- BUFFER NAVIGATION {{{
 vim.keymap.set('n', '<M-S-[>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<M-S-]>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
@@ -34,33 +30,31 @@ vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]i
 -- VISUAL REPLACE {{{
 --  Start command to replace current visual selection
 
-vim.cmd [[ " Escape special characters in a string
-function! EscapeString (string)
-  let l:string=a:string
-  " Escape regex characters
-  let l:string = escape(l:string, '^$.*\/~[]#\" ')
-  " Escape line endings
-  let l:string = substitute(l:string, '\n', '\\n', 'g')
-  return l:string
-endfunction
-]]
+-- Escape special characters for use in a substitute pattern
+---@diagnostic disable-next-line: duplicate-set-field
+function _G.escape_string(str)
+  str = vim.fn.escape(str, [[^$.*\/~[]#" ]])
+  str = str:gsub('\n', '\\n')
+  return str
+end
 
-vim.cmd [[ " Return text selected in visual mode
-function! GetVisualSelection() range
-  " Save current register content
-  let l:current_register_content = @"
-  " Copy selection to the register
-  normal! gv""y
-  " Save selection to variable
-  let l:selection = @"
-  " Restore register to old content
-  let @" = l:current_register_content
+-- Return text selected in visual mode
+---@diagnostic disable-next-line: duplicate-set-field
+function _G.get_visual_selection()
+  local current = vim.fn.getreg '"'
+  vim.cmd 'normal! gv""y'
+  local selection = vim.fn.getreg '"'
+  vim.fn.setreg('"', current)
+  return selection
+end
 
-  return l:selection
-endfunction
-]]
-
-vim.keymap.set('v', '<Leader>r', '<Esc>:%S/<C-r>=EscapeString(GetVisualSelection())<CR>//g<left><left>', { desc = '[R]eplace selection' })
+vim.keymap.set('v', '<Leader>r', '<Esc>:%s/<C-r>=v:lua.escape_string(v:lua.get_visual_selection())<CR>', { desc = '[R]eplace selection' })
+vim.keymap.set(
+  'v',
+  '<Leader>R',
+  '<Esc>:%S/<C-r>=v:lua.escape_string(v:lua.get_visual_selection())<CR>//g<left><left>',
+  { desc = '[R]eplace selection preserving case' }
+)
 -- }}}
 
 -- INSPECT HIGHLIGHT {{{
