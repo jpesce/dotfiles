@@ -23,25 +23,27 @@ brew install neovim
 | `statusline.lua` | Custom status line |
 | `statuscolumn.lua` | Custom status column |
 | `plugins.lua` | Plugin definitions (lazy.nvim) |
+| `plugins/` | Individual plugin configurations |
 
 ## Plugins
 
-Managed by [lazy.nvim](https://github.com/folke/lazy.nvim). Key plugins:
+Managed by [lazy.nvim](https://github.com/folke/lazy.nvim).
 
-| Plugin | Description |
-|--------|-------------|
-| `telescope.nvim` | Fuzzy finder for files, grep, buffers, LSP symbols |
-| `nvim-lspconfig` + `mason.nvim` | LSP support with auto-install |
-| `nvim-cmp` | Autocompletion (LSP, snippets, paths) |
-| `nvim-treesitter` | Syntax highlighting and code analysis |
-| `conform.nvim` | Autoformatting (stylua, prettierd) |
-| `vim-fugitive` + `gitsigns.nvim` | Git integration |
-| `mini.nvim` | Comment, move, pairs, surround, ai textobjects, bracketed, tabline |
-| `which-key.nvim` | Shows pending keybinds |
-| `vim-tmux-navigator` | Seamless pane navigation between tmux and Neovim |
-| `vim-sleuth` | Auto-detect indentation |
-| `vim-eunuch` | File commands (`:Rename`, `:Move`, `:Delete`) |
-| `vim-abolish` | Smart substitutions with `%S` |
+| Feature | Plugins |
+|---------|---------|
+| Fuzzy finder | `telescope.nvim` |
+| LSP | `nvim-lspconfig`, `mason.nvim` |
+| Completion | `blink.cmp` |
+| Syntax highlighting | `nvim-treesitter` |
+| Formatting | `conform.nvim` (stylua, prettierd) |
+| File explorer | `neo-tree.nvim` |
+| Git | `vim-fugitive`, `gitsigns.nvim` |
+| Text objects & UI | `mini.nvim` (move, pairs, surround, ai, bracketed, tabline) |
+| Keybind discovery | `which-key.nvim` |
+| Tmux integration | `vim-tmux-navigator` |
+| Indentation | `vim-sleuth` |
+| File commands | `vim-eunuch` (`:Rename`, `:Move`, `:Delete`) |
+| Smart substitution | `vim-abolish` (`%S`) |
 
 ## Key mappings
 
@@ -51,12 +53,13 @@ Leader key: <kbd>Space</kbd>
 |--------|-------|
 | `<leader>c` | Code (format, rename) |
 | `<leader>d` | Diagnostic (errors, quickfix, actions) |
-| `<leader>g` | Git (diff, blame) |
+| `<leader>e` | Explorer (toggle file tree) |
+| `<leader>g` | Git (diff, blame, signs toggle) |
 | `<leader>l` | List (files, buffers, symbols, keymaps) |
 | `<leader>s` | Search (grep in buffer/workspace) |
-| `<leader>w` | Workspace |
 
 Pane navigation: <kbd>Option</kbd>+<kbd>H</kbd><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd> (shared with tmux)
+Buffer navigation: <kbd>Option</kbd>+<kbd>Shift</kbd>+<kbd>[</kbd> / <kbd>]</kbd>
 
 ## Color scheme
 
