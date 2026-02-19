@@ -5,6 +5,7 @@ return {
   ---@type blink.cmp.Config
   opts = {
     completion = {
+      list = { selection = { preselect = false, auto_insert = false } },
       documentation = { auto_show = true, auto_show_delay_ms = 200 },
       ghost_text = { enabled = true },
       menu = {
@@ -16,6 +17,22 @@ return {
             { 'kind' },
           },
         },
+      },
+    },
+    keymap = {
+      ['<CR>'] = { 'accept', 'fallback' },
+      ['<Esc>'] = { 'cancel', 'fallback' },
+    },
+    cmdline = {
+      keymap = {
+        ['<CR>'] = { 'accept', 'fallback' },
+        ['<Esc>'] = { 'cancel', 'fallback' },
+        ['<Up>'] = { 'select_prev', 'fallback' },
+        ['<Down>'] = { 'select_next', 'fallback' },
+      },
+      completion = {
+        list = { selection = { preselect = false, auto_insert = false } },
+        menu = { auto_show = true },
       },
     },
     signature = { enabled = true },
