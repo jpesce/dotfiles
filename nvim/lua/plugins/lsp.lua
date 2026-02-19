@@ -11,161 +11,104 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
+      -- Diagnostics (global, only needs to run once)
+      vim.diagnostic.config {
+        virtual_text = { current_line = true },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '•',
+            [vim.diagnostic.severity.WARN] = '•',
+            [vim.diagnostic.severity.HINT] = '•',
+            [vim.diagnostic.severity.INFO] = '•',
+          },
+        },
+      }
+
+      -- Keymaps set on LspAttach (only Picker overrides, built-in defaults handle the rest)
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
         callback = function(event)
-          -- Function to mode, buffer and description
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc .. ' (LSP)' })
           end
 
-          -- Go to the definition of the word under your cursor
-          --  To jump back in the taglist, press <C-T>
+          -- Override built-in LSP mappings with Picker (fuzzy finder) versions
           map('gd', Picker.lsp_definitions, '[G]o to [D]efinition')
-
-          -- Go to declaration, WARN: This is not Go to Definition (see gd)
-          --  For example, in C this would take you to the header
+          -- gD goes to the declaration (e.g. header file in C), not the definition/implementation
           map('gD', vim.lsp.buf.declaration, '[G]o to [D]eclaration')
-
-          -- Go to references for the word under your cursor
           map('gr', Picker.lsp_references, '[G]o to [R]eferences')
-
-          -- Go to the implementation of the word under your cursor
-          --  Useful when your language has ways of declaring types without an actual implementation
           map('gI', Picker.lsp_implementations, '[G]o to [I]mplementation')
-
-          -- Go to the type of the word under your cursor
-          --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
           map('gy', Picker.lsp_type_definitions, '[G]o to t[Y]pe definition')
-
-          -- List all the symbols in your current document
-          --  Symbols are things like variables, functions, types, etc
-          map('<leader>ls', Picker.lsp_document_symbols, '[L]ist buffer [S]ymbols')
-
-          -- List all the symbols in your current workspace
-          --  Similar to document symbols, except searches over your whole project
+          map('<leader>ls', Picker.lsp_document_symbols, '[L]ist buffer [s]ymbols')
           map('<leader>lS', Picker.lsp_workspace_symbols, '[L]ist workspace [S]ymbols')
 
-          -- Replace the variable under your cursor
-          --  Most Language Servers support renaming across files, etc
-          map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]eplace')
-
-          -- Execute a code action, usually your cursor needs to be on top of an error
-          -- or a suggestion from your LSP for this to activate
+          -- Code actions (under both [C]ode and [D]iagnostic groups)
+          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
           map('<leader>da', vim.lsp.buf.code_action, '[D]iagnostic [A]ction')
 
-          -- Opens a popup that displays documentation about the word under your cursor
-          --  See `:help K` for why this keymap
-          map('K', vim.lsp.buf.hover, 'Loo[K]up Documentation')
+          map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
 
-          -- Diagnostic configurations
-          vim.diagnostic.config {
-            virtual_text = true,
-            signs = {
-              text = {
-                [vim.diagnostic.severity.ERROR] = '•',
-                [vim.diagnostic.severity.WARN] = '•',
-                [vim.diagnostic.severity.HINT] = '•',
-                [vim.diagnostic.severity.INFO] = '•',
-              },
-            },
+          -- Hide built-in LSP mappings replaced by custom ones
+          require('which-key').add {
+            { 'gra', hidden = true },
+            { 'gri', hidden = true },
+            { 'grn', hidden = true },
+            { 'grr', hidden = true },
+            { 'grt', hidden = true },
           }
         end,
       })
 
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-      --  Add any additional override configuration in the following tables. Available keys are:
-      --  - cmd (table): Override the default command used to start the server
-      --  - filetypes (table): Override the default list of associated filetypes for the server
-      --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      vim.g.markdown_fenced_languages = {
-        'ts=typescript',
-      }
-      local servers = {
-        stylelint_lsp = {},
-        eslint = {
-          filetypes = {
-            'javascript',
-            'javascriptreact',
-            'javascript.jsx',
-            'typescript',
-            'typescriptreact',
-            'typescript.tsx',
-            'vue',
-            'jsonc',
-            'json',
-          },
-        },
-        -- gopls = {},
-        tailwindcss = {},
-        cssls = {},
-        -- solargraph = {},
-        lua_ls = {
-          settings = {
-            Lua = {
-              runtime = { version = 'LuaJIT' },
-              workspace = {
-                checkThirdParty = false,
-                -- Tells lua_ls where to find all the Lua files loaded in neovim configuration.
-                library = {
-                  '${3rd}/luv/library',
-                  unpack(vim.api.nvim_get_runtime_file('', true)),
-                },
-              },
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
-      }
-
-      require('mason').setup()
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Format lua code
-        'prettierd',
+      -- Global capabilities for all LSP servers
+      vim.lsp.config('*', {
+        capabilities = require('blink.cmp').get_lsp_capabilities(),
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      require('mason-lspconfig').setup {
-        ensure_installed = {},
-        automatic_installation = true,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration in `servers` table above. Useful for disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
+      -- Add vim.* completions and LuaJIT runtime when editing Neovim config
+      vim.lsp.config('lua_ls', {
+        on_init = function(client)
+          if client.workspace_folders then
+            local root = client.workspace_folders[1].name
+            if root ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(root .. '/.luarc.json') or vim.uv.fs_stat(root .. '/.luarc.jsonc')) then
+              return
+            end
+          end
+
+          client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = { version = 'LuaJIT' },
+            workspace = {
+              checkThirdParty = false,
+              library = {
+                vim.env.VIMRUNTIME,
+                '${3rd}/luv/library',
+              },
+            },
+            completion = {
+              callSnippet = 'Replace',
+            },
+          })
+        end,
+      })
+
+      vim.g.markdown_fenced_languages = { 'ts=typescript' }
+
+      -- Mason: install tools + auto-enable LSP servers
+      require('mason').setup()
+      require('mason-tool-installer').setup {
+        ensure_installed = {
+          'stylelint_lsp',
+          'eslint',
+          'tailwindcss',
+          'cssls',
+          'lua_ls',
+          'stylua',
+          'prettierd',
         },
       }
+      require('mason-lspconfig').setup { automatic_enable = true }
 
-      -- Start some LSPs manually because couldn't find a way to start via mason-lspconfig using root_pattern
-      local nvim_lspconfig = require 'lspconfig'
-      local tsserver_capabilities = {
-        documentFormattingProvider = false,
-        documentRangeFormattingProvider = false,
-      }
-      tsserver_capabilities = vim.tbl_deep_extend('force', {}, capabilities, tsserver_capabilities or {})
-      -- nvim_lspconfig.tsserver.setup {
-      --   root_dir = nvim_lspconfig.util.root_pattern 'package.json',
-      --   capabilities = tsserver_capabilities,
-      --   single_file_support = false,
-      -- }
-      nvim_lspconfig.denols.setup {
-        root_dir = nvim_lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
-        capabilities = capabilities,
-      }
+      -- Non-mason servers
+      vim.lsp.enable 'denols'
     end,
   },
 }
