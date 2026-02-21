@@ -49,7 +49,7 @@ vim.keymap.set('i', ',', ',<C-g>u')
 vim.keymap.set('i', '?', '?<C-g>u')
 vim.keymap.set('i', '!', '!<C-g>u')
 vim.keymap.set('i', '<Space>', '<Space><C-g>u')
-vim.keymap.set('i', '<CR>', '<CR><C-g>u')
+vim.keymap.set('i', '<CR>', '<C-g>u<CR>')
 -- }}}
 
 -- OLD SCHOOL PROJECT NAVIGATION {{{
@@ -90,7 +90,7 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 vim.opt.foldtext = '' -- highlight fold lines
-vim.opt.fillchars:append 'foldclose:'
+vim.opt.fillchars:append 'foldclose:'
 vim.opt.fillchars:append 'foldopen:'
 vim.opt.fillchars:append 'foldsep: '
 vim.opt.fillchars:append 'fold: '
