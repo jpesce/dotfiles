@@ -9,8 +9,8 @@ setopt CORRECT
 eval "$(/opt/homebrew/bin/brew shellenv)" 
 
 # Directories
-MODULES_DIR=$ZDOTDIR/modules
-PROJECTS_DIR=$HOME/Projects
+export MODULES_DIR=$ZDOTDIR/modules
+export PROJECTS_DIR=$HOME/Projects
 
 # Deferred loading
 source $ZDOTDIR/plugins/zsh-defer/zsh-defer.plugin.zsh
