@@ -12,6 +12,7 @@ require('lazy').setup({
   require 'plugins/formatter',
   require 'plugins/completion',
   require 'plugins/mini',
+  require 'plugins/snacks',
   require 'plugins/treesitter',
   require 'plugins/explorer',
   require 'plugins/tmux-navigator',

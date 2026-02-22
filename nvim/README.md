@@ -39,6 +39,7 @@ Managed by [lazy.nvim](https://github.com/folke/lazy.nvim).
 | File explorer | `neo-tree.nvim` |
 | Git | `vim-fugitive`, `gitsigns.nvim` |
 | Text objects & UI | `mini.nvim` (move, pairs, surround, ai, bracketed, tabline) |
+| Indent guides & scope | `snacks.nvim` (indent guides, scope textobjects `ii`/`ai`, scope jumping `[i`/`]i`) |
 | Keybind discovery | `which-key.nvim` |
 | Tmux integration | `vim-tmux-navigator` |
 | Indentation | `vim-sleuth` |

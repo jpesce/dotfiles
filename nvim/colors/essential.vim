@@ -24,7 +24,8 @@ hi SecondaryItalic  ctermfg=LightGrey   ctermbg=NONE    cterm=italic
 hi Tertiary         ctermfg=8           ctermbg=NONE    cterm=NONE
 hi TertiaryItalic   ctermfg=8           ctermbg=NONE    cterm=italic
 
-hi Quaternary       ctermfg=234         ctermbg=NONE    cterm=NONE
+hi Quaternary       ctermfg=236         ctermbg=NONE    cterm=NONE
+hi Quintenary       ctermfg=234         ctermbg=NONE    cterm=NONE
 
 hi Elevation        ctermfg=NONE        ctermbg=234     cterm=NONE
 
@@ -195,3 +196,7 @@ hi! link MiniTablineHidden          Tertiary
 hi! link MiniTablineModifiedCurrent DefaultItalic
 hi! link MiniTablineModifiedVisible TertiaryItalic
 hi! link MiniTablineModifiedHidden  TertiaryItalic
+
+" Snacks indent
+hi! link SnacksIndent      Quaternary
+hi! link SnacksIndentScope Tertiary
