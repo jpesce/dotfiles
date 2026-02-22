@@ -5,7 +5,18 @@
   },
   "permissions": {
     "allow": [
+      "Read",
+      "List",
+      "Find",
+      "Search",
       "WebSearch",
+      "Get",
+      "Fetch",
+      "WebFetch",
+      "Read",
+      "ReadFile",
+      "Bash(* --version)",
+      "Bash(* --help *)",
       "Bash(ls *)",
       "Bash(wc *)",
       "Bash(find *)",
