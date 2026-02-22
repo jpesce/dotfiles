@@ -37,10 +37,17 @@ vim.api.nvim_create_autocmd('VimEnter', {
   group = vim.api.nvim_create_augroup('project-config', { clear = true }),
   once = true,
   callback = function()
-    local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-    local config_file = vim.fn.stdpath 'config' .. '/projects/' .. project_name .. '.lua'
-    if vim.fn.filereadable(config_file) == 1 then
-      dofile(config_file)
+    local projects_dir = vim.fn.stdpath 'config' .. '/projects/'
+    local dir = vim.fn.getcwd()
+    -- Walk up the directory tree looking for a matching project config
+    while dir ~= '/' do
+      local name = vim.fn.fnamemodify(dir, ':t')
+      local config_file = projects_dir .. name .. '.lua'
+      if vim.fn.filereadable(config_file) == 1 then
+        dofile(config_file)
+        return
+      end
+      dir = vim.fn.fnamemodify(dir, ':h')
     end
   end,
 })

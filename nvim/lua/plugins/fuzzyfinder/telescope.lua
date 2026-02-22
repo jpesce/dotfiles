@@ -19,6 +19,7 @@ return {
         defaults = {
           color_devicons = false,
           layout_config = { width = 0.95 },
+          file_ignore_patterns = TelescopeFileIgnorePatterns or {},
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
@@ -78,7 +79,9 @@ return {
       -- LIST
       vim.keymap.set('n', '<leader>lz', builtin.builtin, { desc = '[L]ist Telescope capabilties' })
 
-      vim.keymap.set('n', '<leader>lf', builtin.find_files, { desc = '[L]ist [F]iles in workspace' })
+      vim.keymap.set('n', '<leader>lf', function()
+        builtin.find_files { hidden = TelescopeShowHidden or false }
+      end, { desc = '[L]ist [F]iles in workspace' })
       vim.keymap.set('n', '<leader>lb', builtin.buffers, { desc = '[L]ist [B]uffers' })
 
       vim.keymap.set('n', '<leader>lh', builtin.help_tags, { desc = '[L]ist [H]elp' })
@@ -99,12 +102,18 @@ return {
         })
       end, { desc = '[S]earch in [B]uffer' })
       vim.keymap.set('n', '<leader>so', function()
-        builtin.live_grep {
+        local opts = {
           grep_open_files = true,
           prompt_title = 'Live grep in open buffers',
         }
+        if TelescopeShowHidden then
+          opts.additional_args = { '--hidden' }
+        end
+        builtin.live_grep(opts)
       end, { desc = '[S]earch in [O]pen buffers' })
-      vim.keymap.set('n', '<leader>sw', builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
+      vim.keymap.set('n', '<leader>sw', function()
+        builtin.live_grep(TelescopeShowHidden and { additional_args = { '--hidden' } } or {})
+      end, { desc = '[S]earch in [W]orkspace' })
 
       -- VISUAL GREP
       vim.keymap.set('v', '<space>sb', function()
@@ -118,7 +127,11 @@ return {
 
       vim.keymap.set('v', '<space>sw', function()
         local text = getVisualSelection()
-        builtin.live_grep { default_text = text }
+        local opts = { default_text = text }
+        if TelescopeShowHidden then
+          opts.additional_args = { '--hidden' }
+        end
+        builtin.live_grep(opts)
       end, { desc = '[S]earch selection in [W]orkspace' })
     end,
   },
