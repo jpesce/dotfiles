@@ -3,6 +3,10 @@ return {
   lazy = false,
   build = ':TSUpdate',
   config = function()
+    -- Add bundled queries (folds, highlights, etc.) to runtimepath
+    local ts_dir = require('lazy.core.config').plugins['nvim-treesitter'].dir
+    vim.opt.rtp:append(vim.fs.joinpath(ts_dir, 'runtime'))
+
     vim.api.nvim_create_autocmd('FileType', {
       group = vim.api.nvim_create_augroup('treesitter-auto-install', { clear = true }),
       callback = function(ev)
