@@ -92,6 +92,14 @@ return {
 
       vim.g.markdown_fenced_languages = { 'ts=typescript' }
 
+      -- Prevent vtsls and denols from both attaching
+      vim.lsp.config('vtsls', {
+        root_markers = { 'package.json', 'tsconfig.json' },
+      })
+      vim.lsp.config('denols', {
+        root_markers = { 'deno.json', 'deno.jsonc' },
+      })
+
       -- Mason: install tools + auto-enable LSP servers
       require('mason').setup()
       require('mason-tool-installer').setup {
@@ -103,12 +111,11 @@ return {
           'lua_ls',
           'stylua',
           'prettierd',
+          'vtsls',
+          'denols',
         },
       }
       require('mason-lspconfig').setup { automatic_enable = true }
-
-      -- Non-mason servers
-      vim.lsp.enable 'denols'
     end,
   },
 }
