@@ -11,12 +11,14 @@ let g:colors_name = 'essential'
 
 " Custom groups to reuse by linking
 hi Accent           ctermfg=16          ctermbg=NONE    cterm=NONE
+hi AccentBold       ctermfg=16          ctermbg=NONE    cterm=bold
 hi AccentInverted   ctermfg=Black       ctermbg=16      cterm=NONE
 
 hi Default          ctermfg=White       ctermbg=NONE    cterm=NONE
 hi DefaultInverted  ctermfg=Black       ctermbg=White   cterm=NONE
 hi DefaultBold      ctermfg=White       ctermbg=NONE    cterm=bold
 hi DefaultItalic    ctermfg=White       ctermbg=NONE    cterm=italic
+hi DefaultBoldItalic ctermfg=White      ctermbg=NONE    cterm=bold,italic
 
 hi Secondary        ctermfg=LightGrey   ctermbg=NONE    cterm=NONE
 hi SecondaryItalic  ctermfg=LightGrey   ctermbg=NONE    cterm=italic
@@ -196,6 +198,53 @@ hi! link MiniTablineHidden          Tertiary
 hi! link MiniTablineModifiedCurrent DefaultItalic
 hi! link MiniTablineModifiedVisible TertiaryItalic
 hi! link MiniTablineModifiedHidden  TertiaryItalic
+
+" Markdown
+hi! link markdownH1                DefaultBold
+hi! link markdownH2                DefaultBold
+hi! link markdownH3                DefaultBold
+hi! link markdownH4                DefaultBold
+hi! link markdownH5                DefaultBold
+hi! link markdownH6                DefaultBold
+hi! link markdownHeadingDelimiter  DefaultBold
+hi! link markdownHeadingRule       DefaultBold
+hi! link markdownBold              DefaultBold
+hi! link markdownItalic            DefaultItalic
+hi! link markdownBoldItalic        DefaultBoldItalic
+hi! link markdownCode              Secondary
+hi! link markdownCodeBlock         Secondary
+hi! link markdownCodeDelimiter     Tertiary
+hi! link markdownBlockquote        SecondaryItalic
+hi! link markdownRule              Tertiary
+hi! link markdownListMarker        Secondary
+hi! link markdownOrderedListMarker Secondary
+hi! link markdownUrl               Underlined
+hi! link markdownLinkText          Accent
+hi! link markdownLink              Underlined
+hi! link markdownIdDeclaration     Accent
+hi! link markdownId                Accent
+
+" Treesitter markup
+hi! link @markup.heading           DefaultBold
+hi! link @markup.heading.1         DefaultBold
+hi! link @markup.heading.2         DefaultBold
+hi! link @markup.heading.3         DefaultBold
+hi! link @markup.heading.4         DefaultBold
+hi! link @markup.heading.5         DefaultBold
+hi! link @markup.heading.6         DefaultBold
+hi! link @markup.heading.marker    DefaultBold
+hi! link @markup.strong            DefaultBold
+hi! link @markup.italic            DefaultItalic
+hi! link @markup.raw               Secondary
+hi! link @markup.raw.block         Secondary
+hi! link @markup.raw.delimiter     Tertiary
+hi! link @markup.quote             SecondaryItalic
+hi! link @markup.list              Secondary
+hi! link @markup.list.checked      Tertiary
+hi! link @markup.list.unchecked    Secondary
+hi! link @markup.link              Accent
+hi! link @markup.link.url          Underlined
+hi! link @markup.link.label        Accent
 
 " Snacks indent
 hi! link SnacksIndent      Quaternary

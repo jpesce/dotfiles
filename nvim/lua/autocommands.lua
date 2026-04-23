@@ -52,4 +52,17 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 -- }}}
+-- PROSE {{{
+--  Enable soft wrapping for prose filetypes
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Enable soft wrapping for prose filetypes',
+  group = vim.api.nvim_create_augroup('prose', { clear = true }),
+  pattern = { 'markdown', 'text', 'mail', 'gitcommit' },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+  end,
+})
+-- }}}
 -- vim: foldmethod=marker
