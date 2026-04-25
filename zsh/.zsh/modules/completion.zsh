@@ -31,4 +31,7 @@ if [[ -n "$HOMEBREW_PREFIX" ]]; then
 fi
 
 autoload -Uz compinit
-compinit -C 
+compinit -C
+
+# Generic completions (from --help) for CLIs without dedicated completion scripts
+compdef _gnu_generic claude
